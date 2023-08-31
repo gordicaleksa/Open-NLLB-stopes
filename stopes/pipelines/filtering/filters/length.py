@@ -94,7 +94,7 @@ class LengthFilter(Filter):
             # and repeatedly produce the same sequence; this filter catches that
             if self.min_src_unique_ratio is not None:
                 # the order is six for English, appropriately scaled for other langs
-                order = min(1, 6 * self.src_factor)
+                order = min(1, 6 * self.src_factor)  # TODO(gordicaleksa): this is a bug, should be max? otherwise for English we have 1 instead of 6
                 ngrms = ngrams(line.src, order=order)
                 if len(set(ngrms)) / len(ngrms) < self.min_src_unique_ratio:
                     counts.min_src_unique_ratio += 1

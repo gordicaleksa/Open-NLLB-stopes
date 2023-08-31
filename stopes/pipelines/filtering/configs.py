@@ -47,7 +47,7 @@ class LidFilterConfig:
 class ToxicityFilterConfig:
     _target_: str = "stopes.pipelines.filtering.filters.ToxicityFilter"
     twl_path_template: str = (
-        "/large_experiments/seamless/nllb/mmt/data/toxicity/{lang}_twl.txt"
+        "/home/aleksa/Projects/nllb/fairseq/NLLB-200_TWL/{lang}_twl.txt"
     )
     eng_porn_twl_path: Optional[
         str

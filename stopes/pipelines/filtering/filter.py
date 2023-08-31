@@ -144,7 +144,7 @@ def filter_group(group_name: str, config: DictConfig):
         timeout_min=2880,
         nodes=1,
         cpus_per_task=4,
-        mem_gb=128,
+        mem_gb=48,
         name=f"filter.{group_name}",
     )
     logger.info(f"Filtering {group_name}")
@@ -216,6 +216,17 @@ def filter_group(group_name: str, config: DictConfig):
 
 @hydra.main(config_path="conf", config_name="example")
 def main(config: DictConfig) -> None:
+    directions_path = config.directions[0]
+    with open(directions_path, "rt") as fin:
+        directions = yaml.safe_load(fin)
+    config.directions = directions
+
+    # TODO(gordicaleksa): a bit hacky currently hardcoded assuming only train primary
+    included_corpora_path = config.train_primary.included_corpora[0]
+    with open(included_corpora_path, "rt") as fin:
+        corpora = yaml.safe_load(fin)
+    config.train_primary.included_corpora = corpora
+
     os.makedirs(config.output_dir, exist_ok=True)
     logger.info(f"Running with config:\n{OmegaConf.to_yaml(config)}")
     with open(Path(config.output_dir) / "config.yaml", "wt") as fout:

@@ -24,7 +24,7 @@ def get_scaling_factors(path):
             factors[lang] = len(fin.read())
 
     # rescale everything based on English
-    return {lang: factors["eng"] / lang_factor for lang, lang_factor in factors.items()}
+    return {lang: factors["eng_Latn"] / lang_factor for lang, lang_factor in factors.items()}
 
 
 def main(args):

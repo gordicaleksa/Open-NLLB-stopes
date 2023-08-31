@@ -52,37 +52,36 @@ def get_mined_datasets(root: Path, args):
     return dict(datasets)
 
 
-def get_primary_datasets(paths, args):
+def get_primary_datasets(datasets_root, args):
     datasets = defaultdict(dict)  # direction -> corpus -> paths
+    # Pass the root directory under which all your datasets are stored.
+    paths = list(datasets_root.iterdir())
     for path in paths:
+        corpus_name = path.name
         direction_directories = glob(str(path / "*-*"))
         for direction_directory in direction_directories:
             _, direction = os.path.split(direction_directory)
             src, tgt = direction.split("-")
-            src_gz_glob = glob(f"{direction_directory}/*.{src}.gz")
             src_glob = glob(f"{direction_directory}/*.{src}")
-            for src_path in src_gz_glob + src_glob:
-                _, src_filename = os.path.split(src_path)
-                if src_path.endswith(".gz"):
-                    src_filename = src_filename[:-3]
-                corpus_name = src_filename[: src_filename.rfind(".")]
-                if "EXCLUDE" in src_path or corpus_name in args.exclude_corpora:
-                    logging.debug(f"Excluding {src_path}")
-                    continue
-                tgt_filename = f"{corpus_name}.{tgt}"
-                if src_path.endswith(".gz"):
-                    tgt_filename += ".gz"
-                tgt_path = Path(direction_directory) / tgt_filename
-                if not os.path.isfile(tgt_path):
-                    logging.warning(
-                        f"Skipping {src_path}: the corresponding {tgt} file is missing"
-                    )
-                    continue
+            trg_glob = glob(f"{direction_directory}/*.{tgt}")
+            if len(trg_glob + src_glob) <= 1:
+                print(
+                    f"Skipping {direction_directory}: {src} or {tgt} missing."
+                )
+                continue
+            assert len(src_glob) == 1 and len(trg_glob) == 1, f"multiple files found for {direction}"
+            src_path = src_glob[0]
+            tgt_path = trg_glob[0]
+            if not os.path.isfile(tgt_path) or not os.path.isfile(src_path):
+                print(
+                    f"Skipping {src_path}: the corresponding {tgt} file is missing"
+                )
+                continue
 
-                assert (
-                    corpus_name not in datasets[direction]
-                ), f"duplicated direction {direction} for corpus {corpus_name}"
-                datasets[direction][corpus_name] = Dataset(src=src_path, tgt=tgt_path)
+            assert (
+                corpus_name not in datasets[direction]
+            ), f"duplicated direction {direction} for corpus {corpus_name}"
+            datasets[direction][corpus_name] = Dataset(src=src_path, tgt=tgt_path)
     return dict(datasets)
 
 
@@ -122,15 +121,14 @@ if __name__ == "__main__":
     parser.add_argument(
         "--bt-root",
         type=Path,
-        required=True,
+        required=False,
         help="Location of backtranslated data (format: $direction/$corpus.$lang.gz).",
     )
     parser.add_argument(
-        "--mined-data-root", type=Path, required=True, help="Location of mined data"
+        "--mined-data-root", type=Path, required=False, help="Location of mined data"
     )
     parser.add_argument(
         "--primary-train-paths",
-        nargs="*",
         type=Path,
         required=True,
         help="Directories containing datasets (format: $direction/$corpus.$lang.gz).",
@@ -147,8 +145,9 @@ if __name__ == "__main__":
         default=["testcorpus"],
     )
     parser.add_argument(
-        "data_type",
+        "--data_type",
         type=str,
+        default="train_primary",
         choices=["train_primary", "train_mined", "train_bt"],
         help="What type of data to populate the config for; "
         "choices: train_primary, train_mined, train_bt",

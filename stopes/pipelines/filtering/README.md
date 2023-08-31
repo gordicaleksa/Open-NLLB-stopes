@@ -12,6 +12,9 @@ by running `scripts/populate_data_conf.py` and `scripts/compute_length_factors.p
 respectively. Please consult the help of those scripts (by running them with `-h`) to
 learn more about how to configure them.
 
+Additionally please run the `extract_directions_and_corpora.py` script to get 2 additional configs
+`directions.yaml` and `included_corpora.yml` that you'll subsequently link inside of the `example.yaml` script as paths (see below for what example.yaml is).
+
 A basic run using default parameters might look like this:
 ```
 python filter.py \
@@ -35,3 +38,16 @@ python filter.py \
   output_dir=/home/$USER/filter_test \
   data_conf_dir=/home/$USER/data_conf
 ```
+
+## Toxicity filtering
+If you want to use toxicity filtering you'll have to download the toxicity-200 word lists from [here](https://github.com/facebookresearch/flores/blob/main/toxicity/README.md).
+
+To make things a bit easier please download the above file to your fairseq root because we are downloading and doing initial datasets preparations there.
+
+You can just run `wget --trust-server-names https://tinyurl.com/NLLB200TWL` from fairseq project root directory.
+
+After that run the following bash script `fairseq/examples/nllb/data/unzip_toxicity_lists.sh` (again it's in the fairseq repo) to unzip all the word lists. It assumes that you've downloaded the toxicity lists to fairseq's root.
+
+Finally you'll have to modify the path (`twl_path_template`) to your word lists inside  `ToxicityFilterConfig`. Atm it's hardcoded, we should eventually make that a part of yaml config.
+
+
