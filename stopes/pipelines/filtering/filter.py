@@ -5,6 +5,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import copy
 import gzip
 import itertools
 import logging
@@ -143,7 +144,7 @@ def filter_group(group_name: str, config: DictConfig):
         slurm_partition=config.executor.slurm_partition,
         timeout_min=2880,
         nodes=1,
-        cpus_per_task=4,
+        cpus_per_task=16,
         mem_gb=48,
         name=f"filter.{group_name}",
     )
@@ -232,11 +233,26 @@ def main(config: DictConfig) -> None:
     with open(Path(config.output_dir) / "config.yaml", "wt") as fout:
         fout.write(OmegaConf.to_yaml(config, sort_keys=True))
 
-    for group_name in ("train_primary", "train_mined", "train_bt"):
-        if config.get(group_name, None):
-            filter_group(group_name=group_name, config=config)
+    # If you want to run this locally we have to batch jobs otherwise the number of processes overwhelms the machine and leads to crashes
+    if config.executor.slurm_partition is None:
+        batch_size = 16  # TODO: set this to a reasonable value (number of cores on your CPU)
+        all_directions = copy.deepcopy(config.directions)
+        root_output_dir = config.output_dir
+        for i in range(0, len(all_directions), batch_size):
+            config.directions = all_directions[i : i + batch_size]
+            config.output_dir = os.path.join(root_output_dir, f"batch_{i}_to_{i+len(config.directions)}")
+            os.makedirs(config.output_dir, exist_ok=True)
+            for group_name in ("train_primary", "train_mined", "train_bt"):
+                if config.get(group_name, None):
+                    filter_group(group_name=group_name, config=config)
 
-    logger.info(f"All jobs done – data written to {config.output_dir}")
+        logger.info(f"All jobs done – data written to {root_output_dir}")
+    else:
+        for group_name in ("train_primary", "train_mined", "train_bt"):
+            if config.get(group_name, None):
+                filter_group(group_name=group_name, config=config)
+
+        logger.info(f"All jobs done – data written to {config.output_dir}")
 
 
 if __name__ == "__main__":

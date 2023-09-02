@@ -77,17 +77,39 @@ async def binarize(
 
     binarizer_fn = partial(get_binarizer, binarize_num_workers, output_dir, tmp_dir)
 
-    src_train_binarizer = binarizer_fn(src_train_shards, src_vocab)
-    tgt_train_binarizer = binarizer_fn(tgt_train_shards, tgt_vocab)
-    src_eval_binarizer = binarizer_fn(src_eval_shards, src_vocab)
-    tgt_eval_binarizer = binarizer_fn(tgt_eval_shards, src_vocab)
+    if launcher.partition is None:
+        batch_size = 16  # TODO: adjust this based on the number of cores on your CPU, leaving it hardcoded for now.
+        src_eval_binarized_list = []
+        tgt_eval_binarized_list = []
+        for i in range(0, len(src_train_shards), batch_size):
+            src_train_binarizer = binarizer_fn(src_train_shards[i : i + batch_size], src_vocab)
+            tgt_train_binarizer = binarizer_fn(tgt_train_shards[i : i + batch_size], tgt_vocab)
+            src_eval_binarizer = binarizer_fn(src_eval_shards[i : i + batch_size], src_vocab)
+            tgt_eval_binarizer = binarizer_fn(tgt_eval_shards[i : i + batch_size], src_vocab)
 
-    _, _, src_eval_binarized, tgt_eval_binarized = await asyncio.gather(
-        launcher.schedule(src_train_binarizer),
-        launcher.schedule(tgt_train_binarizer),
-        launcher.schedule(src_eval_binarizer),
-        launcher.schedule(tgt_eval_binarizer),
-    )
+            _, _, src_eval_binarized, tgt_eval_binarized = await asyncio.gather(
+                launcher.schedule(src_train_binarizer),
+                launcher.schedule(tgt_train_binarizer),
+                launcher.schedule(src_eval_binarizer),
+                launcher.schedule(tgt_eval_binarizer),
+            )
+
+            src_eval_binarized_list.extend(src_eval_binarized)
+            src_eval_binarized = src_eval_binarized_list  # Rename to keep consistent with else branch
+            tgt_eval_binarized_list.extend(tgt_eval_binarized)
+            tgt_eval_binarized = tgt_eval_binarized_list
+    else:
+            src_train_binarizer = binarizer_fn(src_train_shards, src_vocab)
+            tgt_train_binarizer = binarizer_fn(tgt_train_shards, tgt_vocab)
+            src_eval_binarizer = binarizer_fn(src_eval_shards, src_vocab)
+            tgt_eval_binarizer = binarizer_fn(tgt_eval_shards, src_vocab)
+
+            _, _, src_eval_binarized, tgt_eval_binarized = await asyncio.gather(
+                launcher.schedule(src_train_binarizer),
+                launcher.schedule(tgt_train_binarizer),
+                launcher.schedule(src_eval_binarizer),
+                launcher.schedule(tgt_eval_binarizer),
+            )
 
     # Copy train metadata to binarized subfolder.
     for dataset in sharded_train_datasets:

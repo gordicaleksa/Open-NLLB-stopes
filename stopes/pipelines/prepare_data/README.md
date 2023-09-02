@@ -52,3 +52,9 @@ python stopes/pipelines/prepare_data/prepare_data.py output_dir=<OUTPUT_DIR>
 ## Caveat
 
 This pipeline doesn't work if metadata is not specified for all corpora for a (fold, lang_dir) because we concatenate all corpora files for each (fold, lang_dir) into one file and shard them. So we need metadata information for every one of these lines, if specified at all for the (fold, lang_dir).
+
+## Caveat 2
+Make sure to rename the SPM-200 dictionary once you download it. There is hard expectation on how it should be named otherwise you'll hit some bugs.
+
+Example if the spm model is named `flores200_sacrebleu_tokenizer_spm.model` then the dictionary file should be
+named like `flores200_sacrebleu_tokenizer_spm.dict.txt` (same prefix but suffix is `.dict.txt`).

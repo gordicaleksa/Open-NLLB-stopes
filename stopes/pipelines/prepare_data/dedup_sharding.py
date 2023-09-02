@@ -54,7 +54,7 @@ class DedupSharding(StopesModule):
             nodes=1,
             tasks_per_node=1,
             gpus_per_node=0,
-            cpus_per_task=1,
+            cpus_per_task=16,
             timeout_min=2 * 24 * 60,
         )
 
@@ -183,6 +183,7 @@ class DedupSharding(StopesModule):
                     itertools.repeat(None)
                 ) as m_f:
                     for src_line, tgt_line, metadata_line in zip(s_f, t_f, m_f):
+                        # TODO(gordicaleksa): Why not just a deterministic circular logic? What do we gain from this?
                         shard_id = random.randint(0, num_shards - 1)
                         if not self._already_seen(
                             src_line,
@@ -253,6 +254,9 @@ async def dedup_sharding(
             train_datasets_per_lang_dir[dataset.lang_dir].append(dataset)
         else:
             eval_datasets_per_lang_dir[dataset.lang_dir].append(dataset)
+
+    for lang_dir, train_datasets in train_datasets_per_lang_dir.items():
+        assert len(train_datasets) == 1, "Expected only a single dataset per lang direction."
 
     dedup_sharding_jobs = []
     for lang_dir, train_datasets in train_datasets_per_lang_dir.items():

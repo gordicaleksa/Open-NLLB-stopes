@@ -136,6 +136,14 @@ class PrepareData:
 
 @hydra.main(config_path="conf", config_name="prepare_data")
 def main(config: PrepareDataConfig) -> None:
+
+    # For readability purposes we pass in a path instead of dumping the data directly into prepare_data.yaml.
+    train_corpora_path = config.corpora.train[0]
+    assert isinstance(train_corpora_path, str)
+    with open(train_corpora_path, "rt") as fin:
+        train_corpora = OmegaConf.load(fin)
+    config.corpora.train = train_corpora
+
     pipeline = PrepareData(config)
     asyncio.run(pipeline.run())
 
