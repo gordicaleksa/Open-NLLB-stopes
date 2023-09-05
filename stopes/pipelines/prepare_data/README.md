@@ -1,7 +1,11 @@
 # NLLB prepare_data pipeline
 
-Setup:
-Run `prepare_extra_configs.py` to create 2 additional yaml files that you'll need to pass to `prepare_data.yaml`.
+## Quick start
+1. Run `prepare_extra_configs.py` to create additional yaml files that you'll need to pass to `prepare_data.yaml`. It will output `train_corpora.yaml` into `prepare_data_configs/` directory. For validation data specify it directly inside `prepare_data.yaml`.
+2. Modify config files under `conf/`. The main one is `prepare_data.yaml`.
+3. Run the `prepare_data.py` script, no arguments are needed it's controlled solely by the `prepare_data.yaml` config.
+
+## Intro
 
 This pipeline takes in the filtered corpora text files (can be compressed), trains an SPM model, deduplicates, shards, encodes & binarizes them in the format required by fairseq. An array of jobs is scheduled wherever possible, in particular for validate, retrieve_data, dedup_sharding and binarizing. The pipeline uses the caching feature of Stopes.
 

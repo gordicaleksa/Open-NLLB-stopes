@@ -6,11 +6,23 @@ defaults:
   - sharding: default
   - _self_
 
-output_dir: ???
+output_dir: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/prepare_data/final_data
 
 launcher:
-  partition: ??? # set as null if running locally
+  partition: null  # Set as null if running locally otherwise specify your slurm partition
   cache:
     caching_dir: ${output_dir}/cache  # Cache won't be re-used if you change the output_dir.
 
-corpora: ???
+corpora:
+  train:
+      - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/prepare_data/prepare_data_configs/train_corpora.yaml
+  valid:
+    # Set just as an example modify the paths depending on the language directions of interest.
+    eng_Latn-rus_Cyrl:
+      flores202:
+        src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/eval_datasets/flores202_dev/eng_Latn-rus_Cyrl/flores202.eng_Latn
+        tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/eval_datasets/flores202_dev/eng_Latn-rus_Cyrl/flores202.rus_Cyrl
+    tur_Latn-uzn_Latn:
+      flores202:
+        src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/eval_datasets/flores202_dev/tur_Latn-uzn_Latn/flores202.tur_Latn
+        tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/eval_datasets/flores202_dev/tur_Latn-uzn_Latn/flores202.uzn_Latn

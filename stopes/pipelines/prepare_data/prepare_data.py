@@ -7,12 +7,15 @@
 import asyncio
 from collections import defaultdict
 import logging
+import os
 import shutil
+import tarfile
 import typing as tp
 from pathlib import Path
 
 import hydra
 from omegaconf import OmegaConf
+import requests
 
 from stopes.core import utils
 from stopes.pipelines.filtering.dataset import Dataset
@@ -172,8 +175,28 @@ class PrepareData:
             assert Path(dataset.tgt).exists(), f"Nonexistent target path: {dataset.tgt}"
 
 
+def download_spm200():
+    # Get path to the current file
+    target_directory = Path(__file__).resolve().parent / "spm_models"
+    urls_dict = [
+        ("https://tinyurl.com/flores200sacrebleuspm", target_directory / "flores200_sacrebleu_tokenizer_spm.model"),
+        ("https://tinyurl.com/nllb200dictionary", target_directory / "flores200_sacrebleu_tokenizer_spm.dict.txt"),
+    ]
+    for url, path in urls_dict:
+        if not os.path.exists(path):
+            os.makedirs(target_directory, exist_ok=True)
+            response = requests.get(url)
+            if not response.ok:
+                raise Exception(f"Could not download from {url}!")
+            open(path, "wb").write(response.content)
+            print(f"Wrote: {path}")
+
+
 @hydra.main(config_path="conf", config_name="prepare_data")
 def main(config: PrepareDataConfig) -> None:
+    if config.vocab.src_vocab.pretrained or config.vocab.tgt_vocab.pretrained:
+        # Download SPM-200 model and dictionary automatically. We assume that's the tokenizer you want to use.
+        download_spm200()
 
     # For readability purposes we pass in a path instead of dumping the data directly into prepare_data.yaml.
     train_corpora_path = config.corpora.train[0]

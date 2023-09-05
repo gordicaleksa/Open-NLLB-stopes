@@ -1,0 +1,1368 @@
+ace_Arab-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/ace_Arab-eng_Latn/NLLB-Seed.ace_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/ace_Arab-eng_Latn/NLLB-Seed.eng_Latn.gz
+ace_Latn-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/ace_Latn-eng_Latn/NLLB-Seed.ace_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/ace_Latn-eng_Latn/NLLB-Seed.eng_Latn.gz
+afr_Latn-eng_Latn:
+  mburisano:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/afr_Latn-eng_Latn/mburisano.afr_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/afr_Latn-eng_Latn/mburisano.eng_Latn.gz
+aka_Latn-eng_Latn:
+  akuapem:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/aka_Latn-eng_Latn/akuapem.aka_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/aka_Latn-eng_Latn/akuapem.eng_Latn.gz
+amh_Ethi-eng_Latn:
+  aau:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/amh_Ethi-eng_Latn/aau.amh_Ethi.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/amh_Ethi-eng_Latn/aau.eng_Latn.gz
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/amh_Ethi-eng_Latn/hornmt.amh_Ethi.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/amh_Ethi-eng_Latn/hornmt.eng_Latn.gz
+amh_Ethi-gaz_Latn:
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/amh_Ethi-gaz_Latn/hornmt.amh_Ethi.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/amh_Ethi-gaz_Latn/hornmt.gaz_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/amh_Ethi-gaz_Latn/tico.amh_Ethi.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/amh_Ethi-gaz_Latn/tico.gaz_Latn.gz
+amh_Ethi-som_Latn:
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/amh_Ethi-som_Latn/hornmt.amh_Ethi.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/amh_Ethi-som_Latn/hornmt.som_Latn.gz
+amh_Ethi-tir_Ethi:
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/amh_Ethi-tir_Ethi/hornmt.amh_Ethi.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/amh_Ethi-tir_Ethi/hornmt.tir_Ethi.gz
+arb_Arab-eng_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/arb_Arab-eng_Latn/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/arb_Arab-eng_Latn/tico.eng_Latn.gz
+arb_Arab-fra_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/arb_Arab-fra_Latn/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/arb_Arab-fra_Latn/tico.fra_Latn.gz
+arb_Arab-hin_Deva:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/arb_Arab-hin_Deva/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/arb_Arab-hin_Deva/tico.hin_Deva.gz
+arb_Arab-ind_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-ind_Latn/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-ind_Latn/tico.ind_Latn.gz
+arb_Arab-por_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-por_Latn/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-por_Latn/tico.por_Latn.gz
+arb_Arab-rus_Cyrl:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-rus_Cyrl/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-rus_Cyrl/tico.rus_Cyrl.gz
+arb_Arab-spa_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-spa_Latn/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-spa_Latn/tico.spa_Latn.gz
+arb_Arab-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-zho_Hans/tico.arb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/arb_Arab-zho_Hans/tico.zho_Hans.gz
+ary_Arab-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/ary_Arab-eng_Latn/NLLB-Seed.ary_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/ary_Arab-eng_Latn/NLLB-Seed.eng_Latn.gz
+arz_Arab-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/arz_Arab-eng_Latn/NLLB-Seed.arz_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/arz_Arab-eng_Latn/NLLB-Seed.eng_Latn.gz
+azj_Latn-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/azj_Latn-bak_Cyrl/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/azj_Latn-bak_Cyrl/til.bak_Cyrl.gz
+azj_Latn-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/azj_Latn-crh_Latn/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/azj_Latn-crh_Latn/til.crh_Latn.gz
+azj_Latn-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/azj_Latn-eng_Latn/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/azj_Latn-eng_Latn/til.eng_Latn.gz
+azj_Latn-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/azj_Latn-kaz_Cyrl/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/azj_Latn-kaz_Cyrl/til.kaz_Cyrl.gz
+azj_Latn-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/azj_Latn-kir_Cyrl/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/azj_Latn-kir_Cyrl/til.kir_Cyrl.gz
+azj_Latn-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/azj_Latn-rus_Cyrl/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/azj_Latn-rus_Cyrl/til.rus_Cyrl.gz
+azj_Latn-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/azj_Latn-tat_Cyrl/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/azj_Latn-tat_Cyrl/til.tat_Cyrl.gz
+azj_Latn-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/azj_Latn-tuk_Latn/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/azj_Latn-tuk_Latn/til.tuk_Latn.gz
+azj_Latn-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/azj_Latn-tur_Latn/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/azj_Latn-tur_Latn/til.tur_Latn.gz
+azj_Latn-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/azj_Latn-uig_Arab/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/azj_Latn-uig_Arab/til.uig_Arab.gz
+azj_Latn-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/azj_Latn-uzn_Latn/til.azj_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/azj_Latn-uzn_Latn/til.uzn_Latn.gz
+bak_Cyrl-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-azj_Latn/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-azj_Latn/til.azj_Latn.gz
+bak_Cyrl-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/bak_Cyrl-crh_Latn/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/bak_Cyrl-crh_Latn/til.crh_Latn.gz
+bak_Cyrl-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-eng_Latn/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-eng_Latn/til.eng_Latn.gz
+bak_Cyrl-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/bak_Cyrl-kaz_Cyrl/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/bak_Cyrl-kaz_Cyrl/til.kaz_Cyrl.gz
+bak_Cyrl-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-kir_Cyrl/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-kir_Cyrl/til.kir_Cyrl.gz
+bak_Cyrl-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/bak_Cyrl-rus_Cyrl/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/bak_Cyrl-rus_Cyrl/til.rus_Cyrl.gz
+bak_Cyrl-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/bak_Cyrl-tat_Cyrl/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/bak_Cyrl-tat_Cyrl/til.tat_Cyrl.gz
+bak_Cyrl-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-tuk_Latn/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-tuk_Latn/til.tuk_Latn.gz
+bak_Cyrl-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-tur_Latn/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-tur_Latn/til.tur_Latn.gz
+bak_Cyrl-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/bak_Cyrl-uig_Arab/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/bak_Cyrl-uig_Arab/til.uig_Arab.gz
+bak_Cyrl-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-uzn_Latn/til.bak_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/bak_Cyrl-uzn_Latn/til.uzn_Latn.gz
+bam_Latn-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bam_Latn-eng_Latn/NLLB-Seed.bam_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bam_Latn-eng_Latn/NLLB-Seed.eng_Latn.gz
+ban_Latn-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/ban_Latn-eng_Latn/NLLB-Seed.ban_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/ban_Latn-eng_Latn/NLLB-Seed.eng_Latn.gz
+ben_Beng-eng_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ben_Beng-eng_Latn/tico.ben_Beng.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ben_Beng-eng_Latn/tico.eng_Latn.gz
+ben_Beng-hin_Deva:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ben_Beng-hin_Deva/tico.ben_Beng.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ben_Beng-hin_Deva/tico.hin_Deva.gz
+bho_Deva-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bho_Deva-eng_Latn/NLLB-Seed.bho_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bho_Deva-eng_Latn/NLLB-Seed.eng_Latn.gz
+bjn_Arab-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bjn_Arab-eng_Latn/NLLB-Seed.bjn_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bjn_Arab-eng_Latn/NLLB-Seed.eng_Latn.gz
+bjn_Latn-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bjn_Latn-eng_Latn/NLLB-Seed.bjn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bjn_Latn-eng_Latn/NLLB-Seed.eng_Latn.gz
+bug_Latn-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bug_Latn-eng_Latn/NLLB-Seed.bug_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/bug_Latn-eng_Latn/NLLB-Seed.eng_Latn.gz
+ckb_Arab-eng_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ckb_Arab-eng_Latn/tico.ckb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ckb_Arab-eng_Latn/tico.eng_Latn.gz
+ckb_Arab-kmr_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ckb_Arab-kmr_Latn/tico.ckb_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/ckb_Arab-kmr_Latn/tico.kmr_Latn.gz
+crh_Latn-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/crh_Latn-azj_Latn/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/crh_Latn-azj_Latn/til.azj_Latn.gz
+crh_Latn-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-bak_Cyrl/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-bak_Cyrl/til.bak_Cyrl.gz
+crh_Latn-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-eng_Latn/NLLB-Seed.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-eng_Latn/NLLB-Seed.eng_Latn.gz
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-eng_Latn/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-eng_Latn/til.eng_Latn.gz
+crh_Latn-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-kaz_Cyrl/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-kaz_Cyrl/til.kaz_Cyrl.gz
+crh_Latn-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/crh_Latn-kir_Cyrl/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/crh_Latn-kir_Cyrl/til.kir_Cyrl.gz
+crh_Latn-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-rus_Cyrl/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-rus_Cyrl/til.rus_Cyrl.gz
+crh_Latn-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/crh_Latn-tat_Cyrl/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/crh_Latn-tat_Cyrl/til.tat_Cyrl.gz
+crh_Latn-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-tuk_Latn/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-tuk_Latn/til.tuk_Latn.gz
+crh_Latn-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-tur_Latn/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/crh_Latn-tur_Latn/til.tur_Latn.gz
+crh_Latn-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-uig_Arab/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/crh_Latn-uig_Arab/til.uig_Arab.gz
+crh_Latn-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/crh_Latn-uzn_Latn/til.crh_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/crh_Latn-uzn_Latn/til.uzn_Latn.gz
+dik_Latn-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/dik_Latn-eng_Latn/NLLB-Seed.dik_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/dik_Latn-eng_Latn/NLLB-Seed.eng_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/dik_Latn-eng_Latn/tico.dik_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/dik_Latn-eng_Latn/tico.eng_Latn.gz
+dzo_Tibt-eng_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/dzo_Tibt-eng_Latn/NLLB-Seed.dzo_Tibt.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/dzo_Tibt-eng_Latn/NLLB-Seed.eng_Latn.gz
+eng_Latn-aka_Latn:
+  akuapem:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/eng_Latn-aka_Latn/akuapem.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/eng_Latn-aka_Latn/akuapem.aka_Latn.gz
+eng_Latn-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-azj_Latn/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-azj_Latn/til.azj_Latn.gz
+eng_Latn-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/eng_Latn-bak_Cyrl/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/eng_Latn-bak_Cyrl/til.bak_Cyrl.gz
+eng_Latn-ben_Beng:
+  alt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/alt.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/alt.ben_Beng.gz
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/cvit-pib.ben_Beng.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/jw.ben_Beng.gz
+  opensubtitles:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/opensubtitles.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/opensubtitles.ben_Beng.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/pmi.ben_Beng.gz
+  tanzil:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/tanzil.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/tanzil.ben_Beng.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/ted2020.ben_Beng.gz
+  wikimatrix:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/wikimatrix.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-ben_Beng/wikimatrix.ben_Beng.gz
+eng_Latn-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-crh_Latn/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-crh_Latn/til.crh_Latn.gz
+eng_Latn-fra_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-fra_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-fra_Latn/tico.fra_Latn.gz
+eng_Latn-fur_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-fur_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-fur_Latn/NLLB-Seed.fur_Latn.gz
+eng_Latn-fuv_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-fuv_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-fuv_Latn/NLLB-Seed.fuv_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-fuv_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-fuv_Latn/tico.fuv_Latn.gz
+eng_Latn-gaz_Latn:
+  aau:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/eng_Latn-gaz_Latn/aau.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/eng_Latn-gaz_Latn/aau.gaz_Latn.gz
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/eng_Latn-gaz_Latn/hornmt.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/eng_Latn-gaz_Latn/hornmt.gaz_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/eng_Latn-gaz_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/eng_Latn-gaz_Latn/tico.gaz_Latn.gz
+eng_Latn-grn_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-grn_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-grn_Latn/NLLB-Seed.grn_Latn.gz
+eng_Latn-guj_Gujr:
+  bibleuedin:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/bibleuedin.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/bibleuedin.guj_Gujr.gz
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/cvit-pib.guj_Gujr.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/jw.guj_Gujr.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/pmi.guj_Gujr.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/ted2020.guj_Gujr.gz
+  urst:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/urst.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/urst.guj_Gujr.gz
+  wikititles:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/wikititles.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-guj_Gujr/wikititles.guj_Gujr.gz
+eng_Latn-hat_Latn:
+  cmu_haitian:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-hat_Latn/cmu_haitian.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-hat_Latn/cmu_haitian.hat_Latn.gz
+eng_Latn-hau_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-hau_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-hau_Latn/tico.hau_Latn.gz
+eng_Latn-hin_Deva:
+  alt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/alt.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/alt.hin_Deva.gz
+  bibleuedin:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/bibleuedin.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/bibleuedin.hin_Deva.gz
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/cvit-pib.hin_Deva.gz
+  iitb:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/iitb.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/iitb.hin_Deva.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/jw.hin_Deva.gz
+  opensubtitles:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/opensubtitles.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/opensubtitles.hin_Deva.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/pmi.hin_Deva.gz
+  tanzil:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/tanzil.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/tanzil.hin_Deva.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/ted2020.hin_Deva.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/tico.hin_Deva.gz
+  wikimatrix:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/wikimatrix.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-hin_Deva/wikimatrix.hin_Deva.gz
+eng_Latn-hne_Deva:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-hne_Deva/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-hne_Deva/NLLB-Seed.hne_Deva.gz
+eng_Latn-ind_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-ind_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-ind_Latn/tico.ind_Latn.gz
+eng_Latn-kan_Knda:
+  bibleuedin:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/bibleuedin.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/bibleuedin.kan_Knda.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/jw.kan_Knda.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/pmi.kan_Knda.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kan_Knda/ted2020.kan_Knda.gz
+eng_Latn-kas_Arab:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-kas_Arab/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-kas_Arab/NLLB-Seed.kas_Arab.gz
+eng_Latn-kas_Deva:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-kas_Deva/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-kas_Deva/NLLB-Seed.kas_Deva.gz
+eng_Latn-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-kaz_Cyrl/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-kaz_Cyrl/til.kaz_Cyrl.gz
+eng_Latn-khm_Khmr:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-khm_Khmr/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-khm_Khmr/tico.khm_Khmr.gz
+eng_Latn-kin_Latn:
+  kinya_smt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-kin_Latn/kinya_smt.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-kin_Latn/kinya_smt.kin_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-kin_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-kin_Latn/tico.kin_Latn.gz
+eng_Latn-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kir_Cyrl/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-kir_Cyrl/til.kir_Cyrl.gz
+eng_Latn-kmr_Latn:
+  bianet:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-kmr_Latn/bianet.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-kmr_Latn/bianet.kmr_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-kmr_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-kmr_Latn/tico.kmr_Latn.gz
+eng_Latn-knc_Arab:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-knc_Arab/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-knc_Arab/NLLB-Seed.knc_Arab.gz
+eng_Latn-knc_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-knc_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-knc_Latn/NLLB-Seed.knc_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-knc_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-knc_Latn/tico.knc_Latn.gz
+eng_Latn-lij_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-lij_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-lij_Latn/NLLB-Seed.lij_Latn.gz
+eng_Latn-lim_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-lim_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-lim_Latn/NLLB-Seed.lim_Latn.gz
+eng_Latn-lin_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-lin_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-lin_Latn/tico.lin_Latn.gz
+eng_Latn-lmo_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-lmo_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-lmo_Latn/NLLB-Seed.lmo_Latn.gz
+eng_Latn-ltg_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-ltg_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-ltg_Latn/NLLB-Seed.ltg_Latn.gz
+eng_Latn-lug_Latn:
+  mukiibi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-lug_Latn/mukiibi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-lug_Latn/mukiibi.lug_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-lug_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/eng_Latn-lug_Latn/tico.lug_Latn.gz
+eng_Latn-mag_Deva:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-mag_Deva/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_80_to_96/train_primary/eng_Latn-mag_Deva/NLLB-Seed.mag_Deva.gz
+eng_Latn-mal_Mlym:
+  bibleuedin:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/bibleuedin.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/bibleuedin.mal_Mlym.gz
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/cvit-pib.mal_Mlym.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/jw.mal_Mlym.gz
+  opensubtitles:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/opensubtitles.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/opensubtitles.mal_Mlym.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/pmi.mal_Mlym.gz
+  tanzil:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/tanzil.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/tanzil.mal_Mlym.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/ted2020.mal_Mlym.gz
+  wikimatrix:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/wikimatrix.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mal_Mlym/wikimatrix.mal_Mlym.gz
+eng_Latn-mar_Deva:
+  bibleuedin:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/bibleuedin.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/bibleuedin.mar_Deva.gz
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/cvit-pib.mar_Deva.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/jw.mar_Deva.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/pmi.mar_Deva.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/ted2020.mar_Deva.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/tico.mar_Deva.gz
+  wikimatrix:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/wikimatrix.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-mar_Deva/wikimatrix.mar_Deva.gz
+eng_Latn-mni_Beng:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-mni_Beng/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-mni_Beng/NLLB-Seed.mni_Beng.gz
+eng_Latn-mri_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-mri_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-mri_Latn/NLLB-Seed.mri_Latn.gz
+eng_Latn-mya_Mymr:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-mya_Mymr/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-mya_Mymr/tico.mya_Mymr.gz
+eng_Latn-npi_Deva:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-npi_Deva/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_16_to_32/train_primary/eng_Latn-npi_Deva/tico.npi_Deva.gz
+eng_Latn-nus_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-nus_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-nus_Latn/NLLB-Seed.nus_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-nus_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-nus_Latn/tico.nus_Latn.gz
+eng_Latn-ory_Orya:
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/cvit-pib.ory_Orya.gz
+  mtenglish2odia:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/mtenglish2odia.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/mtenglish2odia.ory_Orya.gz
+  odiencorp:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/odiencorp.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/odiencorp.ory_Orya.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/eng_Latn-ory_Orya/pmi.ory_Orya.gz
+eng_Latn-pan_Guru:
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/cvit-pib.pan_Guru.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/jw.pan_Guru.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/pmi.pan_Guru.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-pan_Guru/ted2020.pan_Guru.gz
+eng_Latn-pbt_Arab:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-pbt_Arab/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-pbt_Arab/NLLB-Seed.pbt_Arab.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-pbt_Arab/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-pbt_Arab/tico.pbt_Arab.gz
+eng_Latn-pes_Arab:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-pes_Arab/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-pes_Arab/tico.pes_Arab.gz
+eng_Latn-por_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-por_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-por_Latn/tico.por_Latn.gz
+eng_Latn-prs_Arab:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-prs_Arab/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-prs_Arab/NLLB-Seed.prs_Arab.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-prs_Arab/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-prs_Arab/tico.prs_Arab.gz
+eng_Latn-rus_Cyrl:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-rus_Cyrl/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-rus_Cyrl/tico.rus_Cyrl.gz
+eng_Latn-scn_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-scn_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-scn_Latn/NLLB-Seed.scn_Latn.gz
+eng_Latn-shn_Mymr:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-shn_Mymr/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-shn_Mymr/NLLB-Seed.shn_Mymr.gz
+eng_Latn-som_Latn:
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-som_Latn/hornmt.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-som_Latn/hornmt.som_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-som_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-som_Latn/tico.som_Latn.gz
+eng_Latn-sot_Latn:
+  mburisano:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-sot_Latn/mburisano.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-sot_Latn/mburisano.sot_Latn.gz
+eng_Latn-spa_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-spa_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-spa_Latn/tico.spa_Latn.gz
+eng_Latn-srd_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-srd_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-srd_Latn/NLLB-Seed.srd_Latn.gz
+eng_Latn-ssw_Latn:
+  mburisano:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-ssw_Latn/mburisano.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-ssw_Latn/mburisano.ssw_Latn.gz
+eng_Latn-swh_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-swh_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-swh_Latn/tico.swh_Latn.gz
+eng_Latn-szl_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-szl_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-szl_Latn/NLLB-Seed.szl_Latn.gz
+eng_Latn-tam_Taml:
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/cvit-pib.tam_Taml.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/jw.tam_Taml.gz
+  nlpc:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/nlpc.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/nlpc.tam_Taml.gz
+  opensubtitles:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/opensubtitles.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/opensubtitles.tam_Taml.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/pmi.tam_Taml.gz
+  tanzil:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/tanzil.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/tanzil.tam_Taml.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/ted2020.tam_Taml.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/tico.tam_Taml.gz
+  ufal:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/ufal.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/ufal.tam_Taml.gz
+  wikimatrix:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/wikimatrix.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/wikimatrix.tam_Taml.gz
+  wikititles:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/wikititles.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-tam_Taml/wikititles.tam_Taml.gz
+eng_Latn-taq_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-taq_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-taq_Latn/NLLB-Seed.taq_Latn.gz
+eng_Latn-taq_Tfng:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-taq_Tfng/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-taq_Tfng/NLLB-Seed.taq_Tfng.gz
+eng_Latn-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tat_Cyrl/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tat_Cyrl/til.tat_Cyrl.gz
+eng_Latn-tel_Telu:
+  bibleuedin:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/bibleuedin.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/bibleuedin.tel_Telu.gz
+  cvit-pib:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/cvit-pib.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/cvit-pib.tel_Telu.gz
+  jw:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/jw.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/jw.tel_Telu.gz
+  opensubtitles:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/opensubtitles.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/opensubtitles.tel_Telu.gz
+  pmi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/pmi.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/pmi.tel_Telu.gz
+  ted2020:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/ted2020.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/ted2020.tel_Telu.gz
+  wikimatrix:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/wikimatrix.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/eng_Latn-tel_Telu/wikimatrix.tel_Telu.gz
+eng_Latn-tgl_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-tgl_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-tgl_Latn/tico.tgl_Latn.gz
+eng_Latn-tir_Ethi:
+  aau:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-tir_Ethi/aau.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-tir_Ethi/aau.tir_Ethi.gz
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-tir_Ethi/hornmt.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-tir_Ethi/hornmt.tir_Ethi.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-tir_Ethi/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/eng_Latn-tir_Ethi/tico.tir_Ethi.gz
+eng_Latn-tsn_Latn:
+  mburisano:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-tsn_Latn/mburisano.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-tsn_Latn/mburisano.tsn_Latn.gz
+eng_Latn-tso_Latn:
+  mburisano:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-tso_Latn/mburisano.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/eng_Latn-tso_Latn/mburisano.tso_Latn.gz
+eng_Latn-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/eng_Latn-tuk_Latn/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/eng_Latn-tuk_Latn/til.tuk_Latn.gz
+eng_Latn-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-tur_Latn/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/eng_Latn-tur_Latn/til.tur_Latn.gz
+eng_Latn-tzm_Tfng:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-tzm_Tfng/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-tzm_Tfng/NLLB-Seed.tzm_Tfng.gz
+eng_Latn-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/eng_Latn-uig_Arab/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/eng_Latn-uig_Arab/til.uig_Arab.gz
+eng_Latn-urd_Arab:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-urd_Arab/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-urd_Arab/tico.urd_Arab.gz
+eng_Latn-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-uzn_Latn/til.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/eng_Latn-uzn_Latn/til.uzn_Latn.gz
+eng_Latn-vec_Latn:
+  NLLB-Seed:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-vec_Latn/NLLB-Seed.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-vec_Latn/NLLB-Seed.vec_Latn.gz
+eng_Latn-xho_Latn:
+  mburisano:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/eng_Latn-xho_Latn/mburisano.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/eng_Latn-xho_Latn/mburisano.xho_Latn.gz
+  xhosa_navy:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/eng_Latn-xho_Latn/xhosa_navy.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/eng_Latn-xho_Latn/xhosa_navy.xho_Latn.gz
+eng_Latn-yor_Latn:
+  menyo20k:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-yor_Latn/menyo20k.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/eng_Latn-yor_Latn/menyo20k.yor_Latn.gz
+eng_Latn-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-zho_Hans/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-zho_Hans/tico.zho_Hans.gz
+eng_Latn-zsm_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-zsm_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/eng_Latn-zsm_Latn/tico.zsm_Latn.gz
+eng_Latn-zul_Latn:
+  mburisano:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-zul_Latn/mburisano.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-zul_Latn/mburisano.zul_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-zul_Latn/tico.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-zul_Latn/tico.zul_Latn.gz
+  umsuka:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-zul_Latn/umsuka.eng_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/eng_Latn-zul_Latn/umsuka.zul_Latn.gz
+ewe_Latn-fra_Latn:
+  french_ewe:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/ewe_Latn-fra_Latn/french_ewe.ewe_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/ewe_Latn-fra_Latn/french_ewe.fra_Latn.gz
+fon_Latn-fra_Latn:
+  ffr:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fon_Latn-fra_Latn/ffr.fon_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fon_Latn-fra_Latn/ffr.fra_Latn.gz
+  french_fongbe:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fon_Latn-fra_Latn/french_fongbe.fon_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fon_Latn-fra_Latn/french_fongbe.fra_Latn.gz
+fra_Latn-ewe_Latn:
+  french_ewe:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/fra_Latn-ewe_Latn/french_ewe.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/fra_Latn-ewe_Latn/french_ewe.ewe_Latn.gz
+fra_Latn-fon_Latn:
+  ffr:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fra_Latn-fon_Latn/ffr.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fra_Latn-fon_Latn/ffr.fon_Latn.gz
+  french_fongbe:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fra_Latn-fon_Latn/french_fongbe.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/fra_Latn-fon_Latn/french_fongbe.fon_Latn.gz
+fra_Latn-fuv_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-fuv_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-fuv_Latn/tico.fuv_Latn.gz
+fra_Latn-hin_Deva:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-hin_Deva/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-hin_Deva/tico.hin_Deva.gz
+fra_Latn-ind_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-ind_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-ind_Latn/tico.ind_Latn.gz
+fra_Latn-kin_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-kin_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-kin_Latn/tico.kin_Latn.gz
+fra_Latn-lin_Latn:
+  lingala_songs:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/fra_Latn-lin_Latn/lingala_songs.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/fra_Latn-lin_Latn/lingala_songs.lin_Latn.gz
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/fra_Latn-lin_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/fra_Latn-lin_Latn/tico.lin_Latn.gz
+fra_Latn-lug_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-lug_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-lug_Latn/tico.lug_Latn.gz
+fra_Latn-por_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-por_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-por_Latn/tico.por_Latn.gz
+fra_Latn-rus_Cyrl:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-rus_Cyrl/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_32_to_48/train_primary/fra_Latn-rus_Cyrl/tico.rus_Cyrl.gz
+fra_Latn-spa_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-spa_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-spa_Latn/tico.spa_Latn.gz
+fra_Latn-swh_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-swh_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-swh_Latn/tico.swh_Latn.gz
+fra_Latn-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-zho_Hans/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-zho_Hans/tico.zho_Hans.gz
+fra_Latn-zul_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-zul_Latn/tico.fra_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/fra_Latn-zul_Latn/tico.zul_Latn.gz
+gaz_Latn-som_Latn:
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/gaz_Latn-som_Latn/hornmt.gaz_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/gaz_Latn-som_Latn/hornmt.som_Latn.gz
+gaz_Latn-tir_Ethi:
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/gaz_Latn-tir_Ethi/hornmt.gaz_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/gaz_Latn-tir_Ethi/hornmt.tir_Ethi.gz
+grn_Latn-spa_Latn:
+  giossa:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/grn_Latn-spa_Latn/giossa.grn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/grn_Latn-spa_Latn/giossa.spa_Latn.gz
+hat_Latn-eng_Latn:
+  cmu_haitian:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/hat_Latn-eng_Latn/cmu_haitian.hat_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/hat_Latn-eng_Latn/cmu_haitian.eng_Latn.gz
+hin_Deva-ind_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-ind_Latn/tico.hin_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-ind_Latn/tico.ind_Latn.gz
+hin_Deva-mar_Deva:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-mar_Deva/tico.hin_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-mar_Deva/tico.mar_Deva.gz
+hin_Deva-por_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-por_Latn/tico.hin_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-por_Latn/tico.por_Latn.gz
+hin_Deva-rus_Cyrl:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-rus_Cyrl/tico.hin_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-rus_Cyrl/tico.rus_Cyrl.gz
+hin_Deva-spa_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-spa_Latn/tico.hin_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-spa_Latn/tico.spa_Latn.gz
+hin_Deva-urd_Arab:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-urd_Arab/tico.hin_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-urd_Arab/tico.urd_Arab.gz
+hin_Deva-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-zho_Hans/tico.hin_Deva.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/hin_Deva-zho_Hans/tico.zho_Hans.gz
+ind_Latn-por_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-por_Latn/tico.ind_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-por_Latn/tico.por_Latn.gz
+ind_Latn-rus_Cyrl:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-rus_Cyrl/tico.ind_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-rus_Cyrl/tico.rus_Cyrl.gz
+ind_Latn-spa_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-spa_Latn/tico.ind_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-spa_Latn/tico.spa_Latn.gz
+ind_Latn-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-zho_Hans/tico.ind_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/ind_Latn-zho_Hans/tico.zho_Hans.gz
+kaz_Cyrl-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/kaz_Cyrl-azj_Latn/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/kaz_Cyrl-azj_Latn/til.azj_Latn.gz
+kaz_Cyrl-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kaz_Cyrl-bak_Cyrl/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kaz_Cyrl-bak_Cyrl/til.bak_Cyrl.gz
+kaz_Cyrl-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/kaz_Cyrl-crh_Latn/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/kaz_Cyrl-crh_Latn/til.crh_Latn.gz
+kaz_Cyrl-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/kaz_Cyrl-eng_Latn/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/kaz_Cyrl-eng_Latn/til.eng_Latn.gz
+kaz_Cyrl-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/kaz_Cyrl-kir_Cyrl/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/kaz_Cyrl-kir_Cyrl/til.kir_Cyrl.gz
+kaz_Cyrl-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/kaz_Cyrl-rus_Cyrl/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/kaz_Cyrl-rus_Cyrl/til.rus_Cyrl.gz
+kaz_Cyrl-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/kaz_Cyrl-tat_Cyrl/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/kaz_Cyrl-tat_Cyrl/til.tat_Cyrl.gz
+kaz_Cyrl-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/kaz_Cyrl-tuk_Latn/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/kaz_Cyrl-tuk_Latn/til.tuk_Latn.gz
+kaz_Cyrl-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/kaz_Cyrl-tur_Latn/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/kaz_Cyrl-tur_Latn/til.tur_Latn.gz
+kaz_Cyrl-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kaz_Cyrl-uig_Arab/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kaz_Cyrl-uig_Arab/til.uig_Arab.gz
+kaz_Cyrl-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/kaz_Cyrl-uzn_Latn/til.kaz_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/kaz_Cyrl-uzn_Latn/til.uzn_Latn.gz
+kin_Latn-eng_Latn:
+  kinya_smt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/kin_Latn-eng_Latn/kinya_smt.kin_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/kin_Latn-eng_Latn/kinya_smt.eng_Latn.gz
+kir_Cyrl-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/kir_Cyrl-azj_Latn/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/kir_Cyrl-azj_Latn/til.azj_Latn.gz
+kir_Cyrl-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/kir_Cyrl-bak_Cyrl/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/kir_Cyrl-bak_Cyrl/til.bak_Cyrl.gz
+kir_Cyrl-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kir_Cyrl-crh_Latn/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kir_Cyrl-crh_Latn/til.crh_Latn.gz
+kir_Cyrl-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/kir_Cyrl-eng_Latn/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/kir_Cyrl-eng_Latn/til.eng_Latn.gz
+kir_Cyrl-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/kir_Cyrl-kaz_Cyrl/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/kir_Cyrl-kaz_Cyrl/til.kaz_Cyrl.gz
+kir_Cyrl-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/kir_Cyrl-rus_Cyrl/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/kir_Cyrl-rus_Cyrl/til.rus_Cyrl.gz
+kir_Cyrl-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/kir_Cyrl-tat_Cyrl/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/kir_Cyrl-tat_Cyrl/til.tat_Cyrl.gz
+kir_Cyrl-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/kir_Cyrl-tuk_Latn/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/kir_Cyrl-tuk_Latn/til.tuk_Latn.gz
+kir_Cyrl-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/kir_Cyrl-tur_Latn/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/kir_Cyrl-tur_Latn/til.tur_Latn.gz
+kir_Cyrl-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kir_Cyrl-uig_Arab/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/kir_Cyrl-uig_Arab/til.uig_Arab.gz
+kir_Cyrl-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/kir_Cyrl-uzn_Latn/til.kir_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/kir_Cyrl-uzn_Latn/til.uzn_Latn.gz
+kmr_Latn-eng_Latn:
+  bianet:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/kmr_Latn-eng_Latn/bianet.kmr_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/kmr_Latn-eng_Latn/bianet.eng_Latn.gz
+kmr_Latn-tur_Latn:
+  bianet:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/kmr_Latn-tur_Latn/bianet.kmr_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/kmr_Latn-tur_Latn/bianet.tur_Latn.gz
+lin_Latn-fra_Latn:
+  lingala_songs:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/lin_Latn-fra_Latn/lingala_songs.lin_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/lin_Latn-fra_Latn/lingala_songs.fra_Latn.gz
+lug_Latn-eng_Latn:
+  mukiibi:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/lug_Latn-eng_Latn/mukiibi.lug_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/lug_Latn-eng_Latn/mukiibi.eng_Latn.gz
+min_Latn-ind_Latn:
+  minangnlp:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/min_Latn-ind_Latn/minangnlp.min_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/min_Latn-ind_Latn/minangnlp.ind_Latn.gz
+nno_Latn-nob_Latn:
+  nynorsk_memories:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/nno_Latn-nob_Latn/nynorsk_memories.nno_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/nno_Latn-nob_Latn/nynorsk_memories.nob_Latn.gz
+nob_Latn-nno_Latn:
+  nynorsk_memories:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/nob_Latn-nno_Latn/nynorsk_memories.nob_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/nob_Latn-nno_Latn/nynorsk_memories.nno_Latn.gz
+pes_Arab-prs_Arab:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/pes_Arab-prs_Arab/tico.pes_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_48_to_64/train_primary/pes_Arab-prs_Arab/tico.prs_Arab.gz
+por_Latn-rus_Cyrl:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/por_Latn-rus_Cyrl/tico.por_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/por_Latn-rus_Cyrl/tico.rus_Cyrl.gz
+por_Latn-spa_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/por_Latn-spa_Latn/tico.por_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/por_Latn-spa_Latn/tico.spa_Latn.gz
+por_Latn-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/por_Latn-zho_Hans/tico.por_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/por_Latn-zho_Hans/tico.zho_Hans.gz
+rus_Cyrl-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/rus_Cyrl-azj_Latn/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/rus_Cyrl-azj_Latn/til.azj_Latn.gz
+rus_Cyrl-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/rus_Cyrl-bak_Cyrl/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/rus_Cyrl-bak_Cyrl/til.bak_Cyrl.gz
+rus_Cyrl-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/rus_Cyrl-crh_Latn/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/rus_Cyrl-crh_Latn/til.crh_Latn.gz
+rus_Cyrl-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/rus_Cyrl-kaz_Cyrl/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/rus_Cyrl-kaz_Cyrl/til.kaz_Cyrl.gz
+rus_Cyrl-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/rus_Cyrl-kir_Cyrl/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/rus_Cyrl-kir_Cyrl/til.kir_Cyrl.gz
+rus_Cyrl-spa_Latn:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/rus_Cyrl-spa_Latn/tico.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/rus_Cyrl-spa_Latn/tico.spa_Latn.gz
+rus_Cyrl-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/rus_Cyrl-tat_Cyrl/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/rus_Cyrl-tat_Cyrl/til.tat_Cyrl.gz
+rus_Cyrl-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/rus_Cyrl-tuk_Latn/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/rus_Cyrl-tuk_Latn/til.tuk_Latn.gz
+rus_Cyrl-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/rus_Cyrl-tur_Latn/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/rus_Cyrl-tur_Latn/til.tur_Latn.gz
+rus_Cyrl-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/rus_Cyrl-uig_Arab/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/rus_Cyrl-uig_Arab/til.uig_Arab.gz
+rus_Cyrl-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/rus_Cyrl-uzn_Latn/til.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/rus_Cyrl-uzn_Latn/til.uzn_Latn.gz
+rus_Cyrl-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/rus_Cyrl-zho_Hans/tico.rus_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/rus_Cyrl-zho_Hans/tico.zho_Hans.gz
+som_Latn-tir_Ethi:
+  hornmt:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/som_Latn-tir_Ethi/hornmt.som_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_0_to_16/train_primary/som_Latn-tir_Ethi/hornmt.tir_Ethi.gz
+spa_Latn-grn_Latn:
+  giossa:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/spa_Latn-grn_Latn/giossa.spa_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/spa_Latn-grn_Latn/giossa.grn_Latn.gz
+spa_Latn-zho_Hans:
+  tico:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/spa_Latn-zho_Hans/tico.spa_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/spa_Latn-zho_Hans/tico.zho_Hans.gz
+tat_Cyrl-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tat_Cyrl-azj_Latn/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tat_Cyrl-azj_Latn/til.azj_Latn.gz
+tat_Cyrl-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tat_Cyrl-bak_Cyrl/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tat_Cyrl-bak_Cyrl/til.bak_Cyrl.gz
+tat_Cyrl-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/tat_Cyrl-crh_Latn/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/tat_Cyrl-crh_Latn/til.crh_Latn.gz
+tat_Cyrl-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tat_Cyrl-eng_Latn/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tat_Cyrl-eng_Latn/til.eng_Latn.gz
+tat_Cyrl-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tat_Cyrl-kaz_Cyrl/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tat_Cyrl-kaz_Cyrl/til.kaz_Cyrl.gz
+tat_Cyrl-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tat_Cyrl-kir_Cyrl/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tat_Cyrl-kir_Cyrl/til.kir_Cyrl.gz
+tat_Cyrl-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tat_Cyrl-rus_Cyrl/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tat_Cyrl-rus_Cyrl/til.rus_Cyrl.gz
+tat_Cyrl-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tat_Cyrl-tuk_Latn/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tat_Cyrl-tuk_Latn/til.tuk_Latn.gz
+tat_Cyrl-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tat_Cyrl-tur_Latn/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tat_Cyrl-tur_Latn/til.tur_Latn.gz
+tat_Cyrl-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/tat_Cyrl-uig_Arab/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/tat_Cyrl-uig_Arab/til.uig_Arab.gz
+tat_Cyrl-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tat_Cyrl-uzn_Latn/til.tat_Cyrl.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tat_Cyrl-uzn_Latn/til.uzn_Latn.gz
+tuk_Latn-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-azj_Latn/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-azj_Latn/til.azj_Latn.gz
+tuk_Latn-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/tuk_Latn-bak_Cyrl/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/tuk_Latn-bak_Cyrl/til.bak_Cyrl.gz
+tuk_Latn-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tuk_Latn-crh_Latn/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tuk_Latn-crh_Latn/til.crh_Latn.gz
+tuk_Latn-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tuk_Latn-eng_Latn/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tuk_Latn-eng_Latn/til.eng_Latn.gz
+tuk_Latn-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/tuk_Latn-kaz_Cyrl/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/tuk_Latn-kaz_Cyrl/til.kaz_Cyrl.gz
+tuk_Latn-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-kir_Cyrl/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-kir_Cyrl/til.kir_Cyrl.gz
+tuk_Latn-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-rus_Cyrl/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-rus_Cyrl/til.rus_Cyrl.gz
+tuk_Latn-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-tat_Cyrl/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-tat_Cyrl/til.tat_Cyrl.gz
+tuk_Latn-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-tur_Latn/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tuk_Latn-tur_Latn/til.tur_Latn.gz
+tuk_Latn-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tuk_Latn-uig_Arab/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tuk_Latn-uig_Arab/til.uig_Arab.gz
+tuk_Latn-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tuk_Latn-uzn_Latn/til.tuk_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/tuk_Latn-uzn_Latn/til.uzn_Latn.gz
+tur_Latn-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tur_Latn-azj_Latn/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tur_Latn-azj_Latn/til.azj_Latn.gz
+tur_Latn-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tur_Latn-bak_Cyrl/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tur_Latn-bak_Cyrl/til.bak_Cyrl.gz
+tur_Latn-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/tur_Latn-crh_Latn/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/tur_Latn-crh_Latn/til.crh_Latn.gz
+tur_Latn-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/tur_Latn-eng_Latn/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/tur_Latn-eng_Latn/til.eng_Latn.gz
+tur_Latn-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tur_Latn-kaz_Cyrl/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tur_Latn-kaz_Cyrl/til.kaz_Cyrl.gz
+tur_Latn-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tur_Latn-kir_Cyrl/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tur_Latn-kir_Cyrl/til.kir_Cyrl.gz
+tur_Latn-kmr_Latn:
+  bianet:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/tur_Latn-kmr_Latn/bianet.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_96_to_112/train_primary/tur_Latn-kmr_Latn/bianet.kmr_Latn.gz
+tur_Latn-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/tur_Latn-rus_Cyrl/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_272_to_279/train_primary/tur_Latn-rus_Cyrl/til.rus_Cyrl.gz
+tur_Latn-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tur_Latn-tat_Cyrl/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_240_to_256/train_primary/tur_Latn-tat_Cyrl/til.tat_Cyrl.gz
+tur_Latn-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tur_Latn-tuk_Latn/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/tur_Latn-tuk_Latn/til.tuk_Latn.gz
+tur_Latn-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tur_Latn-uig_Arab/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/tur_Latn-uig_Arab/til.uig_Arab.gz
+tur_Latn-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tur_Latn-uzn_Latn/til.tur_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/tur_Latn-uzn_Latn/til.uzn_Latn.gz
+uig_Arab-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-azj_Latn/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-azj_Latn/til.azj_Latn.gz
+uig_Arab-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-bak_Cyrl/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-bak_Cyrl/til.bak_Cyrl.gz
+uig_Arab-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/uig_Arab-crh_Latn/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/uig_Arab-crh_Latn/til.crh_Latn.gz
+uig_Arab-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/uig_Arab-eng_Latn/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/uig_Arab-eng_Latn/til.eng_Latn.gz
+uig_Arab-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-kaz_Cyrl/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-kaz_Cyrl/til.kaz_Cyrl.gz
+uig_Arab-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-kir_Cyrl/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-kir_Cyrl/til.kir_Cyrl.gz
+uig_Arab-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/uig_Arab-rus_Cyrl/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/uig_Arab-rus_Cyrl/til.rus_Cyrl.gz
+uig_Arab-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-tat_Cyrl/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_112_to_128/train_primary/uig_Arab-tat_Cyrl/til.tat_Cyrl.gz
+uig_Arab-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/uig_Arab-tuk_Latn/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/uig_Arab-tuk_Latn/til.tuk_Latn.gz
+uig_Arab-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/uig_Arab-tur_Latn/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/uig_Arab-tur_Latn/til.tur_Latn.gz
+uig_Arab-uzn_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/uig_Arab-uzn_Latn/til.uig_Arab.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/uig_Arab-uzn_Latn/til.uzn_Latn.gz
+uzn_Latn-azj_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/uzn_Latn-azj_Latn/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/uzn_Latn-azj_Latn/til.azj_Latn.gz
+uzn_Latn-bak_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/uzn_Latn-bak_Cyrl/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_176_to_192/train_primary/uzn_Latn-bak_Cyrl/til.bak_Cyrl.gz
+uzn_Latn-crh_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/uzn_Latn-crh_Latn/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/uzn_Latn-crh_Latn/til.crh_Latn.gz
+uzn_Latn-eng_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/uzn_Latn-eng_Latn/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/uzn_Latn-eng_Latn/til.eng_Latn.gz
+uzn_Latn-kaz_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/uzn_Latn-kaz_Cyrl/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/uzn_Latn-kaz_Cyrl/til.kaz_Cyrl.gz
+uzn_Latn-kir_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/uzn_Latn-kir_Cyrl/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/uzn_Latn-kir_Cyrl/til.kir_Cyrl.gz
+uzn_Latn-rus_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/uzn_Latn-rus_Cyrl/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_256_to_272/train_primary/uzn_Latn-rus_Cyrl/til.rus_Cyrl.gz
+uzn_Latn-tat_Cyrl:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/uzn_Latn-tat_Cyrl/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_208_to_224/train_primary/uzn_Latn-tat_Cyrl/til.tat_Cyrl.gz
+uzn_Latn-tuk_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/uzn_Latn-tuk_Latn/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_128_to_144/train_primary/uzn_Latn-tuk_Latn/til.tuk_Latn.gz
+uzn_Latn-tur_Latn:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/uzn_Latn-tur_Latn/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_224_to_240/train_primary/uzn_Latn-tur_Latn/til.tur_Latn.gz
+uzn_Latn-uig_Arab:
+  til:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/uzn_Latn-uig_Arab/til.uzn_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_160_to_176/train_primary/uzn_Latn-uig_Arab/til.uig_Arab.gz
+xho_Latn-eng_Latn:
+  xhosa_navy:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/xho_Latn-eng_Latn/xhosa_navy.xho_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_192_to_208/train_primary/xho_Latn-eng_Latn/xhosa_navy.eng_Latn.gz
+yor_Latn-eng_Latn:
+  menyo20k:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/yor_Latn-eng_Latn/menyo20k.yor_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_144_to_160/train_primary/yor_Latn-eng_Latn/menyo20k.eng_Latn.gz
+zul_Latn-eng_Latn:
+  umsuka:
+    src: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/zul_Latn-eng_Latn/umsuka.zul_Latn.gz
+    tgt: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_out_new/batch_64_to_80/train_primary/zul_Latn-eng_Latn/umsuka.eng_Latn.gz

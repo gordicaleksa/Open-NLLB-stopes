@@ -136,3 +136,9 @@ demo/*.gz
 demo/models/
 demo/mining/*.gz
 demo/mining/models/
+
+/stopes/pipelines/prepare_data/spm_models/
+\stopes/pipelines/filtering/flores200/
+/stopes/pipelines/prepare_data/processed*
+stopes/pipelines/prepare_data/*out*
+stopes/pipelines/filtering/*out*

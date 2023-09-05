@@ -1,4 +1,7 @@
-pretrained: null
+pretrained:
+  model_file: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/prepare_data/spm_models/flores200_sacrebleu_tokenizer_spm.model
+  vocab_file: /home/aleksa/Projects/nllb/stopes/stopes/pipelines/prepare_data/spm_models/flores200_sacrebleu_tokenizer_spm.dict.txt
+
 sampling_config:
   sampled_data_size: 10_000_000
   sampling_temperature: 1.0
