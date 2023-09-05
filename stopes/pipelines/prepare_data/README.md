@@ -1,8 +1,10 @@
 # NLLB prepare_data pipeline
 
 ## Quick start
-1. Run `prepare_extra_configs.py` to create additional yaml files that you'll need to pass to `prepare_data.yaml`. It will output `train_corpora.yaml` into `prepare_data_configs/` directory. For validation data specify it directly inside `prepare_data.yaml`.
-2. Modify config files under `conf/`. The main one is `prepare_data.yaml`.
+1. Run `prepare_extra_configs.py` to create additional yaml file (`train_corpora.yaml`) that you'll need to pass to `prepare_data.yaml`. It will automatically save it into `prepare_data_configs/` directory (similar to how the filtering stage saves to `filter_configs`). For validation data specify it directly inside `prepare_data.yaml` (you'll just need to modify the existing settings). Note: this script expects you already ran the filtering pipeline and have the `train_primary.yaml` config in the right location.
+
+2. Modify config files under `conf/`. The main one is `prepare_data.yaml`. You'll also need to modify the paths in the `conf/vocab/`. The `prepare_data.py` script will automatically download SPM-200 model and dictionary into `prepare_data/spm_models/` directory.
+
 3. Run the `prepare_data.py` script, no arguments are needed it's controlled solely by the `prepare_data.yaml` config.
 
 ## Intro
@@ -60,8 +62,5 @@ python stopes/pipelines/prepare_data/prepare_data.py output_dir=<OUTPUT_DIR>
 
 This pipeline doesn't work if metadata is not specified for all corpora for a (fold, lang_dir) because we concatenate all corpora files for each (fold, lang_dir) into one file and shard them. So we need metadata information for every one of these lines, if specified at all for the (fold, lang_dir).
 
-## Caveat 2
-Make sure to rename the SPM-200 dictionary once you download it. There is hard expectation on how it should be named otherwise you'll hit some bugs.
-
-Example if the spm model is named `flores200_sacrebleu_tokenizer_spm.model` then the dictionary file should be
-named like `flores200_sacrebleu_tokenizer_spm.dict.txt` (same prefix but suffix is `.dict.txt`).
+## Note
+There is hard expectation on how SPM-200 dictionary should be named otherwise you'll hit some bugs. Example if the spm model is named `flores200_sacrebleu_tokenizer_spm.model` then the dictionary file should be named like `flores200_sacrebleu_tokenizer_spm.dict.txt` (same prefix but suffix is `.dict.txt`). This is now automatically handled by the `prepare_data.py` script and you don't need to worry about it.
