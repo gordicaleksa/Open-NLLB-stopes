@@ -159,12 +159,26 @@ async def retrieve_data(
     for _, datasets in datasets_per_fold_lang_dir.items():
         retrieve_data_jobs.append(RetrieveDataJob(datasets=datasets))
 
-    retrieve_data_module = RetrieveData(
-        RetrieveDataConfig(
-            output_dir=output_dir,
-            preprocessing_config=preprocessing_config,
-            retrieve_data_jobs=retrieve_data_jobs,
+    if launcher.partition is None:  # local run.
+        batch_size = 16  # TODO: change this depending on the number of CPU cores on your machine.
+        retrieved_datasets = []
+        for i in range(0, len(retrieve_data_jobs), batch_size):
+            retrieve_data_jobs_batch = retrieve_data_jobs[i : i + batch_size]
+            retrieve_data_module = RetrieveData(
+                RetrieveDataConfig(
+                    output_dir=output_dir,
+                    preprocessing_config=preprocessing_config,
+                    retrieve_data_jobs=retrieve_data_jobs_batch,
+                )
+            )
+            retrieved_datasets.extend(await launcher.schedule(retrieve_data_module))
+    else:
+        retrieve_data_module = RetrieveData(
+            RetrieveDataConfig(
+                output_dir=output_dir,
+                preprocessing_config=preprocessing_config,
+                retrieve_data_jobs=retrieve_data_jobs,
+            )
         )
-    )
-    retrieved_datasets = await launcher.schedule(retrieve_data_module)
+        retrieved_datasets = await launcher.schedule(retrieve_data_module)
     return retrieved_datasets

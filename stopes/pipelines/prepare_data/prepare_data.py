@@ -5,6 +5,7 @@
 # LICENSE file in the root directory of this source tree.
 
 import asyncio
+from collections import defaultdict
 import logging
 import shutil
 import typing as tp
@@ -25,6 +26,37 @@ from stopes.pipelines.prepare_data.validate import validate
 logger = logging.getLogger("prepare_data")
 
 
+def sort_datasets_based_on_num_sentences(datasets, is_local_run):
+    # if local run sort to make things faster otherwise we have too much data
+    # and this would slow us down too much
+    if is_local_run:
+        dataset_num_sentences_tuples = []
+        for dataset in datasets:
+            src_path = dataset.src
+            lang_direction = Path(src_path).parent.name
+            src_cnt = utils.count_lines(src_path)
+            tgt_path = dataset.tgt
+            tgt_cnt = utils.count_lines(tgt_path)
+            assert src_cnt == tgt_cnt, f"src and tgt have different number of lines for {src_path}"
+            dataset_num_sentences_tuples.append((dataset, src_cnt, lang_direction))
+        dataset_num_sentences_tuples.sort(key=lambda x: x[1])
+        datasets = [dataset for dataset, _, _ in dataset_num_sentences_tuples]
+        return datasets, dataset_num_sentences_tuples
+    else:
+        return datasets, None
+
+
+def maybe_sort(datasets_with_metadata, is_local_run):
+    if is_local_run:
+        lang_direction_num_sentences = defaultdict(int)
+        for _, num_sentences, lang_direction in datasets_with_metadata:
+            lang_direction_num_sentences[lang_direction] += num_sentences
+        datasets_with_metadata.sort(key=lambda x: lang_direction_num_sentences[x[2]])
+        return [dataset for dataset, _, _ in datasets_with_metadata]
+    else:
+        return datasets_with_metadata
+
+
 class PrepareData:
     def __init__(self, config: PrepareDataConfig):
         self.config = config
@@ -32,7 +64,12 @@ class PrepareData:
         # Cache won't be re-used if you change the output_dir.
         self.config.launcher.cache.caching_dir = Path(self.output_dir) / "cache"
         self.launcher = hydra.utils.instantiate(self.config.launcher)
-        self.datasets = self._get_datasets(self.config.corpora)
+        unsorted_datasets = self._get_datasets(self.config.corpora)
+        # Sort the datasets according to the number of sentences in them.
+        # For the local runs where we batch the datasets this will speed up thing by quite a lot.
+        datasets, datasets_with_metadata = sort_datasets_based_on_num_sentences(unsorted_datasets, is_local_run=self.launcher.partition is None)
+        self.datasets = datasets
+        self.datasets_with_metadata = datasets if datasets_with_metadata is None else datasets_with_metadata
         self._check_files_exist(self.datasets)
         OmegaConf.save(
             config=config,
@@ -44,6 +81,7 @@ class PrepareData:
         train_src_counts_map, train_tgt_counts_map, train_counts_map = await validate(
             self.datasets, self.launcher
         )
+        self.datasets = maybe_sort(self.datasets_with_metadata, is_local_run=self.launcher.partition is None)
         retrieved_datasets: tp.List[Dataset] = await retrieve_data(
             self.datasets,
             self.config.preprocessing,

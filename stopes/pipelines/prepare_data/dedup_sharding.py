@@ -288,14 +288,28 @@ async def dedup_sharding(
                     )
                 )
 
-    dedup_sharding_module = DedupSharding(
-        DedupShardingConfig(
-            dedup_config=dedup_config,
-            output_dir=output_dir,
-            dedup_sharding_jobs=dedup_sharding_jobs,
+    if launcher.partition is None:
+        batch_size = 16  # TODO: change this depending on the number of CPU cores on your machine.
+        dedup_sharding_results = []
+        for i in range(0, len(dedup_sharding_jobs), batch_size):
+            dedup_sharding_jobs_batch = dedup_sharding_jobs[i : i + batch_size]
+            dedup_sharding_module = DedupSharding(
+                DedupShardingConfig(
+                    dedup_config=dedup_config,
+                    output_dir=output_dir,
+                    dedup_sharding_jobs=dedup_sharding_jobs_batch,
+                )
+            )
+            dedup_sharding_results.extend(await launcher.schedule(dedup_sharding_module))
+    else:
+        dedup_sharding_module = DedupSharding(
+            DedupShardingConfig(
+                dedup_config=dedup_config,
+                output_dir=output_dir,
+                dedup_sharding_jobs=dedup_sharding_jobs,
+            )
         )
-    )
-    dedup_sharding_results = await launcher.schedule(dedup_sharding_module)
+        dedup_sharding_results = await launcher.schedule(dedup_sharding_module)
 
     # Flatten lists
     sharded_train_datasets: tp.List[Dataset] = [

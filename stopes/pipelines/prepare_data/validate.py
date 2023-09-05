@@ -76,8 +76,17 @@ class ValidateData(StopesModule):
 async def validate(
     datasets: tp.List[Dataset], launcher: Launcher
 ) -> tp.Tuple[tp.Dict[str, int], tp.Dict[str, int], tp.Dict[str, int]]:
-    validation_module = ValidateData(ValidateDataConfig(datasets=datasets))
-    validation_results = await launcher.schedule(validation_module)
+    if launcher.partition is None:  # local run.
+        batch_size = 32  # TODO: change this depending on the number of CPU cores on your machine.
+        validation_results = []
+        for i in range(0, len(datasets), batch_size):
+            datasets_batch = datasets[i : i + batch_size]
+            validation_module = ValidateData(ValidateDataConfig(datasets=datasets_batch))
+            validation_results.extend(await launcher.schedule(validation_module))
+    else:
+        validation_module = ValidateData(ValidateDataConfig(datasets=datasets))
+        validation_results = await launcher.schedule(validation_module)
+
     train_src_counts_map = defaultdict(int)
     train_tgt_counts_map = defaultdict(int)
     train_counts_map = defaultdict(int)

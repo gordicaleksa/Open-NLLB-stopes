@@ -219,8 +219,9 @@ def filter_group(group_name: str, config: DictConfig):
 def main(config: DictConfig) -> None:
     directions_path = config.directions[0]
     with open(directions_path, "rt") as fin:
-        directions = yaml.safe_load(fin)
-    config.directions = directions
+        all_directions = yaml.safe_load(fin)
+        # Values contain the number of sentences for directions which we don't need anymore they were just used for sorting (optimization)
+        all_directions = list(all_directions.keys())
 
     # TODO(gordicaleksa): a bit hacky currently hardcoded assuming only train primary
     included_corpora_path = config.train_primary.included_corpora[0]
@@ -236,7 +237,6 @@ def main(config: DictConfig) -> None:
     # If you want to run this locally we have to batch jobs otherwise the number of processes overwhelms the machine and leads to crashes
     if config.executor.slurm_partition is None:
         batch_size = 16  # TODO: set this to a reasonable value (number of cores on your CPU)
-        all_directions = copy.deepcopy(config.directions)
         root_output_dir = config.output_dir
         for i in range(0, len(all_directions), batch_size):
             config.directions = all_directions[i : i + batch_size]
@@ -254,6 +254,19 @@ def main(config: DictConfig) -> None:
 
         logger.info(f"All jobs done – data written to {config.output_dir}")
 
+    bad_corpora = []
+    for root_dir, _, files in os.walk(config.output_dir):
+        for file in files:
+            if file != "total.yaml" and file != "config.yaml" and file.endswith(".yaml"):
+                with open(os.path.join(root_dir, file), "r") as fin:
+                    yaml_info = yaml.safe_load(fin)
+                    total_after = yaml_info["total_after"]
+                    if total_after == 0:
+                        bad_corpora.append(os.path.join(root_dir, file))
+    if len(bad_corpora) > 0:
+        print('*' * 80)
+        print(f"Found {len(bad_corpora)} empty corpora: {bad_corpora}")
+        print('*' * 80)
 
 if __name__ == "__main__":
     main()

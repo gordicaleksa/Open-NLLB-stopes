@@ -8,15 +8,31 @@ directions and corpora information directly into example config we instead link 
 import pathlib
 import yaml
 
+from stopes.core.utils import count_lines
+
 # We're making an assumption here for now that you'll be keeping your configs in a particular location.
 yaml_config_path = pathlib.Path(__file__).parent.parent / "filter_configs" / "unfiltered_corpora"
 
 with open(yaml_config_path / "train_primary.yaml", "r") as fout:
     config = yaml.safe_load(fout)
-    directions = list(config.keys())
-    print(config.keys())
+
+    lang_direction_num_sentences = {}
+    for lang_direction, datasets in config.items():
+        num_sentences_for_lang_direction = 0
+        for corpus_name, dataset in datasets.items():
+            src_path = dataset["src"]
+            src_cnt = count_lines(src_path)
+            tgt_path = dataset["tgt"]
+            tgt_cnt = count_lines(tgt_path)
+            assert src_cnt == tgt_cnt, f"src and tgt have different number of lines for {src_path}"
+            num_sentences_for_lang_direction += src_cnt
+        lang_direction_num_sentences[lang_direction] = num_sentences_for_lang_direction
+
+    lang_direction_num_sentences = dict(
+        sorted(lang_direction_num_sentences.items(), key=lambda item: item[1], reverse=False)
+    )
     with open(yaml_config_path / "directions.yaml", "w") as fout:
-        yaml.dump(directions, fout)
+        yaml.dump(lang_direction_num_sentences, fout, sort_keys=False)
 
     corpora = []
     for el in list(config.values()):
