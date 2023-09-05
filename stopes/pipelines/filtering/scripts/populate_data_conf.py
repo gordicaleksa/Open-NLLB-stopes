@@ -92,7 +92,7 @@ def main(args):
         with open(data_path / "train_primary.yaml", "wt") as fout:
             fout.write(
                 OmegaConf.to_yaml(
-                    get_primary_datasets(args.primary_train_paths, args),
+                    get_primary_datasets(args.primary_train_root, args),
                     sort_keys=True,
                 )
             )
@@ -128,15 +128,15 @@ if __name__ == "__main__":
         "--mined-data-root", type=Path, required=False, help="Location of mined data"
     )
     parser.add_argument(
-        "--primary-train-paths",
+        "--primary-train-root",
         type=Path,
-        required=True,
-        help="Directories containing datasets (format: $direction/$corpus.$lang.gz).",
+        required=False,
+        help="Directory containing the raw datasets downloaded using the `download_parallel_corpora.py` from Open-NLLB project.",
     )
     parser.add_argument(
         "--data-conf-dir",
         type=Path,
-        required=True,
+        default=Path("stopes/pipelines/filtering/filter_configs"),
         help="Directory where the configuration files are stored.",
     )
     parser.add_argument(
@@ -153,4 +153,8 @@ if __name__ == "__main__":
         "choices: train_primary, train_mined, train_bt",
     )
     args = parser.parse_args()
+    if args.bt_root is None and args.mined_data_root is None and args.primary_train_root is None:
+        raise ValueError(
+            "You must specify at least one of --bt-root, --mined-data-root, or --primary-train-paths"
+    )
     main(args)

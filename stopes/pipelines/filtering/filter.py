@@ -217,6 +217,7 @@ def filter_group(group_name: str, config: DictConfig):
 
 @hydra.main(config_path="conf", config_name="example")
 def main(config: DictConfig) -> None:
+    config.data_conf_dir = (Path(__file__).parent / "filter_configs").resolve()  # Default config path we use everywhere.
     directions_path = config.directions[0]
     with open(directions_path, "rt") as fin:
         all_directions = yaml.safe_load(fin)

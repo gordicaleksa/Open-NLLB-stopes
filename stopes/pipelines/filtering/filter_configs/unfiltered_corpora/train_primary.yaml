@@ -1,0 +1,2820 @@
+ace_Arab-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ace_Arab-eng_Latn/NLLB-Seed.ace_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ace_Arab-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+ace_Latn-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ace_Latn-eng_Latn/NLLB-Seed.ace_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ace_Latn-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+afr_Latn-eng_Latn:
+  mburisano:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/afr_Latn-eng_Latn/mburisano.afr_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/afr_Latn-eng_Latn/mburisano.eng_Latn
+    tsv: null
+aka_Latn-eng_Latn:
+  akuapem:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/akuapem/aka_Latn-eng_Latn/akuapem.aka_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/akuapem/aka_Latn-eng_Latn/akuapem.eng_Latn
+    tsv: null
+amh_Ethi-eng_Latn:
+  aau:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/aau/amh_Ethi-eng_Latn/aau.amh_Ethi
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/aau/amh_Ethi-eng_Latn/aau.eng_Latn
+    tsv: null
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-eng_Latn/hornmt.amh_Ethi
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-eng_Latn/hornmt.eng_Latn
+    tsv: null
+amh_Ethi-gaz_Latn:
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-gaz_Latn/hornmt.amh_Ethi
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-gaz_Latn/hornmt.gaz_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/amh_Ethi-gaz_Latn/tico.amh_Ethi
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/amh_Ethi-gaz_Latn/tico.gaz_Latn
+    tsv: null
+amh_Ethi-som_Latn:
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-som_Latn/hornmt.amh_Ethi
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-som_Latn/hornmt.som_Latn
+    tsv: null
+amh_Ethi-tir_Ethi:
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-tir_Ethi/hornmt.amh_Ethi
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/amh_Ethi-tir_Ethi/hornmt.tir_Ethi
+    tsv: null
+arb_Arab-eng_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-eng_Latn/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-eng_Latn/tico.eng_Latn
+    tsv: null
+arb_Arab-fra_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-fra_Latn/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-fra_Latn/tico.fra_Latn
+    tsv: null
+arb_Arab-hin_Deva:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-hin_Deva/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-hin_Deva/tico.hin_Deva
+    tsv: null
+arb_Arab-ind_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-ind_Latn/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-ind_Latn/tico.ind_Latn
+    tsv: null
+arb_Arab-por_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-por_Latn/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-por_Latn/tico.por_Latn
+    tsv: null
+arb_Arab-rus_Cyrl:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-rus_Cyrl/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-rus_Cyrl/tico.rus_Cyrl
+    tsv: null
+arb_Arab-spa_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-spa_Latn/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-spa_Latn/tico.spa_Latn
+    tsv: null
+arb_Arab-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-zho_Hans/tico.arb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/arb_Arab-zho_Hans/tico.zho_Hans
+    tsv: null
+ary_Arab-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ary_Arab-eng_Latn/NLLB-Seed.ary_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ary_Arab-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+arz_Arab-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/arz_Arab-eng_Latn/NLLB-Seed.arz_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/arz_Arab-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+azj_Latn-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-bak_Cyrl/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+azj_Latn-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-crh_Latn/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-crh_Latn/til.crh_Latn
+    tsv: null
+azj_Latn-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-eng_Latn/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-eng_Latn/til.eng_Latn
+    tsv: null
+azj_Latn-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-kaz_Cyrl/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+azj_Latn-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-kir_Cyrl/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+azj_Latn-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-rus_Cyrl/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+azj_Latn-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-tat_Cyrl/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+azj_Latn-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-tuk_Latn/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-tuk_Latn/til.tuk_Latn
+    tsv: null
+azj_Latn-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-tur_Latn/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-tur_Latn/til.tur_Latn
+    tsv: null
+azj_Latn-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-uig_Arab/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-uig_Arab/til.uig_Arab
+    tsv: null
+azj_Latn-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-uzn_Latn/til.azj_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/azj_Latn-uzn_Latn/til.uzn_Latn
+    tsv: null
+bak_Cyrl-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-azj_Latn/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-azj_Latn/til.azj_Latn
+    tsv: null
+bak_Cyrl-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-crh_Latn/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-crh_Latn/til.crh_Latn
+    tsv: null
+bak_Cyrl-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-eng_Latn/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-eng_Latn/til.eng_Latn
+    tsv: null
+bak_Cyrl-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-kaz_Cyrl/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+bak_Cyrl-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-kir_Cyrl/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+bak_Cyrl-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-rus_Cyrl/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+bak_Cyrl-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-tat_Cyrl/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+bak_Cyrl-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-tuk_Latn/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-tuk_Latn/til.tuk_Latn
+    tsv: null
+bak_Cyrl-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-tur_Latn/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-tur_Latn/til.tur_Latn
+    tsv: null
+bak_Cyrl-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-uig_Arab/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-uig_Arab/til.uig_Arab
+    tsv: null
+bak_Cyrl-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-uzn_Latn/til.bak_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/bak_Cyrl-uzn_Latn/til.uzn_Latn
+    tsv: null
+bam_Latn-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bam_Latn-eng_Latn/NLLB-Seed.bam_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bam_Latn-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+ban_Latn-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ban_Latn-eng_Latn/NLLB-Seed.ban_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/ban_Latn-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+ben_Beng-eng_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ben_Beng-eng_Latn/tico.ben_Beng
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ben_Beng-eng_Latn/tico.eng_Latn
+    tsv: null
+ben_Beng-hin_Deva:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ben_Beng-hin_Deva/tico.ben_Beng
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ben_Beng-hin_Deva/tico.hin_Deva
+    tsv: null
+bho_Deva-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bho_Deva-eng_Latn/NLLB-Seed.bho_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bho_Deva-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+bjn_Arab-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bjn_Arab-eng_Latn/NLLB-Seed.bjn_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bjn_Arab-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+bjn_Latn-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bjn_Latn-eng_Latn/NLLB-Seed.bjn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bjn_Latn-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+bug_Latn-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bug_Latn-eng_Latn/NLLB-Seed.bug_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/bug_Latn-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+ckb_Arab-eng_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ckb_Arab-eng_Latn/tico.ckb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ckb_Arab-eng_Latn/tico.eng_Latn
+    tsv: null
+ckb_Arab-kmr_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ckb_Arab-kmr_Latn/tico.ckb_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ckb_Arab-kmr_Latn/tico.kmr_Latn
+    tsv: null
+crh_Latn-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-azj_Latn/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-azj_Latn/til.azj_Latn
+    tsv: null
+crh_Latn-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-bak_Cyrl/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+crh_Latn-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/crh_Latn-eng_Latn/NLLB-Seed.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/crh_Latn-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-eng_Latn/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-eng_Latn/til.eng_Latn
+    tsv: null
+crh_Latn-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-kaz_Cyrl/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+crh_Latn-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-kir_Cyrl/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+crh_Latn-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-rus_Cyrl/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+crh_Latn-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-tat_Cyrl/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+crh_Latn-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-tuk_Latn/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-tuk_Latn/til.tuk_Latn
+    tsv: null
+crh_Latn-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-tur_Latn/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-tur_Latn/til.tur_Latn
+    tsv: null
+crh_Latn-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-uig_Arab/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-uig_Arab/til.uig_Arab
+    tsv: null
+crh_Latn-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-uzn_Latn/til.crh_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/crh_Latn-uzn_Latn/til.uzn_Latn
+    tsv: null
+dik_Latn-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/dik_Latn-eng_Latn/NLLB-Seed.dik_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/dik_Latn-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/dik_Latn-eng_Latn/tico.dik_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/dik_Latn-eng_Latn/tico.eng_Latn
+    tsv: null
+dzo_Tibt-eng_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/dzo_Tibt-eng_Latn/NLLB-Seed.dzo_Tibt
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/dzo_Tibt-eng_Latn/NLLB-Seed.eng_Latn
+    tsv: null
+eng_Latn-aka_Latn:
+  akuapem:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/akuapem/eng_Latn-aka_Latn/akuapem.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/akuapem/eng_Latn-aka_Latn/akuapem.aka_Latn
+    tsv: null
+eng_Latn-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-azj_Latn/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-azj_Latn/til.azj_Latn
+    tsv: null
+eng_Latn-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-bak_Cyrl/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+eng_Latn-ben_Beng:
+  alt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/alt/eng_Latn-ben_Beng/alt.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/alt/eng_Latn-ben_Beng/alt.ben_Beng
+    tsv: null
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-ben_Beng/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-ben_Beng/cvit-pib.ben_Beng
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-ben_Beng/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-ben_Beng/jw.ben_Beng
+    tsv: null
+  opensubtitles:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-ben_Beng/opensubtitles.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-ben_Beng/opensubtitles.ben_Beng
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-ben_Beng/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-ben_Beng/pmi.ben_Beng
+    tsv: null
+  tanzil:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-ben_Beng/tanzil.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-ben_Beng/tanzil.ben_Beng
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-ben_Beng/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-ben_Beng/ted2020.ben_Beng
+    tsv: null
+  wikimatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-ben_Beng/wikimatrix.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-ben_Beng/wikimatrix.ben_Beng
+    tsv: null
+eng_Latn-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-crh_Latn/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-crh_Latn/til.crh_Latn
+    tsv: null
+eng_Latn-fra_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-fra_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-fra_Latn/tico.fra_Latn
+    tsv: null
+eng_Latn-fur_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-fur_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-fur_Latn/NLLB-Seed.fur_Latn
+    tsv: null
+eng_Latn-fuv_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-fuv_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-fuv_Latn/NLLB-Seed.fuv_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-fuv_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-fuv_Latn/tico.fuv_Latn
+    tsv: null
+eng_Latn-gaz_Latn:
+  aau:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/aau/eng_Latn-gaz_Latn/aau.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/aau/eng_Latn-gaz_Latn/aau.gaz_Latn
+    tsv: null
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/eng_Latn-gaz_Latn/hornmt.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/eng_Latn-gaz_Latn/hornmt.gaz_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-gaz_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-gaz_Latn/tico.gaz_Latn
+    tsv: null
+eng_Latn-grn_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-grn_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-grn_Latn/NLLB-Seed.grn_Latn
+    tsv: null
+eng_Latn-guj_Gujr:
+  bibleuedin:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-guj_Gujr/bibleuedin.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-guj_Gujr/bibleuedin.guj_Gujr
+    tsv: null
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-guj_Gujr/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-guj_Gujr/cvit-pib.guj_Gujr
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-guj_Gujr/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-guj_Gujr/jw.guj_Gujr
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-guj_Gujr/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-guj_Gujr/pmi.guj_Gujr
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-guj_Gujr/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-guj_Gujr/ted2020.guj_Gujr
+    tsv: null
+  urst:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/urst/eng_Latn-guj_Gujr/urst.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/urst/eng_Latn-guj_Gujr/urst.guj_Gujr
+    tsv: null
+  wikititles:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikititles/eng_Latn-guj_Gujr/wikititles.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikititles/eng_Latn-guj_Gujr/wikititles.guj_Gujr
+    tsv: null
+eng_Latn-hat_Latn:
+  cmu_haitian:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cmu_haitian/eng_Latn-hat_Latn/cmu_haitian.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cmu_haitian/eng_Latn-hat_Latn/cmu_haitian.hat_Latn
+    tsv: null
+eng_Latn-hau_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-hau_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-hau_Latn/tico.hau_Latn
+    tsv: null
+eng_Latn-hin_Deva:
+  alt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/alt/eng_Latn-hin_Deva/alt.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/alt/eng_Latn-hin_Deva/alt.hin_Deva
+    tsv: null
+  bibleuedin:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-hin_Deva/bibleuedin.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-hin_Deva/bibleuedin.hin_Deva
+    tsv: null
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-hin_Deva/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-hin_Deva/cvit-pib.hin_Deva
+    tsv: null
+  iitb:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/iitb/eng_Latn-hin_Deva/iitb.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/iitb/eng_Latn-hin_Deva/iitb.hin_Deva
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-hin_Deva/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-hin_Deva/jw.hin_Deva
+    tsv: null
+  opensubtitles:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-hin_Deva/opensubtitles.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-hin_Deva/opensubtitles.hin_Deva
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-hin_Deva/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-hin_Deva/pmi.hin_Deva
+    tsv: null
+  tanzil:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-hin_Deva/tanzil.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-hin_Deva/tanzil.hin_Deva
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-hin_Deva/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-hin_Deva/ted2020.hin_Deva
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-hin_Deva/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-hin_Deva/tico.hin_Deva
+    tsv: null
+  wikimatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-hin_Deva/wikimatrix.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-hin_Deva/wikimatrix.hin_Deva
+    tsv: null
+eng_Latn-hne_Deva:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-hne_Deva/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-hne_Deva/NLLB-Seed.hne_Deva
+    tsv: null
+eng_Latn-ind_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-ind_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-ind_Latn/tico.ind_Latn
+    tsv: null
+eng_Latn-kan_Knda:
+  bibleuedin:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-kan_Knda/bibleuedin.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-kan_Knda/bibleuedin.kan_Knda
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-kan_Knda/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-kan_Knda/jw.kan_Knda
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-kan_Knda/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-kan_Knda/pmi.kan_Knda
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-kan_Knda/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-kan_Knda/ted2020.kan_Knda
+    tsv: null
+eng_Latn-kas_Arab:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-kas_Arab/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-kas_Arab/NLLB-Seed.kas_Arab
+    tsv: null
+eng_Latn-kas_Deva:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-kas_Deva/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-kas_Deva/NLLB-Seed.kas_Deva
+    tsv: null
+eng_Latn-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-kaz_Cyrl/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+eng_Latn-khm_Khmr:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-khm_Khmr/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-khm_Khmr/tico.khm_Khmr
+    tsv: null
+eng_Latn-kin_Latn:
+  kinya_smt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/kinya_smt/eng_Latn-kin_Latn/kinya_smt.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/kinya_smt/eng_Latn-kin_Latn/kinya_smt.kin_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-kin_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-kin_Latn/tico.kin_Latn
+    tsv: null
+eng_Latn-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-kir_Cyrl/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+eng_Latn-kmr_Latn:
+  bianet:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/eng_Latn-kmr_Latn/bianet.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/eng_Latn-kmr_Latn/bianet.kmr_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-kmr_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-kmr_Latn/tico.kmr_Latn
+    tsv: null
+eng_Latn-knc_Arab:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-knc_Arab/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-knc_Arab/NLLB-Seed.knc_Arab
+    tsv: null
+eng_Latn-knc_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-knc_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-knc_Latn/NLLB-Seed.knc_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-knc_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-knc_Latn/tico.knc_Latn
+    tsv: null
+eng_Latn-lij_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-lij_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-lij_Latn/NLLB-Seed.lij_Latn
+    tsv: null
+eng_Latn-lim_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-lim_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-lim_Latn/NLLB-Seed.lim_Latn
+    tsv: null
+eng_Latn-lin_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-lin_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-lin_Latn/tico.lin_Latn
+    tsv: null
+eng_Latn-lmo_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-lmo_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-lmo_Latn/NLLB-Seed.lmo_Latn
+    tsv: null
+eng_Latn-ltg_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-ltg_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-ltg_Latn/NLLB-Seed.ltg_Latn
+    tsv: null
+eng_Latn-lug_Latn:
+  mukiibi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mukiibi/eng_Latn-lug_Latn/mukiibi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mukiibi/eng_Latn-lug_Latn/mukiibi.lug_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-lug_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-lug_Latn/tico.lug_Latn
+    tsv: null
+eng_Latn-mag_Deva:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-mag_Deva/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-mag_Deva/NLLB-Seed.mag_Deva
+    tsv: null
+eng_Latn-mal_Mlym:
+  bibleuedin:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-mal_Mlym/bibleuedin.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-mal_Mlym/bibleuedin.mal_Mlym
+    tsv: null
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-mal_Mlym/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-mal_Mlym/cvit-pib.mal_Mlym
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-mal_Mlym/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-mal_Mlym/jw.mal_Mlym
+    tsv: null
+  opensubtitles:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-mal_Mlym/opensubtitles.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-mal_Mlym/opensubtitles.mal_Mlym
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-mal_Mlym/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-mal_Mlym/pmi.mal_Mlym
+    tsv: null
+  tanzil:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-mal_Mlym/tanzil.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-mal_Mlym/tanzil.mal_Mlym
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-mal_Mlym/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-mal_Mlym/ted2020.mal_Mlym
+    tsv: null
+  wikimatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-mal_Mlym/wikimatrix.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-mal_Mlym/wikimatrix.mal_Mlym
+    tsv: null
+eng_Latn-mar_Deva:
+  bibleuedin:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-mar_Deva/bibleuedin.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-mar_Deva/bibleuedin.mar_Deva
+    tsv: null
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-mar_Deva/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-mar_Deva/cvit-pib.mar_Deva
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-mar_Deva/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-mar_Deva/jw.mar_Deva
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-mar_Deva/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-mar_Deva/pmi.mar_Deva
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-mar_Deva/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-mar_Deva/ted2020.mar_Deva
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-mar_Deva/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-mar_Deva/tico.mar_Deva
+    tsv: null
+  wikimatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-mar_Deva/wikimatrix.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-mar_Deva/wikimatrix.mar_Deva
+    tsv: null
+eng_Latn-mni_Beng:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-mni_Beng/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-mni_Beng/NLLB-Seed.mni_Beng
+    tsv: null
+eng_Latn-mri_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-mri_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-mri_Latn/NLLB-Seed.mri_Latn
+    tsv: null
+eng_Latn-mya_Mymr:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-mya_Mymr/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-mya_Mymr/tico.mya_Mymr
+    tsv: null
+eng_Latn-npi_Deva:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-npi_Deva/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-npi_Deva/tico.npi_Deva
+    tsv: null
+eng_Latn-nus_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-nus_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-nus_Latn/NLLB-Seed.nus_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-nus_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-nus_Latn/tico.nus_Latn
+    tsv: null
+eng_Latn-ory_Orya:
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-ory_Orya/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-ory_Orya/cvit-pib.ory_Orya
+    tsv: null
+  mtenglish2odia:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mtenglish2odia/eng_Latn-ory_Orya/mtenglish2odia.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mtenglish2odia/eng_Latn-ory_Orya/mtenglish2odia.ory_Orya
+    tsv: null
+  odiencorp:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/odiencorp/eng_Latn-ory_Orya/odiencorp.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/odiencorp/eng_Latn-ory_Orya/odiencorp.ory_Orya
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-ory_Orya/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-ory_Orya/pmi.ory_Orya
+    tsv: null
+eng_Latn-pan_Guru:
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-pan_Guru/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-pan_Guru/cvit-pib.pan_Guru
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-pan_Guru/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-pan_Guru/jw.pan_Guru
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-pan_Guru/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-pan_Guru/pmi.pan_Guru
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-pan_Guru/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-pan_Guru/ted2020.pan_Guru
+    tsv: null
+eng_Latn-pbt_Arab:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-pbt_Arab/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-pbt_Arab/NLLB-Seed.pbt_Arab
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-pbt_Arab/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-pbt_Arab/tico.pbt_Arab
+    tsv: null
+eng_Latn-pes_Arab:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-pes_Arab/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-pes_Arab/tico.pes_Arab
+    tsv: null
+eng_Latn-por_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-por_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-por_Latn/tico.por_Latn
+    tsv: null
+eng_Latn-prs_Arab:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-prs_Arab/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-prs_Arab/NLLB-Seed.prs_Arab
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-prs_Arab/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-prs_Arab/tico.prs_Arab
+    tsv: null
+eng_Latn-rus_Cyrl:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-rus_Cyrl/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-rus_Cyrl/tico.rus_Cyrl
+    tsv: null
+eng_Latn-scn_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-scn_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-scn_Latn/NLLB-Seed.scn_Latn
+    tsv: null
+eng_Latn-shn_Mymr:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-shn_Mymr/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-shn_Mymr/NLLB-Seed.shn_Mymr
+    tsv: null
+eng_Latn-som_Latn:
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/eng_Latn-som_Latn/hornmt.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/eng_Latn-som_Latn/hornmt.som_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-som_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-som_Latn/tico.som_Latn
+    tsv: null
+eng_Latn-sot_Latn:
+  mburisano:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-sot_Latn/mburisano.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-sot_Latn/mburisano.sot_Latn
+    tsv: null
+eng_Latn-spa_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-spa_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-spa_Latn/tico.spa_Latn
+    tsv: null
+eng_Latn-srd_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-srd_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-srd_Latn/NLLB-Seed.srd_Latn
+    tsv: null
+eng_Latn-ssw_Latn:
+  mburisano:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-ssw_Latn/mburisano.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-ssw_Latn/mburisano.ssw_Latn
+    tsv: null
+eng_Latn-swh_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-swh_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-swh_Latn/tico.swh_Latn
+    tsv: null
+eng_Latn-szl_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-szl_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-szl_Latn/NLLB-Seed.szl_Latn
+    tsv: null
+eng_Latn-tam_Taml:
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-tam_Taml/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-tam_Taml/cvit-pib.tam_Taml
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-tam_Taml/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-tam_Taml/jw.tam_Taml
+    tsv: null
+  nlpc:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/nlpc/eng_Latn-tam_Taml/nlpc.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/nlpc/eng_Latn-tam_Taml/nlpc.tam_Taml
+    tsv: null
+  opensubtitles:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-tam_Taml/opensubtitles.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-tam_Taml/opensubtitles.tam_Taml
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-tam_Taml/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-tam_Taml/pmi.tam_Taml
+    tsv: null
+  tanzil:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-tam_Taml/tanzil.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tanzil/eng_Latn-tam_Taml/tanzil.tam_Taml
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-tam_Taml/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-tam_Taml/ted2020.tam_Taml
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-tam_Taml/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-tam_Taml/tico.tam_Taml
+    tsv: null
+  ufal:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ufal/eng_Latn-tam_Taml/ufal.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ufal/eng_Latn-tam_Taml/ufal.tam_Taml
+    tsv: null
+  wikimatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-tam_Taml/wikimatrix.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-tam_Taml/wikimatrix.tam_Taml
+    tsv: null
+  wikititles:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikititles/eng_Latn-tam_Taml/wikititles.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikititles/eng_Latn-tam_Taml/wikititles.tam_Taml
+    tsv: null
+eng_Latn-taq_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-taq_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-taq_Latn/NLLB-Seed.taq_Latn
+    tsv: null
+eng_Latn-taq_Tfng:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-taq_Tfng/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-taq_Tfng/NLLB-Seed.taq_Tfng
+    tsv: null
+eng_Latn-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-tat_Cyrl/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+eng_Latn-tel_Telu:
+  bibleuedin:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-tel_Telu/bibleuedin.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bibleuedin/eng_Latn-tel_Telu/bibleuedin.tel_Telu
+    tsv: null
+  cvit-pib:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-tel_Telu/cvit-pib.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cvit-pib/eng_Latn-tel_Telu/cvit-pib.tel_Telu
+    tsv: null
+  jw:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-tel_Telu/jw.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/jw/eng_Latn-tel_Telu/jw.tel_Telu
+    tsv: null
+  opensubtitles:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-tel_Telu/opensubtitles.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/opensubtitles/eng_Latn-tel_Telu/opensubtitles.tel_Telu
+    tsv: null
+  pmi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-tel_Telu/pmi.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/pmi/eng_Latn-tel_Telu/pmi.tel_Telu
+    tsv: null
+  ted2020:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-tel_Telu/ted2020.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ted2020/eng_Latn-tel_Telu/ted2020.tel_Telu
+    tsv: null
+  wikimatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-tel_Telu/wikimatrix.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/wikimatrix/eng_Latn-tel_Telu/wikimatrix.tel_Telu
+    tsv: null
+eng_Latn-tgl_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-tgl_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-tgl_Latn/tico.tgl_Latn
+    tsv: null
+eng_Latn-tir_Ethi:
+  aau:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/aau/eng_Latn-tir_Ethi/aau.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/aau/eng_Latn-tir_Ethi/aau.tir_Ethi
+    tsv: null
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/eng_Latn-tir_Ethi/hornmt.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/eng_Latn-tir_Ethi/hornmt.tir_Ethi
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-tir_Ethi/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-tir_Ethi/tico.tir_Ethi
+    tsv: null
+eng_Latn-tsn_Latn:
+  mburisano:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-tsn_Latn/mburisano.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-tsn_Latn/mburisano.tsn_Latn
+    tsv: null
+eng_Latn-tso_Latn:
+  mburisano:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-tso_Latn/mburisano.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-tso_Latn/mburisano.tso_Latn
+    tsv: null
+eng_Latn-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-tuk_Latn/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-tuk_Latn/til.tuk_Latn
+    tsv: null
+eng_Latn-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-tur_Latn/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-tur_Latn/til.tur_Latn
+    tsv: null
+eng_Latn-tzm_Tfng:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-tzm_Tfng/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-tzm_Tfng/NLLB-Seed.tzm_Tfng
+    tsv: null
+eng_Latn-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-uig_Arab/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-uig_Arab/til.uig_Arab
+    tsv: null
+eng_Latn-urd_Arab:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-urd_Arab/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-urd_Arab/tico.urd_Arab
+    tsv: null
+eng_Latn-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-uzn_Latn/til.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/eng_Latn-uzn_Latn/til.uzn_Latn
+    tsv: null
+eng_Latn-vec_Latn:
+  NLLB-Seed:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-vec_Latn/NLLB-Seed.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/NLLB-Seed/eng_Latn-vec_Latn/NLLB-Seed.vec_Latn
+    tsv: null
+eng_Latn-xho_Latn:
+  mburisano:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-xho_Latn/mburisano.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-xho_Latn/mburisano.xho_Latn
+    tsv: null
+  xhosa_navy:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/xhosa_navy/eng_Latn-xho_Latn/xhosa_navy.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/xhosa_navy/eng_Latn-xho_Latn/xhosa_navy.xho_Latn
+    tsv: null
+eng_Latn-yor_Latn:
+  menyo20k:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/menyo20k/eng_Latn-yor_Latn/menyo20k.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/menyo20k/eng_Latn-yor_Latn/menyo20k.yor_Latn
+    tsv: null
+eng_Latn-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-zho_Hans/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-zho_Hans/tico.zho_Hans
+    tsv: null
+eng_Latn-zsm_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-zsm_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-zsm_Latn/tico.zsm_Latn
+    tsv: null
+eng_Latn-zul_Latn:
+  mburisano:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-zul_Latn/mburisano.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mburisano/eng_Latn-zul_Latn/mburisano.zul_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-zul_Latn/tico.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/eng_Latn-zul_Latn/tico.zul_Latn
+    tsv: null
+  umsuka:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/umsuka/eng_Latn-zul_Latn/umsuka.eng_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/umsuka/eng_Latn-zul_Latn/umsuka.zul_Latn
+    tsv: null
+ewe_Latn-fra_Latn:
+  french_ewe:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_ewe/ewe_Latn-fra_Latn/french_ewe.ewe_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_ewe/ewe_Latn-fra_Latn/french_ewe.fra_Latn
+    tsv: null
+fon_Latn-fra_Latn:
+  ffr:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ffr/fon_Latn-fra_Latn/ffr.fon_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ffr/fon_Latn-fra_Latn/ffr.fra_Latn
+    tsv: null
+  french_fongbe:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_fongbe/fon_Latn-fra_Latn/french_fongbe.fon_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_fongbe/fon_Latn-fra_Latn/french_fongbe.fra_Latn
+    tsv: null
+fra_Latn-ewe_Latn:
+  french_ewe:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_ewe/fra_Latn-ewe_Latn/french_ewe.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_ewe/fra_Latn-ewe_Latn/french_ewe.ewe_Latn
+    tsv: null
+fra_Latn-fon_Latn:
+  ffr:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ffr/fra_Latn-fon_Latn/ffr.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/ffr/fra_Latn-fon_Latn/ffr.fon_Latn
+    tsv: null
+  french_fongbe:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_fongbe/fra_Latn-fon_Latn/french_fongbe.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/french_fongbe/fra_Latn-fon_Latn/french_fongbe.fon_Latn
+    tsv: null
+fra_Latn-fuv_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-fuv_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-fuv_Latn/tico.fuv_Latn
+    tsv: null
+fra_Latn-hin_Deva:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-hin_Deva/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-hin_Deva/tico.hin_Deva
+    tsv: null
+fra_Latn-ind_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-ind_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-ind_Latn/tico.ind_Latn
+    tsv: null
+fra_Latn-kin_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-kin_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-kin_Latn/tico.kin_Latn
+    tsv: null
+fra_Latn-lin_Latn:
+  lingala_songs:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/lingala_songs/fra_Latn-lin_Latn/lingala_songs.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/lingala_songs/fra_Latn-lin_Latn/lingala_songs.lin_Latn
+    tsv: null
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-lin_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-lin_Latn/tico.lin_Latn
+    tsv: null
+fra_Latn-lug_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-lug_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-lug_Latn/tico.lug_Latn
+    tsv: null
+fra_Latn-por_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-por_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-por_Latn/tico.por_Latn
+    tsv: null
+fra_Latn-rus_Cyrl:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-rus_Cyrl/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-rus_Cyrl/tico.rus_Cyrl
+    tsv: null
+fra_Latn-spa_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-spa_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-spa_Latn/tico.spa_Latn
+    tsv: null
+fra_Latn-swh_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-swh_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-swh_Latn/tico.swh_Latn
+    tsv: null
+fra_Latn-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-zho_Hans/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-zho_Hans/tico.zho_Hans
+    tsv: null
+fra_Latn-zul_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-zul_Latn/tico.fra_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/fra_Latn-zul_Latn/tico.zul_Latn
+    tsv: null
+gaz_Latn-som_Latn:
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/gaz_Latn-som_Latn/hornmt.gaz_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/gaz_Latn-som_Latn/hornmt.som_Latn
+    tsv: null
+gaz_Latn-tir_Ethi:
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/gaz_Latn-tir_Ethi/hornmt.gaz_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/gaz_Latn-tir_Ethi/hornmt.tir_Ethi
+    tsv: null
+grn_Latn-spa_Latn:
+  giossa:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/giossa/grn_Latn-spa_Latn/giossa.grn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/giossa/grn_Latn-spa_Latn/giossa.spa_Latn
+    tsv: null
+hat_Latn-eng_Latn:
+  cmu_haitian:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cmu_haitian/hat_Latn-eng_Latn/cmu_haitian.hat_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/cmu_haitian/hat_Latn-eng_Latn/cmu_haitian.eng_Latn
+    tsv: null
+hin_Deva-ind_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-ind_Latn/tico.hin_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-ind_Latn/tico.ind_Latn
+    tsv: null
+hin_Deva-mar_Deva:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-mar_Deva/tico.hin_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-mar_Deva/tico.mar_Deva
+    tsv: null
+hin_Deva-por_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-por_Latn/tico.hin_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-por_Latn/tico.por_Latn
+    tsv: null
+hin_Deva-rus_Cyrl:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-rus_Cyrl/tico.hin_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-rus_Cyrl/tico.rus_Cyrl
+    tsv: null
+hin_Deva-spa_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-spa_Latn/tico.hin_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-spa_Latn/tico.spa_Latn
+    tsv: null
+hin_Deva-urd_Arab:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-urd_Arab/tico.hin_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-urd_Arab/tico.urd_Arab
+    tsv: null
+hin_Deva-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-zho_Hans/tico.hin_Deva
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/hin_Deva-zho_Hans/tico.zho_Hans
+    tsv: null
+ind_Latn-por_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-por_Latn/tico.ind_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-por_Latn/tico.por_Latn
+    tsv: null
+ind_Latn-rus_Cyrl:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-rus_Cyrl/tico.ind_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-rus_Cyrl/tico.rus_Cyrl
+    tsv: null
+ind_Latn-spa_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-spa_Latn/tico.ind_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-spa_Latn/tico.spa_Latn
+    tsv: null
+ind_Latn-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-zho_Hans/tico.ind_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/ind_Latn-zho_Hans/tico.zho_Hans
+    tsv: null
+kaz_Cyrl-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-azj_Latn/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-azj_Latn/til.azj_Latn
+    tsv: null
+kaz_Cyrl-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-bak_Cyrl/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+kaz_Cyrl-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-crh_Latn/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-crh_Latn/til.crh_Latn
+    tsv: null
+kaz_Cyrl-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-eng_Latn/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-eng_Latn/til.eng_Latn
+    tsv: null
+kaz_Cyrl-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-kir_Cyrl/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+kaz_Cyrl-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-rus_Cyrl/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+kaz_Cyrl-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-tat_Cyrl/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+kaz_Cyrl-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-tuk_Latn/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-tuk_Latn/til.tuk_Latn
+    tsv: null
+kaz_Cyrl-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-tur_Latn/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-tur_Latn/til.tur_Latn
+    tsv: null
+kaz_Cyrl-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-uig_Arab/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-uig_Arab/til.uig_Arab
+    tsv: null
+kaz_Cyrl-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-uzn_Latn/til.kaz_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kaz_Cyrl-uzn_Latn/til.uzn_Latn
+    tsv: null
+kin_Latn-eng_Latn:
+  kinya_smt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/kinya_smt/kin_Latn-eng_Latn/kinya_smt.kin_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/kinya_smt/kin_Latn-eng_Latn/kinya_smt.eng_Latn
+    tsv: null
+kir_Cyrl-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-azj_Latn/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-azj_Latn/til.azj_Latn
+    tsv: null
+kir_Cyrl-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-bak_Cyrl/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+kir_Cyrl-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-crh_Latn/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-crh_Latn/til.crh_Latn
+    tsv: null
+kir_Cyrl-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-eng_Latn/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-eng_Latn/til.eng_Latn
+    tsv: null
+kir_Cyrl-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-kaz_Cyrl/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+kir_Cyrl-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-rus_Cyrl/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+kir_Cyrl-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-tat_Cyrl/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+kir_Cyrl-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-tuk_Latn/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-tuk_Latn/til.tuk_Latn
+    tsv: null
+kir_Cyrl-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-tur_Latn/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-tur_Latn/til.tur_Latn
+    tsv: null
+kir_Cyrl-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-uig_Arab/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-uig_Arab/til.uig_Arab
+    tsv: null
+kir_Cyrl-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-uzn_Latn/til.kir_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/kir_Cyrl-uzn_Latn/til.uzn_Latn
+    tsv: null
+kmr_Latn-eng_Latn:
+  bianet:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/kmr_Latn-eng_Latn/bianet.kmr_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/kmr_Latn-eng_Latn/bianet.eng_Latn
+    tsv: null
+kmr_Latn-tur_Latn:
+  bianet:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/kmr_Latn-tur_Latn/bianet.kmr_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/kmr_Latn-tur_Latn/bianet.tur_Latn
+    tsv: null
+lin_Latn-fra_Latn:
+  lingala_songs:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/lingala_songs/lin_Latn-fra_Latn/lingala_songs.lin_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/lingala_songs/lin_Latn-fra_Latn/lingala_songs.fra_Latn
+    tsv: null
+lug_Latn-eng_Latn:
+  mukiibi:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mukiibi/lug_Latn-eng_Latn/mukiibi.lug_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/mukiibi/lug_Latn-eng_Latn/mukiibi.eng_Latn
+    tsv: null
+min_Latn-ind_Latn:
+  minangnlp:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/minangnlp/min_Latn-ind_Latn/minangnlp.min_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/minangnlp/min_Latn-ind_Latn/minangnlp.ind_Latn
+    tsv: null
+nno_Latn-nob_Latn:
+  nynorsk_memories:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/nynorsk_memories/nno_Latn-nob_Latn/nynorsk_memories.nno_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/nynorsk_memories/nno_Latn-nob_Latn/nynorsk_memories.nob_Latn
+    tsv: null
+nob_Latn-nno_Latn:
+  nynorsk_memories:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/nynorsk_memories/nob_Latn-nno_Latn/nynorsk_memories.nob_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/nynorsk_memories/nob_Latn-nno_Latn/nynorsk_memories.nno_Latn
+    tsv: null
+pes_Arab-prs_Arab:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/pes_Arab-prs_Arab/tico.pes_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/pes_Arab-prs_Arab/tico.prs_Arab
+    tsv: null
+por_Latn-rus_Cyrl:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/por_Latn-rus_Cyrl/tico.por_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/por_Latn-rus_Cyrl/tico.rus_Cyrl
+    tsv: null
+por_Latn-spa_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/por_Latn-spa_Latn/tico.por_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/por_Latn-spa_Latn/tico.spa_Latn
+    tsv: null
+por_Latn-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/por_Latn-zho_Hans/tico.por_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/por_Latn-zho_Hans/tico.zho_Hans
+    tsv: null
+rus_Cyrl-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-azj_Latn/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-azj_Latn/til.azj_Latn
+    tsv: null
+rus_Cyrl-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-bak_Cyrl/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+rus_Cyrl-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-crh_Latn/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-crh_Latn/til.crh_Latn
+    tsv: null
+rus_Cyrl-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-kaz_Cyrl/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+rus_Cyrl-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-kir_Cyrl/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+rus_Cyrl-spa_Latn:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/rus_Cyrl-spa_Latn/tico.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/rus_Cyrl-spa_Latn/tico.spa_Latn
+    tsv: null
+rus_Cyrl-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-tat_Cyrl/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+rus_Cyrl-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-tuk_Latn/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-tuk_Latn/til.tuk_Latn
+    tsv: null
+rus_Cyrl-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-tur_Latn/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-tur_Latn/til.tur_Latn
+    tsv: null
+rus_Cyrl-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-uig_Arab/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-uig_Arab/til.uig_Arab
+    tsv: null
+rus_Cyrl-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-uzn_Latn/til.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/rus_Cyrl-uzn_Latn/til.uzn_Latn
+    tsv: null
+rus_Cyrl-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/rus_Cyrl-zho_Hans/tico.rus_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/rus_Cyrl-zho_Hans/tico.zho_Hans
+    tsv: null
+som_Latn-tir_Ethi:
+  hornmt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/som_Latn-tir_Ethi/hornmt.som_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/hornmt/som_Latn-tir_Ethi/hornmt.tir_Ethi
+    tsv: null
+spa_Latn-grn_Latn:
+  giossa:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/giossa/spa_Latn-grn_Latn/giossa.spa_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/giossa/spa_Latn-grn_Latn/giossa.grn_Latn
+    tsv: null
+spa_Latn-zho_Hans:
+  tico:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/spa_Latn-zho_Hans/tico.spa_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/tico/spa_Latn-zho_Hans/tico.zho_Hans
+    tsv: null
+tat_Cyrl-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-azj_Latn/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-azj_Latn/til.azj_Latn
+    tsv: null
+tat_Cyrl-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-bak_Cyrl/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+tat_Cyrl-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-crh_Latn/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-crh_Latn/til.crh_Latn
+    tsv: null
+tat_Cyrl-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-eng_Latn/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-eng_Latn/til.eng_Latn
+    tsv: null
+tat_Cyrl-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-kaz_Cyrl/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+tat_Cyrl-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-kir_Cyrl/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+tat_Cyrl-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-rus_Cyrl/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+tat_Cyrl-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-tuk_Latn/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-tuk_Latn/til.tuk_Latn
+    tsv: null
+tat_Cyrl-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-tur_Latn/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-tur_Latn/til.tur_Latn
+    tsv: null
+tat_Cyrl-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-uig_Arab/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-uig_Arab/til.uig_Arab
+    tsv: null
+tat_Cyrl-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-uzn_Latn/til.tat_Cyrl
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tat_Cyrl-uzn_Latn/til.uzn_Latn
+    tsv: null
+tuk_Latn-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-azj_Latn/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-azj_Latn/til.azj_Latn
+    tsv: null
+tuk_Latn-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-bak_Cyrl/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+tuk_Latn-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-crh_Latn/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-crh_Latn/til.crh_Latn
+    tsv: null
+tuk_Latn-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-eng_Latn/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-eng_Latn/til.eng_Latn
+    tsv: null
+tuk_Latn-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-kaz_Cyrl/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+tuk_Latn-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-kir_Cyrl/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+tuk_Latn-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-rus_Cyrl/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+tuk_Latn-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-tat_Cyrl/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+tuk_Latn-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-tur_Latn/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-tur_Latn/til.tur_Latn
+    tsv: null
+tuk_Latn-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-uig_Arab/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-uig_Arab/til.uig_Arab
+    tsv: null
+tuk_Latn-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-uzn_Latn/til.tuk_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tuk_Latn-uzn_Latn/til.uzn_Latn
+    tsv: null
+tur_Latn-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-azj_Latn/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-azj_Latn/til.azj_Latn
+    tsv: null
+tur_Latn-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-bak_Cyrl/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+tur_Latn-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-crh_Latn/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-crh_Latn/til.crh_Latn
+    tsv: null
+tur_Latn-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-eng_Latn/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-eng_Latn/til.eng_Latn
+    tsv: null
+tur_Latn-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-kaz_Cyrl/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+tur_Latn-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-kir_Cyrl/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+tur_Latn-kmr_Latn:
+  bianet:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/tur_Latn-kmr_Latn/bianet.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/bianet/tur_Latn-kmr_Latn/bianet.kmr_Latn
+    tsv: null
+tur_Latn-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-rus_Cyrl/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+tur_Latn-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-tat_Cyrl/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+tur_Latn-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-tuk_Latn/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-tuk_Latn/til.tuk_Latn
+    tsv: null
+tur_Latn-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-uig_Arab/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-uig_Arab/til.uig_Arab
+    tsv: null
+tur_Latn-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-uzn_Latn/til.tur_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/tur_Latn-uzn_Latn/til.uzn_Latn
+    tsv: null
+uig_Arab-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-azj_Latn/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-azj_Latn/til.azj_Latn
+    tsv: null
+uig_Arab-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-bak_Cyrl/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+uig_Arab-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-crh_Latn/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-crh_Latn/til.crh_Latn
+    tsv: null
+uig_Arab-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-eng_Latn/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-eng_Latn/til.eng_Latn
+    tsv: null
+uig_Arab-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-kaz_Cyrl/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+uig_Arab-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-kir_Cyrl/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+uig_Arab-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-rus_Cyrl/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+uig_Arab-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-tat_Cyrl/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+uig_Arab-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-tuk_Latn/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-tuk_Latn/til.tuk_Latn
+    tsv: null
+uig_Arab-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-tur_Latn/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-tur_Latn/til.tur_Latn
+    tsv: null
+uig_Arab-uzn_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-uzn_Latn/til.uig_Arab
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uig_Arab-uzn_Latn/til.uzn_Latn
+    tsv: null
+uzn_Latn-azj_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-azj_Latn/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-azj_Latn/til.azj_Latn
+    tsv: null
+uzn_Latn-bak_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-bak_Cyrl/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-bak_Cyrl/til.bak_Cyrl
+    tsv: null
+uzn_Latn-crh_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-crh_Latn/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-crh_Latn/til.crh_Latn
+    tsv: null
+uzn_Latn-eng_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-eng_Latn/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-eng_Latn/til.eng_Latn
+    tsv: null
+uzn_Latn-kaz_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-kaz_Cyrl/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-kaz_Cyrl/til.kaz_Cyrl
+    tsv: null
+uzn_Latn-kir_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-kir_Cyrl/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-kir_Cyrl/til.kir_Cyrl
+    tsv: null
+uzn_Latn-rus_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-rus_Cyrl/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-rus_Cyrl/til.rus_Cyrl
+    tsv: null
+uzn_Latn-tat_Cyrl:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-tat_Cyrl/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-tat_Cyrl/til.tat_Cyrl
+    tsv: null
+uzn_Latn-tuk_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-tuk_Latn/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-tuk_Latn/til.tuk_Latn
+    tsv: null
+uzn_Latn-tur_Latn:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-tur_Latn/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-tur_Latn/til.tur_Latn
+    tsv: null
+uzn_Latn-uig_Arab:
+  til:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-uig_Arab/til.uzn_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/til/uzn_Latn-uig_Arab/til.uig_Arab
+    tsv: null
+xho_Latn-eng_Latn:
+  xhosa_navy:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/xhosa_navy/xho_Latn-eng_Latn/xhosa_navy.xho_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/xhosa_navy/xho_Latn-eng_Latn/xhosa_navy.eng_Latn
+    tsv: null
+yor_Latn-eng_Latn:
+  menyo20k:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/menyo20k/yor_Latn-eng_Latn/menyo20k.yor_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/menyo20k/yor_Latn-eng_Latn/menyo20k.eng_Latn
+    tsv: null
+zul_Latn-eng_Latn:
+  umsuka:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/umsuka/zul_Latn-eng_Latn/umsuka.zul_Latn
+    tgt: /home/aleksa/Projects/nllb/fairseq/examples/nllb/data/train_datasets/umsuka/zul_Latn-eng_Latn/umsuka.eng_Latn
+    tsv: null

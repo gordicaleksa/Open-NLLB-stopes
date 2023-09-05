@@ -6,22 +6,23 @@ defaults:
   - train_primary/dedup_filter: default
 
 directions:
-  - eng_Latn-lij_Latn
-  - eng_Latn-scn_Latn
+ - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/directions.yaml
 train_primary:
   normalize_punctuation: true
   included_corpora:
-    - nllbseed
-    - tatoeba
+    - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/included_corpora.yaml
+  laser_filter: null
   length_filter:
     min_len: 5
     max_len: 1050
     max_len_ratio: 9
-  dedup_filter:
-    dedup_pairs: true
-    max_target_dedup: null
   lid_filter: null
   toxicity_filter: null
+  dedup_filter:
+    dedup_pairs: true
+    max_source_dedup: null
+    max_target_dedup: null
+
 train_mined: null
 train_bt: null
 executor:
