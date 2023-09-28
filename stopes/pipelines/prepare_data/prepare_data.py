@@ -91,28 +91,25 @@ class PrepareData:
             self.launcher,
             self.retrieved_data_dir,
         )
-        (src_vocab, tgt_vocab), (
-            sharded_train_datasets,
-            retrieved_eval_datasets,
-            max_num_shards,
-        ) = await asyncio.gather(
-            build_vocab(
+        (src_vocab, tgt_vocab) = await build_vocab(
                 retrieved_datasets,
                 self.config.vocab,
                 train_src_counts_map,
                 train_tgt_counts_map,
                 self.launcher,
                 self.vocab_dir,
-            ),
-            dedup_sharding(
-                retrieved_datasets,
-                train_counts_map,
-                self.config.dedup,
-                self.config.sharding,
-                self.launcher,
-                self.tmp_dir / "sharded",
-            ),
-        )
+            )
+            # dedup_sharding(
+            #     retrieved_datasets,
+            #     train_counts_map,
+            #     self.config.dedup,
+            #     self.config.sharding,
+            #     self.launcher,
+            #     self.tmp_dir / "sharded",
+            # ),
+        sharded_train_datasets = []
+        retrieved_eval_datasets = retrieved_datasets
+        max_num_shards = 1
         await binarize(
             sharded_train_datasets,
             retrieved_eval_datasets,
@@ -199,11 +196,11 @@ def main(config: PrepareDataConfig) -> None:
         download_spm200()
 
     # For readability purposes we pass in a path instead of dumping the data directly into prepare_data.yaml.
-    train_corpora_path = config.corpora.train[0]
-    assert isinstance(train_corpora_path, str)
-    with open(train_corpora_path, "rt") as fin:
-        train_corpora = OmegaConf.load(fin)
-    config.corpora.train = train_corpora
+    # train_corpora_path = config.corpora.train[0]
+    # assert isinstance(train_corpora_path, str)
+    # with open(train_corpora_path, "rt") as fin:
+    #     train_corpora = OmegaConf.load(fin)
+    # config.corpora.train = train_corpora
 
     pipeline = PrepareData(config)
     asyncio.run(pipeline.run())
