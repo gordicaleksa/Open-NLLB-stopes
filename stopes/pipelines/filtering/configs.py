@@ -10,6 +10,8 @@ from typing import Dict, List, Optional
 
 from hydra.core.config_store import ConfigStore
 
+from stopes.pipelines.filtering.dataset import Dataset
+
 
 @dataclass
 class ExecutorConfig:
@@ -34,6 +36,14 @@ class LengthFilterConfig:
 
 
 @dataclass
+class SymbolsFilterConfig:
+    _target_: str = "stopes.pipelines.filtering.filters.SymbolsFilter"
+    hashtag_num: Optional[int] = 3
+    digit2char_ratio: Optional[float] = 0.5
+    words_with_alpha_ratio: Optional[float] = 0.5
+
+
+@dataclass
 class LidFilterConfig:
     _target_: str = "stopes.pipelines.filtering.filters.LidFilter"
     model_path: str = "/large_experiments/seamless/nllb/mmt/lidruns/lid_models/2022-02-18_ft_model.bin"
@@ -51,7 +61,7 @@ class ToxicityFilterConfig:
     )
     eng_porn_twl_path: Optional[
         str
-    ] = "/large_experiments/seamless/nllb/mmt/data/toxicity/eng_twl_short_porn.txt"
+    ] = None  # "/large_experiments/seamless/nllb/mmt/data/toxicity/eng_twl_short_porn.txt"
     max_toxicity: Optional[int] = None
     max_toxicity_difference: Optional[int] = 2
 
@@ -65,19 +75,30 @@ class DedupFilterConfig:
 
 
 @dataclass
+class FuzzyDedupFilterConfig:
+    _target_: str = "stopes.pipelines.filtering.filters.FuzzyDedupFilter"
+    num_perms: int = 100
+    num_bands: int = 10
+    subvector_size: int = 10
+    datasets: Dict[str, Dataset] = None
+
+
+@dataclass
 class GroupFilterConfig:
     # one (and only one) of these should be set, the other should be None
     included_corpora: Optional[List[str]] = None
     excluded_corpora: Optional[List[str]] = None
 
-    normalize_punctuation: bool = True
+    normalize_line: bool = True
     normalize_unicode: bool = False
 
-    laser_filter: Optional[LaserFilterConfig] = None
+    laser_filter: Optional[LaserFilterConfig] = LaserFilterConfig()
     length_filter: LengthFilterConfig = LengthFilterConfig()
-    lid_filter: Optional[LidFilterConfig] = None
-    toxicity_filter: Optional[ToxicityFilterConfig] = None
-    dedup_filter: DedupFilterConfig = DedupFilterConfig()
+    symbols_filter: SymbolsFilterConfig = SymbolsFilterConfig()
+    lid_filter: Optional[LidFilterConfig] = LidFilterConfig()
+    toxicity_filter: Optional[ToxicityFilterConfig] = ToxicityFilterConfig()
+    dedup_filter: Optional[DedupFilterConfig] = DedupFilterConfig()
+    fuzzy_dedup_filter: Optional[FuzzyDedupFilterConfig] = FuzzyDedupFilterConfig()
 
 
 @dataclass

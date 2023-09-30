@@ -27,12 +27,29 @@ from stopes.pipelines.filtering.configs import (
 from stopes.pipelines.filtering.dataset import Dataset, DatasetLine, DatasetReader
 from stopes.pipelines.filtering.filters import FilteringCounts
 from stopes.pipelines.filtering.utils import cache_step_sync, normalize_unicode
-from stopes.pipelines.monolingual.utils.text_normalizer import replace_unicode_punct
+from stopes.pipelines.monolingual.utils.text_normalizer import replace_unicode_punct, remove_non_printing_char
 
 logger = logging.getLogger(__name__)
 
 
 register_configs()
+
+
+def balance_quotation_marks(line):
+    if line.startswith('"') and not line.endswith('"'):
+        line = line[1:]
+
+    if not line.startswith('"') and line.endswith('"'):
+        line = line[:-1]
+
+    return line
+
+
+def normalize_line(line):
+    line = line.strip()
+    line = replace_unicode_punct(line)
+    line_tmp = remove_non_printing_char(line)
+    return balance_quotation_marks(line_tmp)
 
 
 # TODO have this use the MultiprocLineProcessor module
@@ -61,12 +78,16 @@ def filter_direction(
             tgt_lang=tgt_lang,
         ),
         hydra.utils.instantiate(
+            config.symbols_filter, keep_dates_and_numbers=group_name != "train_mined"
+        ),
+        hydra.utils.instantiate(
             config.lid_filter, src_lang=src_lang, tgt_lang=tgt_lang
         ),
         hydra.utils.instantiate(
             config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
         ),
         hydra.utils.instantiate(config.dedup_filter),
+        hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets)
     ]
 
     # filter datasets sequentially
@@ -94,7 +115,7 @@ def filter_direction(
             if tgt_lang is not None:
                 fout_tgt = outputs.enter_context(gzip.open(path_out_tgt, "wt"))
 
-            for line in inputs:
+            for i, line in enumerate(inputs):
                 dataset_counts.total_before += 1
 
                 if config.normalize_unicode:
@@ -102,15 +123,20 @@ def filter_direction(
                     if line.tgt is not None:
                         line.tgt = normalize_unicode(line.tgt)
 
-                if config.normalize_punctuation:
-                    line.src = replace_unicode_punct(line.src)
+                if config.normalize_line:
+                    line.src = normalize_line(line.src)
                     if line.tgt is not None:
-                        line.tgt = replace_unicode_punct(line.tgt)
+                        line.tgt = normalize_line(line.tgt)
 
                 # apply filters sequentially
                 for fltr in filters:
                     if fltr is None:
                         continue
+
+                    # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
+                    if fltr.__class__.__name__ == "FuzzyDedupFilter":
+                        line.src = f'{str(i).zfill(9)}{line.src}'
+
                     line = fltr.filter_line(line, dataset_counts)
                     # no need to keep filtering if the line was already discarded
                     if line is None:
@@ -224,11 +250,23 @@ def main(config: DictConfig) -> None:
         # Values contain the number of sentences for directions which we don't need anymore they were just used for sorting (optimization)
         all_directions = list(all_directions.keys())
 
-    # TODO(gordicaleksa): a bit hacky currently hardcoded assuming only train primary
+    assert config.train_primary is not None, "train_primary config is required"
     included_corpora_path = config.train_primary.included_corpora[0]
     with open(included_corpora_path, "rt") as fin:
         corpora = yaml.safe_load(fin)
     config.train_primary.included_corpora = corpora
+
+    if config.train_mined is not None:
+        included_corpora_path = config.train_mined.included_corpora[0]
+        with open(included_corpora_path, "rt") as fin:
+            corpora = yaml.safe_load(fin)
+        config.train_mined.included_corpora = corpora
+
+    if config.train_bt is not None:
+        included_corpora_path = config.train_bt.included_corpora[0]
+        with open(included_corpora_path, "rt") as fin:
+            corpora = yaml.safe_load(fin)
+        config.train_bt.included_corpora = corpora
 
     os.makedirs(config.output_dir, exist_ok=True)
     logger.info(f"Running with config:\n{OmegaConf.to_yaml(config)}")

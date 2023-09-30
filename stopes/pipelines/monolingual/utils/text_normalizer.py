@@ -177,15 +177,19 @@ def slow_normalize_for_dedup(line: str) -> str:
     return normalize(line, accent=False, case=True, numbers=True, punct=2)
 
 
+def normalize_whitespace(s):
+    # Replace sequences of whitespace characters with a single space
+    s = re.sub(r'\s+', ' ', s)
+    # Remove leading and trailing whitespace
+    return s.strip()
+
+
 def normalize_for_dedup(line: str) -> str:
-    line = line.strip()
+    line = normalize_whitespace(line)
     if not line:
         return line
-    # case
     line = line.lower()
-    # numbers
     line = DIGIT_RE.sub("0", line)
     line = PUNCT_OR_NON_PRINTING_CHARS_RE.sub("", line)
-    # tab
-    line = line.replace("\t", "")
+    line = strip_accents(line)
     return line

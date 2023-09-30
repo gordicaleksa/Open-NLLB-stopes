@@ -58,11 +58,17 @@ class ToxicityFilter(Filter):
         max_toxicity_difference: Optional[int],
         src_lang: str,
         tgt_lang: Optional[str],
+        debug: bool = False,
     ):
         self.max_toxicity = max_toxicity
         self.max_toxicity_difference = max_toxicity_difference
         self.tgt_toxicity_list: Optional[ToxicityList] = None
         self.src_toxicity_list: Optional[ToxicityList] = None
+        self.debug = debug
+
+        if self.debug:
+            current_path = os.path.dirname(os.path.realpath(__file__))
+            self.debug_file = open(os.path.join(current_path, "debug_toxicity_filter.txt"), "a")
 
         # load src toxicity list
         src_paths = []
@@ -109,6 +115,9 @@ class ToxicityFilter(Filter):
             ):
                 difference = abs(src_toxicity - tgt_toxicity)
                 if difference > self.max_toxicity_difference:
+                    if self.debug:
+                        self.debug_file.write(f"{line.src}" + " || " + f"{line.tgt}" + "\n")
+                        self.debug_file.flush()
                     counts.max_toxicity_difference += 1
                     return None
         return line

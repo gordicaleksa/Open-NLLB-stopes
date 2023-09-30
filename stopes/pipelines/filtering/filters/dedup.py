@@ -8,6 +8,7 @@
 from collections import Counter
 from typing import Dict, List, Optional, Set
 
+from datasketch import MinHash, MinHashLSH
 import xxhash
 
 from stopes.pipelines.filtering.dataset import DatasetLine
@@ -67,5 +68,59 @@ class DedupFilter(Filter):
                 counts.source_dedup += 1
                 return None
             self.source_dup_counts[line_hash] += 1
+
+        return line
+
+
+class FuzzyDedupFilter(Filter):
+    MAX_NUM_LINES = '999999999'  # arbitrary setting, but should be enough for most datasets
+
+    def __init__(
+        self,
+        src_lines,
+        tgt_lines,
+        num_bands: int = 10,
+        subvector_size: int = 10,
+        num_perms: int = 100,
+    ):
+        assert len(src_lines) <= int(self.MAX_NUM_LINES), f'FuzzyDedupFilter: too many lines ({len(src_lines)})'
+
+        self.num_perms = num_perms
+        self.lsh = MinHashLSH(params=[num_bands, subvector_size], num_perm=num_perms)
+
+        for i, (src_line, trg_line) in enumerate(zip(src_lines, tgt_lines)):
+            mh = MinHash(num_perm=num_perms)
+
+            for shingle in self.get_shingle_set(normalize_for_dedup(src_line) + " " + normalize_for_dedup(trg_line)):
+                mh.update(shingle.encode('utf8'))
+
+            self.lsh.insert(f'{str(i).zfill(len(self.MAX_NUM_LINES))}', mh)
+
+    def get_shingle_set(self, text: str, k: int = 5):
+        shingle_set = []
+        for i in range(len(text) - k+1):
+            shingle_set.append(text[i:i+k])
+        return set(shingle_set)
+
+    def filter_line(
+        self, line: DatasetLine, counts: FilteringCounts
+    ) -> Optional[DatasetLine]:
+        # a hacky way to pass in the line number in order not to break the function signature
+        i = int(line.src[:len(self.MAX_NUM_LINES)])
+
+        line.src = line.src[len(self.MAX_NUM_LINES):]  # remove the line number from the beginning of the line
+
+        mh = MinHash(num_perm=self.num_perms)
+
+        for shingle in self.get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
+            mh.update(shingle.encode('utf8'))
+
+        result = self.lsh.query(mh)
+
+        for index in result:
+            if index != i:
+                self.lsh.remove(i)  # Remove the current line from the LSH index
+                counts.pair_fuzzy_dedup += 1
+                return None
 
         return line
