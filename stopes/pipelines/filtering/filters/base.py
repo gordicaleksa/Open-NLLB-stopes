@@ -28,6 +28,8 @@ class FilteringCounts:
         source_dedup: int = 0,
         target_dedup: int = 0,
         pair_dedup: int = 0,
+        pair_fuzzy_dedup: int = 0,
+        symbols: int = 0,
     ):
         self.total_before = total_before
         self.total_after = total_after
@@ -38,6 +40,9 @@ class FilteringCounts:
         self.max_len = max_len
         self.max_len_ratio = max_len_ratio
         self.min_src_unique_ratio = min_src_unique_ratio
+
+        # SymbolsFilter
+        self.symbols = symbols
 
         # ToxicityFilter
         self.max_toxicity = max_toxicity
@@ -53,6 +58,9 @@ class FilteringCounts:
         self.pair_dedup = pair_dedup
         self.target_dedup = target_dedup
         self.source_dedup = source_dedup
+
+        # FuzzyDedupFilter
+        self.pair_fuzzy_dedup = pair_fuzzy_dedup
 
     def __add__(self, other):
         return FilteringCounts(

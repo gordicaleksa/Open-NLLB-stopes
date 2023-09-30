@@ -41,18 +41,18 @@ def get_bt_datasets(root: Path, args):
     return dict(datasets)
 
 
-def get_mined_datasets(root: Path, args):
-    datasets = defaultdict(dict)
+# def get_mined_datasets(root: Path, args):
+#     datasets = defaultdict(dict)
 
-    for path in glob(str(root / "bitexts.mined" / "bitext.*.tsv.gz")):
-        _, filename = os.path.split(path)
-        direction = filename.split(".")[1]
-        datasets[direction]["mined"] = Dataset(tsv=path)
+#     for path in glob(str(root / "bitexts.mined" / "bitext.*.tsv.gz")):
+#         _, filename = os.path.split(path)
+#         direction = filename.split(".")[1]
+#         datasets[direction]["mined"] = Dataset(tsv=path)
 
-    return dict(datasets)
+#     return dict(datasets)
 
 
-def get_primary_datasets(datasets_root, args):
+def get_primary_and_mined_datasets(datasets_root, args):
     datasets = defaultdict(dict)  # direction -> corpus -> paths
     # Pass the root directory under which all your datasets are stored.
     paths = list(datasets_root.iterdir())
@@ -92,7 +92,7 @@ def main(args):
         with open(data_path / "train_primary.yaml", "wt") as fout:
             fout.write(
                 OmegaConf.to_yaml(
-                    get_primary_datasets(args.primary_train_root, args),
+                    get_primary_and_mined_datasets(args.primary_train_root, args),
                     sort_keys=True,
                 )
             )
@@ -100,7 +100,7 @@ def main(args):
         with open(data_path / "train_mined.yaml", "wt") as fout:
             fout.write(
                 OmegaConf.to_yaml(
-                    get_mined_datasets(args.mined_data_root, args),
+                    get_primary_and_mined_datasets(args.mined_data_root, args),
                     sort_keys=True,
                 )
             )
@@ -147,7 +147,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_type",
         type=str,
-        default="train_primary",
+        default="train_mined",
         choices=["train_primary", "train_mined", "train_bt"],
         help="What type of data to populate the config for; "
         "choices: train_primary, train_mined, train_bt",

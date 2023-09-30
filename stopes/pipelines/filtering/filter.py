@@ -51,6 +51,18 @@ def filter_direction(
     direction = f"{src_lang}-{tgt_lang}" if tgt_lang is not None else src_lang
     print(f"Filtering {group_name}.{direction}")
 
+    src_lines = []
+    tgt_lines = []
+    tmp_cnt = 0  # TODO(gordicaleksa): remove this one
+    for corpus_name, dataset in datasets.items():
+        with DatasetReader(dataset, corpus_name) as inputs:
+            for line in inputs:
+                src_lines.append(line.src)
+                tgt_lines.append(line.tgt)
+                tmp_cnt += 1
+                if tmp_cnt > 5000:
+                    break
+
     # build the list of filters to be applied to this direction
     filters = [
         hydra.utils.instantiate(config.laser_filter),
@@ -61,13 +73,24 @@ def filter_direction(
             tgt_lang=tgt_lang,
         ),
         hydra.utils.instantiate(
+            config.symbols_filter
+        ),
+        hydra.utils.instantiate(
             config.lid_filter, src_lang=src_lang, tgt_lang=tgt_lang
         ),
         hydra.utils.instantiate(
             config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
         ),
+        hydra.utils.instantiate(config.fuzzy_dedup_filter, src_lines=src_lines, tgt_lines=tgt_lines),
         hydra.utils.instantiate(config.dedup_filter),
     ]
+
+    # TODO(gordicaleksa): correct solution would be to use group_name to infer which datasets are mined.
+    extra_filters = [
+        hydra.utils.instantiate(config.mined_filter)
+    ]
+
+    mined_corpora = ["CCMatrix",  "NLLB", "CCAligned", "XLEnt", "WikiMatrix", "ParaCrawl"]
 
     # filter datasets sequentially
     counts: Dict[str, FilteringCounts] = {}
@@ -94,7 +117,7 @@ def filter_direction(
             if tgt_lang is not None:
                 fout_tgt = outputs.enter_context(gzip.open(path_out_tgt, "wt"))
 
-            for line in inputs:
+            for i, line in enumerate(inputs):
                 dataset_counts.total_before += 1
 
                 if config.normalize_unicode:
@@ -102,15 +125,21 @@ def filter_direction(
                     if line.tgt is not None:
                         line.tgt = normalize_unicode(line.tgt)
 
+                # TODO(gordicaleksa): non-printing char removal? anywhere?
                 if config.normalize_punctuation:
                     line.src = replace_unicode_punct(line.src)
                     if line.tgt is not None:
                         line.tgt = replace_unicode_punct(line.tgt)
 
                 # apply filters sequentially
-                for fltr in filters:
+                for fltr in filters + (extra_filters if corpus_name in mined_corpora else []):
                     if fltr is None:
                         continue
+
+                    # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
+                    if fltr.__class__.__name__ == "FuzzyDedupFilter":
+                        line.src = f'{str(i).zfill(9)}{line.src}'
+
                     line = fltr.filter_line(line, dataset_counts)
                     # no need to keep filtering if the line was already discarded
                     if line is None:

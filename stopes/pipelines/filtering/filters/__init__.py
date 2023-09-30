@@ -6,8 +6,10 @@
 # LICENSE file in the root directory of this source tree.
 
 from stopes.pipelines.filtering.filters.base import FilteringCounts
-from stopes.pipelines.filtering.filters.dedup import DedupFilter
+from stopes.pipelines.filtering.filters.dedup import DedupFilter, FuzzyDedupFilter
 from stopes.pipelines.filtering.filters.laser import LaserFilter
 from stopes.pipelines.filtering.filters.length import LengthFilter
-from stopes.pipelines.filtering.filters.lid import LidFilter
+from stopes.pipelines.filtering.filters.lid import LidFilter, HBSLidFilter
 from stopes.pipelines.filtering.filters.toxicity import ToxicityFilter, ToxicityList
+from stopes.pipelines.filtering.filters.symbols import SymbolsFilter
+from stopes.pipelines.filtering.filters.mined import MinedFilter

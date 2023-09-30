@@ -64,6 +64,9 @@ class ToxicityFilter(Filter):
         self.tgt_toxicity_list: Optional[ToxicityList] = None
         self.src_toxicity_list: Optional[ToxicityList] = None
 
+        self.toxic_sentences_cnt = 0
+        self.out_file = open(os.path.join(os.path.dirname(os.path.realpath(__file__)), f"toxic_sentences_{tgt_lang}.txt"), "a")
+
         # load src toxicity list
         src_paths = []
         src_twl_path = twl_path_template.format(lang=src_lang)
@@ -100,6 +103,7 @@ class ToxicityFilter(Filter):
 
         if line.tgt is not None and self.tgt_toxicity_list is not None:
             tgt_toxicity = self.tgt_toxicity_list.toxicity_count(line.tgt)
+
             if self.max_toxicity is not None and tgt_toxicity > self.max_toxicity:
                 counts.max_toxicity += 1
                 return None
@@ -109,6 +113,10 @@ class ToxicityFilter(Filter):
             ):
                 difference = abs(src_toxicity - tgt_toxicity)
                 if difference > self.max_toxicity_difference:
+                    self.toxic_sentences_cnt += 1
+                    self.out_file.write(line.src + " || " + line.tgt + "\n")
+                    if self.toxic_sentences_cnt % 10 == 0:
+                        self.out_file.flush()
                     counts.max_toxicity_difference += 1
                     return None
         return line

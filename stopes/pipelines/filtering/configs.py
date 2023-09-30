@@ -34,6 +34,12 @@ class LengthFilterConfig:
 
 
 @dataclass
+class SymbolsFilterConfig:
+    _target_: str = "stopes.pipelines.filtering.filters.SymbolsFilter"
+    hashtag_num: Optional[int] = 3
+
+
+@dataclass
 class LidFilterConfig:
     _target_: str = "stopes.pipelines.filtering.filters.LidFilter"
     model_path: str = "/large_experiments/seamless/nllb/mmt/lidruns/lid_models/2022-02-18_ft_model.bin"
@@ -51,7 +57,7 @@ class ToxicityFilterConfig:
     )
     eng_porn_twl_path: Optional[
         str
-    ] = "/large_experiments/seamless/nllb/mmt/data/toxicity/eng_twl_short_porn.txt"
+    ] = None  # "/large_experiments/seamless/nllb/mmt/data/toxicity/eng_twl_short_porn.txt"
     max_toxicity: Optional[int] = None
     max_toxicity_difference: Optional[int] = 2
 
@@ -65,6 +71,19 @@ class DedupFilterConfig:
 
 
 @dataclass
+class FuzzyDedupFilterConfig:
+    _target_: str = "stopes.pipelines.filtering.filters.FuzzyDedupFilter"
+    num_perms: int = 100
+    src_lines: Optional[List[str]] = None
+    tgt_lines: Optional[List[str]] = None
+
+
+@dataclass
+class MinedFilterConfig:
+    _target_: str = "stopes.pipelines.filtering.filters.MinedFilter"
+
+
+@dataclass
 class GroupFilterConfig:
     # one (and only one) of these should be set, the other should be None
     included_corpora: Optional[List[str]] = None
@@ -73,11 +92,15 @@ class GroupFilterConfig:
     normalize_punctuation: bool = True
     normalize_unicode: bool = False
 
-    laser_filter: Optional[LaserFilterConfig] = None
+    laser_filter: Optional[LaserFilterConfig] = LaserFilterConfig()
     length_filter: LengthFilterConfig = LengthFilterConfig()
-    lid_filter: Optional[LidFilterConfig] = None
-    toxicity_filter: Optional[ToxicityFilterConfig] = None
-    dedup_filter: DedupFilterConfig = DedupFilterConfig()
+    symbols_filter: SymbolsFilterConfig = SymbolsFilterConfig()
+    lid_filter: Optional[LidFilterConfig] = LidFilterConfig()
+    toxicity_filter: Optional[ToxicityFilterConfig] = ToxicityFilterConfig()
+    dedup_filter: Optional[DedupFilterConfig] = DedupFilterConfig()
+    fuzzy_dedup_filter: Optional[FuzzyDedupFilterConfig] = FuzzyDedupFilterConfig()
+
+    mined_filter: Optional[MinedFilterConfig] = MinedFilterConfig()
 
 
 @dataclass

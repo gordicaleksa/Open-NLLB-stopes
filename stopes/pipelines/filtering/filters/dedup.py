@@ -8,6 +8,7 @@
 from collections import Counter
 from typing import Dict, List, Optional, Set
 
+from datasketch import MinHash, MinHashLSH
 import xxhash
 
 from stopes.pipelines.filtering.dataset import DatasetLine
@@ -67,5 +68,57 @@ class DedupFilter(Filter):
                 counts.source_dedup += 1
                 return None
             self.source_dup_counts[line_hash] += 1
+
+        return line
+
+
+class FuzzyDedupFilter(Filter):
+    MAX_NUM_LINES = '999999999'
+
+    def __init__(
+        self,
+        src_lines,
+        tgt_lines,
+        num_perms: int = 100,
+    ):
+        assert len(src_lines) <= int(self.MAX_NUM_LINES), f'FuzzyDedupFilter: too many lines ({len(src_lines)})'
+
+        self.num_perms = num_perms
+        self.lsh = MinHashLSH(params=[10, 10], num_perm=num_perms)  # TODO: experiment with b (number of bands) & r (size of subvector) params
+        for i, (src_line, trg_line) in enumerate(zip(src_lines, tgt_lines)):
+            src_line = src_line.strip()
+            trg_line = trg_line.strip()
+            mh = MinHash(num_perm=num_perms)
+
+            for shingle in self.get_shingle_set(src_line + " " + trg_line):
+                mh.update(shingle.encode('utf8'))
+
+            self.lsh.insert(f'{str(i).zfill(len(self.MAX_NUM_LINES))}', mh)
+
+    def get_shingle_set(self, text: str, k: int = 5):
+        shingle_set = []
+        for i in range(len(text) - k+1):
+            shingle_set.append(text[i:i+k])
+        return set(shingle_set)
+
+    def filter_line(
+        self, line: DatasetLine, counts: FilteringCounts
+    ) -> Optional[DatasetLine]:
+        i = int(line.src[:len(self.MAX_NUM_LINES)])  # hacky way to pass in the line number in order not to break the function signature
+        line.src = line.src[len(self.MAX_NUM_LINES):]  # remove the line number from the beginning of the line
+        # TODO(gordicaleksa): punctuation is removed, text is lowercased, NFD Unicode normalization is applied, accents are removed, and all whitespace is normalized.
+        mh = MinHash(num_perm=self.num_perms)
+
+        for shingle in self.get_shingle_set(line.src + " " + line.tgt):
+            mh.update(shingle.encode('utf8'))
+
+        result = self.lsh.query(mh)  # [4073, 1877, 1054, 1738, 4163, 1407, 1695, 4445, 1065, 4557, 863, 1293, 999, 754, 4754]
+
+        if len(result) > 1:  # we have found fuzzy duplicates
+            if result[-1] == i:  # we keep only the final duplicate
+                return line
+            else:
+                counts.pair_fuzzy_dedup += 1
+                return None
 
         return line
