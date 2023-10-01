@@ -11,7 +11,7 @@ from typing import Dict, List, Optional, Set
 from datasketch import MinHash, MinHashLSH
 import xxhash
 
-from stopes.pipelines.filtering.dataset import DatasetLine
+from stopes.pipelines.filtering.dataset import Dataset, DatasetLine, DatasetReader
 from stopes.pipelines.filtering.filters.base import Filter, FilteringCounts
 from stopes.pipelines.monolingual.utils.text_normalizer import normalize_for_dedup
 
@@ -77,24 +77,30 @@ class FuzzyDedupFilter(Filter):
 
     def __init__(
         self,
-        src_lines,
-        tgt_lines,
+        datasets: Dict[str, Dataset],
         num_bands: int = 10,
         subvector_size: int = 10,
         num_perms: int = 100,
+        threshold: float = None,
     ):
-        assert len(src_lines) <= int(self.MAX_NUM_LINES), f'FuzzyDedupFilter: too many lines ({len(src_lines)})'
-
         self.num_perms = num_perms
-        self.lsh = MinHashLSH(params=[num_bands, subvector_size], num_perm=num_perms)
+        if threshold:
+            self.lsh = MinHashLSH(threshold=threshold, num_perm=num_perms)
+        else:
+            self.lsh = MinHashLSH(params=[num_bands, subvector_size], num_perm=num_perms)
 
-        for i, (src_line, trg_line) in enumerate(zip(src_lines, tgt_lines)):
-            mh = MinHash(num_perm=num_perms)
+        cnt = 0
+        for corpus_name, dataset in datasets.items():
+            with DatasetReader(dataset, corpus_name) as inputs:
+                for line in inputs:
+                    # TODO(gordicaleksa): computation of minhashes can be parallelized
+                    mh = MinHash(num_perm=num_perms)
 
-            for shingle in self.get_shingle_set(normalize_for_dedup(src_line) + " " + normalize_for_dedup(trg_line)):
-                mh.update(shingle.encode('utf8'))
+                    for shingle in self.get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
+                        mh.update(shingle.encode('utf8'))
 
-            self.lsh.insert(f'{str(i).zfill(len(self.MAX_NUM_LINES))}', mh)
+                    self.lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
+                    cnt += 1
 
     def get_shingle_set(self, text: str, k: int = 5):
         shingle_set = []

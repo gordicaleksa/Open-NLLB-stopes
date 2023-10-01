@@ -87,17 +87,19 @@ def filter_direction(
             config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
         ),
         hydra.utils.instantiate(config.dedup_filter),
-        hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets)
     ]
 
-    # filter datasets sequentially
     counts: Dict[str, FilteringCounts] = {}
+    fuzzy_datasets = {}
+    # 1st stage of filtering: everything except for fuzzy deduplication.
     for corpus_name, dataset in datasets.items():
         dataset_counts = FilteringCounts()  # filtering counts for the current dataset
 
-        path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}.gz"
-        path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}.gz"
-        path_counts = dataset_output_dir / f"{corpus_name}.yaml"
+        path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy"
+        path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy"
+        fuzzy_datasets[corpus_name] = Dataset(src=path_out_src_before_fuzzy, tgt=path_out_tgt_before_fuzzy, tsv=None, metadata=None, lang_dir=None, fold=None)
+
+        path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy.yaml"
 
         if os.path.isfile(path_counts):
             with open(path_counts, "rt") as fin:
@@ -105,15 +107,15 @@ def filter_direction(
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
-        print(f"Processing {corpus_name}")
+        print(f"Processing {corpus_name} before fuzzy deduplication")
         with ExitStack() as outputs, DatasetReader(dataset, corpus_name) as inputs:
-            fout_src = outputs.enter_context(gzip.open(path_out_src, "wt"))
+            fout_src = outputs.enter_context(open(path_out_src_before_fuzzy, "wt"))
             fout_tgt = None
 
             # if tgt_lang is not provided, we have a monolingual dataset;
             # otherwise, the parallel file needs to be opened
             if tgt_lang is not None:
-                fout_tgt = outputs.enter_context(gzip.open(path_out_tgt, "wt"))
+                fout_tgt = outputs.enter_context(open(path_out_tgt_before_fuzzy, "wt"))
 
             for i, line in enumerate(inputs):
                 dataset_counts.total_before += 1
@@ -133,10 +135,6 @@ def filter_direction(
                     if fltr is None:
                         continue
 
-                    # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
-                    if fltr.__class__.__name__ == "FuzzyDedupFilter":
-                        line.src = f'{str(i).zfill(9)}{line.src}'
-
                     line = fltr.filter_line(line, dataset_counts)
                     # no need to keep filtering if the line was already discarded
                     if line is None:
@@ -153,10 +151,57 @@ def filter_direction(
                 counts[corpus_name] = dataset_counts
                 with open(path_counts, "wt") as fout:
                     yaml.safe_dump(dataset_counts.__dict__, fout)
+
+    # 2nd stage: fuzzy deduplication
+    # It's stateful so we have to do it before the loop - we're doing fuzzy across all datasets for this lang direction.
+    fuzzy_filter = hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets=fuzzy_datasets)
+    for corpus_name, dataset in fuzzy_datasets.items():
+        dataset_counts = counts[corpus_name]
+
+        path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}"
+        path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}"
+
+        path_counts = dataset_output_dir / f"{corpus_name}.yaml"
+
+        if os.path.isfile(path_counts):
+            with open(path_counts, "rt") as fin:
+                counts[corpus_name] = yaml.safe_load(fin)
+            print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
+            continue
+
+        print(f"Processing {corpus_name} - fuzzy deduplication")
+        with ExitStack() as outputs, DatasetReader(dataset, corpus_name) as inputs:
+            fout_src = outputs.enter_context(gzip.open(path_out_src, "wt"))
+            fout_tgt = None
+
+            # if tgt_lang is not provided, we have a monolingual dataset;
+            # otherwise, the parallel file needs to be opened
+            if tgt_lang is not None:
+                fout_tgt = outputs.enter_context(gzip.open(path_out_tgt, "wt"))
+
+            for i, line in enumerate(inputs):
+                # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
+                line.src = f'{str(i).zfill(9)}{line.src}'
+                line = fuzzy_filter.filter_line(line, dataset_counts)
+                if line is None:
+                    continue
+
+                fout_src.write(line.src + "\n")
+                if fout_tgt is not None:
+                    fout_tgt.write(line.tgt + "\n")
+                dataset_counts.total_after_fuzzy += 1
+
+            if dataset_counts:
+                with open(path_counts, "wt") as fout:
+                    yaml.safe_dump(dataset_counts.__dict__, fout)
+
+        # TODO(gordicaleksa): maybe if fuzzy finished successfully delete the before_fuzzy files
+
     if counts:
         print(f"Total counts: {sum(counts.values()).__dict__}")
         with open(dataset_output_dir / "total.yaml", "wt") as fout:
             yaml.safe_dump(sum(counts.values()).__dict__, fout)
+
     return direction, counts
 
 

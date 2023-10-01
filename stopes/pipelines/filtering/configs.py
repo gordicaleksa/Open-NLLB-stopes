@@ -77,10 +77,11 @@ class DedupFilterConfig:
 @dataclass
 class FuzzyDedupFilterConfig:
     _target_: str = "stopes.pipelines.filtering.filters.FuzzyDedupFilter"
-    num_perms: int = 100
+    num_perms: int = 10
+    threshold: float = 0.5
     num_bands: int = 10
     subvector_size: int = 10
-    datasets: Dict[str, Dataset] = None
+    datasets: Optional[Dict[str, Dataset]] = None
 
 
 @dataclass
@@ -94,7 +95,7 @@ class GroupFilterConfig:
 
     laser_filter: Optional[LaserFilterConfig] = LaserFilterConfig()
     length_filter: LengthFilterConfig = LengthFilterConfig()
-    symbols_filter: SymbolsFilterConfig = SymbolsFilterConfig()
+    symbols_filter: Optional[SymbolsFilterConfig] = SymbolsFilterConfig()
     lid_filter: Optional[LidFilterConfig] = LidFilterConfig()
     toxicity_filter: Optional[ToxicityFilterConfig] = ToxicityFilterConfig()
     dedup_filter: Optional[DedupFilterConfig] = DedupFilterConfig()

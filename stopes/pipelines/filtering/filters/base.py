@@ -16,6 +16,7 @@ class FilteringCounts:
         self,
         total_before: int = 0,  # total examples before filtering
         total_after: int = 0,  # total examples after filtering
+        total_after_fuzzy: int = 0,  # total examples after fuzzy deduplication
         empty: int = 0,  # num of examples filtered due to being empty
         min_len: int = 0,
         max_len: int = 0,
@@ -33,6 +34,7 @@ class FilteringCounts:
     ):
         self.total_before = total_before
         self.total_after = total_after
+        self.total_after_fuzzy = total_after_fuzzy
 
         # LengthFilter
         self.empty = empty
