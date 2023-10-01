@@ -78,6 +78,7 @@ class DedupFilterConfig:
 class FuzzyDedupFilterConfig:
     _target_: str = "stopes.pipelines.filtering.filters.FuzzyDedupFilter"
     num_perms: int = 10
+    num_workers: int = 10
     threshold: float = 0.5
     num_bands: int = 10
     subvector_size: int = 10
@@ -104,6 +105,7 @@ class GroupFilterConfig:
 
 @dataclass
 class FilterConfig:
+    wandb_run_name: str
     data_conf_dir: str
     output_dir: str
     executor: ExecutorConfig

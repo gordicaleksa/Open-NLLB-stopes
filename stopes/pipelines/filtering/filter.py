@@ -10,6 +10,7 @@ import gzip
 import itertools
 import logging
 import os
+import random
 from contextlib import ExitStack
 from pathlib import Path
 from typing import Dict, Optional
@@ -18,7 +19,9 @@ import hydra
 import yaml
 from omegaconf import DictConfig, OmegaConf
 from submitit import AutoExecutor
+import wandb
 
+from stopes.core import utils
 from stopes.pipelines.filtering.configs import (
     FilterConfig,
     GroupFilterConfig,
@@ -64,8 +67,10 @@ def filter_direction(
     dataset_output_dir: Path,
     custom_step_name: str,
     output_dir: Path,
+    wandb_run_name: str,
 ):
     direction = f"{src_lang}-{tgt_lang}" if tgt_lang is not None else src_lang
+    wandb.init(project="NLLB-filtering", reinit=False, name=wandb_run_name)
     print(f"Filtering {group_name}.{direction}")
 
     # build the list of filters to be applied to this direction
@@ -88,6 +93,15 @@ def filter_direction(
         ),
         hydra.utils.instantiate(config.dedup_filter),
     ]
+
+    total_num_lines = 0
+    for corpus_name, dataset in datasets.items():
+        path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy.yaml"
+
+        if os.path.isfile(path_counts):
+            continue
+
+        total_num_lines += utils.count_lines(dataset.src)
 
     counts: Dict[str, FilteringCounts] = {}
     fuzzy_datasets = {}
@@ -117,8 +131,14 @@ def filter_direction(
             if tgt_lang is not None:
                 fout_tgt = outputs.enter_context(open(path_out_tgt_before_fuzzy, "wt"))
 
-            for i, line in enumerate(inputs):
+            for line in inputs:
                 dataset_counts.total_before += 1
+
+                if dataset_counts.total_before % 1000 == 0:
+                    wandb.log(
+                        {f"{group_name.split('_')[-1]}_before_fuzzy/{direction}": dataset_counts.total_before / total_num_lines},
+                        step=dataset_counts.total_before
+                    )
 
                 if config.normalize_unicode:
                     line.src = normalize_unicode(line.src)
@@ -155,6 +175,7 @@ def filter_direction(
     # 2nd stage: fuzzy deduplication
     # It's stateful so we have to do it before the loop - we're doing fuzzy across all datasets for this lang direction.
     fuzzy_filter = hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets=fuzzy_datasets)
+    cnt = 0
     for corpus_name, dataset in fuzzy_datasets.items():
         dataset_counts = counts[corpus_name]
 
@@ -180,6 +201,13 @@ def filter_direction(
                 fout_tgt = outputs.enter_context(gzip.open(path_out_tgt, "wt"))
 
             for i, line in enumerate(inputs):
+                if cnt % 1000 == 0:
+                    wandb.log(
+                        {f"{group_name.split('_')[-1]}_fuzzy/{direction}": cnt / dataset_counts.total_after},
+                        step=cnt
+                    )
+                cnt += 1
+
                 # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
                 line.src = f'{str(i).zfill(9)}{line.src}'
                 line = fuzzy_filter.filter_line(line, dataset_counts)
@@ -279,6 +307,7 @@ def filter_group(group_name: str, config: DictConfig):
                 dataset_output_dir=dataset_output_dir,
                 custom_step_name=f"{group_name}.{direction}",
                 output_dir=Path(config.output_dir),
+                wandb_run_name=config.wandb_run_name
             )
             jobs.append(job)
     logger.info(f"All jobs for {group_name} have been scheduled")
@@ -288,6 +317,7 @@ def filter_group(group_name: str, config: DictConfig):
 
 @hydra.main(config_path="conf", config_name="example")
 def main(config: DictConfig) -> None:
+    config.wandb_run_name = f"filtering_{random.randint(0, 1000000)}"
     config.data_conf_dir = (Path(__file__).parent / "filter_configs").resolve()  # Default config path we use everywhere.
     directions_path = config.directions[0]
     with open(directions_path, "rt") as fin:
