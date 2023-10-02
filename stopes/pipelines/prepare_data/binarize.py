@@ -81,7 +81,7 @@ async def binarize(
         batch_size = 16  # TODO: adjust this based on the number of cores on your CPU, leaving it hardcoded for now.
         src_eval_binarized_list = []
         tgt_eval_binarized_list = []
-        for i in range(0, len(src_train_shards), batch_size):
+        for i in range(0, len(src_eval_shards), batch_size):
             src_train_binarizer = binarizer_fn(src_train_shards[i : i + batch_size], src_vocab)
             tgt_train_binarizer = binarizer_fn(tgt_train_shards[i : i + batch_size], tgt_vocab)
             src_eval_binarizer = binarizer_fn(src_eval_shards[i : i + batch_size], src_vocab)

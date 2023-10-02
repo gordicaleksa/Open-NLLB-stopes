@@ -7,6 +7,11 @@
 
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
+import glob
+import os
+from pathlib import Path
+import pickle
+import re
 import time
 from typing import Dict, List, Optional, Set
 
@@ -95,6 +100,17 @@ def convert_offsets_to_line_numbers(offsets, filename):
         return line_numbers_offsets
 
 
+def yield_minhashes(minhashes_directory):
+    query = os.path.join(minhashes_directory, "*minhashes_*.pkl")
+    minhash_files = list(glob.glob(query))
+    minhash_files.sort(key=lambda x: int(re.search(r'minhashes_(\d+)\.pkl', x).group(1)))
+
+    for file in minhash_files:
+        data = pickle.load(open(file, "rb"))
+        for offset, minhash in data:
+            yield (offset, minhash)
+
+
 class FuzzyDedupFilter(Filter):
     MAX_NUM_LINES = '999999999'  # arbitrary setting, but should be enough for most datasets
 
@@ -106,6 +122,7 @@ class FuzzyDedupFilter(Filter):
         num_perms: int = 100,
         threshold: float = None,
         num_workers: int = 10,
+        output_dir: str = None,
     ):
         self.num_perms = num_perms
         if threshold:
@@ -113,14 +130,21 @@ class FuzzyDedupFilter(Filter):
         else:
             self.lsh = MinHashLSH(params=[num_bands, subvector_size], num_perm=num_perms)
 
-        self.build_lsh_parallel(self.lsh, datasets, num_perms, num_workers)
+        self.build_lsh_parallel(self.lsh, output_dir, datasets, num_perms, num_workers)
 
-    def build_lsh_parallel(self, lsh, datasets, num_perms, num_workers):
+    def build_lsh_parallel(self, lsh, output_dir, datasets, num_perms, num_workers):
+        os.makedirs(output_dir, exist_ok=True)
         global_offset = 0
-        minhashes = []
-        for _, dataset in datasets.items():
+        for i, (_, dataset) in enumerate(datasets.items()):
             num_lines = utils.count_lines(dataset.src)
-            src_offsets = find_offsets(dataset.src, num_workers)
+            if num_lines == 0:
+                print(f'Skipping {i+1}-th dataset: {dataset.src} because it has 0 lines.')
+                continue
+            print(f'Computing minhashes for {i+1}-th dataset: {dataset.src}.')
+            # Modify the number of workers dynamically based on the number of lines in the dataset using the passed value as the upper bound.
+            num_workers_dynamic = min(((num_lines - 1) // 5000) + 1, num_workers)
+
+            src_offsets = find_offsets(dataset.src, num_workers_dynamic)
             src_file_chunks = list(zip(src_offsets, src_offsets[1:]))
             src_chunks_line_numbers = convert_offsets_to_line_numbers(src_offsets, dataset.src)
             tgt_offsets = find_offsets_given_line_numbers(dataset.tgt, src_chunks_line_numbers)
@@ -128,23 +152,23 @@ class FuzzyDedupFilter(Filter):
             tgt_chunks_line_numbers = convert_offsets_to_line_numbers(tgt_offsets, dataset.tgt)
             assert tgt_chunks_line_numbers == src_chunks_line_numbers, f"src and tgt have different number of lines for {dataset.src} and {dataset.tgt}"
             tgt_file_chunks = list(zip(tgt_offsets, tgt_offsets[1:]))
+            src_chunks_line_numbers = list(zip(src_chunks_line_numbers, src_chunks_line_numbers[1:]))
 
-            with ProcessPoolExecutor(max_workers=num_workers) as executor:
+            with ProcessPoolExecutor(max_workers=num_workers_dynamic) as executor:
                 futures = [
                     executor.submit(
-                        self.compute_minhash_worker, dataset.src, dataset.tgt, src_offset, tgt_offset, global_offset, file_offset, num_perms)
-                    for (src_offset, tgt_offset, file_offset) in zip(src_file_chunks, tgt_file_chunks, src_chunks_line_numbers)
+                        self.compute_minhash_worker, output_dir, dataset.src, dataset.tgt, src_offset, tgt_offset, global_offset, line_numbers_covered_range, num_perms)
+                    for (src_offset, tgt_offset, line_numbers_covered_range) in zip(src_file_chunks, tgt_file_chunks, src_chunks_line_numbers)
                 ]
                 # with tqdm(total=num_chunks) as pbar:
                 #     for _ in concurrent.futures.as_completed(futures):
                 #         pbar.update(1)
                 for future in futures:
-                    minhashes_partial = future.result()
-                    minhashes.extend(minhashes_partial)
+                    future.result()
 
             global_offset += num_lines
 
-        for cnt, mh in minhashes:
+        for cnt, mh in yield_minhashes(output_dir):
             lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
 
     def build_lsh_sequential(self, lsh, datasets, num_perms):
@@ -160,8 +184,13 @@ class FuzzyDedupFilter(Filter):
                     lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
                     cnt += 1
 
-    def compute_minhash_worker(self, src_path, tgt_path, src_offset, tgt_offset, global_offset, document_offset, num_perms):
+    def compute_minhash_worker(self, output_dir, src_path, tgt_path, src_offset, tgt_offset, global_offset, line_numbers_covered_range, num_perms):
         mhs = []
+
+        # Caching.
+        if os.path.exists(os.path.join(output_dir, f"minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")):
+            return
+
         with BitextChunker(src_path, tgt_path, src_offset, tgt_offset) as line_iterator:
             for i, line in enumerate(line_iterator):
                 mh = MinHash(num_perm=num_perms)
@@ -169,8 +198,14 @@ class FuzzyDedupFilter(Filter):
                 for shingle in self.get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
                     mh.update(shingle.encode('utf8'))
 
-                mhs.append((global_offset + document_offset + i, mh))
-        return mhs
+                mhs.append((global_offset + line_numbers_covered_range[0] + i, mh))
+
+        if len(mhs) == line_numbers_covered_range[1] - line_numbers_covered_range[0]:
+            minhashes_file = os.path.join(output_dir, f"minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")
+            pickle.dump(mhs, open(minhashes_file, "wb"))
+        else:
+            minhashes_file = os.path.join(output_dir, f"error_minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")
+            pickle.dump(mhs, open(minhashes_file, "wb"))
 
     def get_shingle_set(self, text: str, k: int = 5):
         shingle_set = []

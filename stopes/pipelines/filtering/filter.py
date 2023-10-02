@@ -55,6 +55,11 @@ def normalize_line(line):
     return balance_quotation_marks(line_tmp)
 
 
+def get_step(counts, dataset_counts):
+    steps = sum([el.total_before for el in counts.values()])
+    return steps + dataset_counts.total_before
+
+
 # TODO have this use the MultiprocLineProcessor module
 @cache_step_sync("filter_direction")
 def filter_direction(
@@ -134,10 +139,10 @@ def filter_direction(
             for line in inputs:
                 dataset_counts.total_before += 1
 
-                if dataset_counts.total_before % 1000 == 0:
+                if get_step(counts, dataset_counts) % 1000 == 0:
                     wandb.log(
-                        {f"{group_name.split('_')[-1]}_before_fuzzy/{direction}": dataset_counts.total_before / total_num_lines},
-                        step=dataset_counts.total_before
+                        {f"{group_name.split('_')[-1]}_before_fuzzy/{direction}": get_step(counts, dataset_counts) / total_num_lines},
+                        step=get_step(counts, dataset_counts)
                     )
 
                 if config.normalize_unicode:
@@ -174,13 +179,13 @@ def filter_direction(
 
     # 2nd stage: fuzzy deduplication
     # It's stateful so we have to do it before the loop - we're doing fuzzy across all datasets for this lang direction.
-    fuzzy_filter = hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets=fuzzy_datasets)
+    fuzzy_filter = hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets=fuzzy_datasets, output_dir=Path(output_dir) / f"minhashes_{direction}")
     cnt = 0
     for corpus_name, dataset in fuzzy_datasets.items():
-        dataset_counts = counts[corpus_name]
+        dataset_counts = FilteringCounts(**counts[corpus_name])
 
-        path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}"
-        path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}"
+        path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}.gz"
+        path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}.gz"
 
         path_counts = dataset_output_dir / f"{corpus_name}.yaml"
 
@@ -206,11 +211,12 @@ def filter_direction(
                         {f"{group_name.split('_')[-1]}_fuzzy/{direction}": cnt / dataset_counts.total_after},
                         step=cnt
                     )
-                cnt += 1
 
                 # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
-                line.src = f'{str(i).zfill(9)}{line.src}'
+                line.src = f'{str(cnt).zfill(9)}{line.src}'
                 line = fuzzy_filter.filter_line(line, dataset_counts)
+                cnt += 1  # this needs to be precisely here, don't move it unless you know why you are doing that.
+
                 if line is None:
                     continue
 
