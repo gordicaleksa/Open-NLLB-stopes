@@ -2,6 +2,7 @@ import os
 import typing as tp
 
 from stopes.pipelines.filtering.dataset import DatasetLine
+from stopes.core import utils
 
 
 def _safe_readline(fd) -> str:
@@ -43,6 +44,21 @@ def find_offsets_given_line_numbers(filename: str, line_numbers: tp.List[int]) -
         assert f.tell() == os.fstat(f.fileno()).st_size
         offsets.append(os.fstat(f.fileno()).st_size)
         return offsets
+
+
+def build_line_number_to_byte_offset_map(filename: str) -> tp.Dict[int, int]:
+    line_number_to_byte_offset = {}
+    line_num = 0
+    with open(filename, "r", encoding="utf-8") as f:
+        file_size = os.fstat(f.fileno()).st_size
+        while f.tell() < file_size:
+            line_number_to_byte_offset[line_num] = f.tell()
+            _safe_readline(f)
+            line_num += 1
+
+        assert utils.count_lines(filename) == line_num
+        assert f.tell() == os.fstat(f.fileno()).st_size
+        return line_number_to_byte_offset
 
 
 class BitextChunkLineIterator:

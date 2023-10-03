@@ -23,7 +23,7 @@ from stopes.pipelines.filtering.dataset import Dataset, DatasetLine, DatasetRead
 from stopes.pipelines.filtering.filters.base import Filter, FilteringCounts
 from stopes.pipelines.monolingual.utils.text_normalizer import normalize_for_dedup
 
-from stopes.pipelines.filtering.filters.file_chunker_utils_bitext import BitextChunker, find_offsets, find_offsets_given_line_numbers
+from stopes.pipelines.filtering.filters.file_chunker_utils_bitext import BitextChunker, find_offsets, find_offsets_given_line_numbers, build_line_number_to_byte_offset_map
 
 class DedupFilter(Filter):
     def __init__(
@@ -111,6 +111,37 @@ def yield_minhashes(minhashes_directory):
             yield (offset, minhash)
 
 
+def get_shingle_set(text: str, k: int = 5):
+    shingle_set = []
+    for i in range(len(text) - k+1):
+        shingle_set.append(text[i:i+k])
+    return set(shingle_set)
+
+
+def compute_minhash_worker(output_dir, src_path, tgt_path, src_offset, tgt_offset, global_offset, line_numbers_covered_range, num_perms):
+    mhs = []
+
+    # Caching.
+    if os.path.exists(os.path.join(output_dir, f"minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")):
+        return
+
+    with BitextChunker(src_path, tgt_path, src_offset, tgt_offset) as line_iterator:
+        for i, line in enumerate(line_iterator):
+            mh = MinHash(num_perm=num_perms)
+
+            for shingle in get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
+                mh.update(shingle.encode('utf8'))
+
+            mhs.append((global_offset + line_numbers_covered_range[0] + i, mh))
+
+    if len(mhs) == line_numbers_covered_range[1] - line_numbers_covered_range[0]:
+        minhashes_file = os.path.join(output_dir, f"minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")
+        pickle.dump(mhs, open(minhashes_file, "wb"))
+    else:
+        minhashes_file = os.path.join(output_dir, f"error_minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")
+        pickle.dump(mhs, open(minhashes_file, "wb"))
+
+
 class FuzzyDedupFilter(Filter):
     MAX_NUM_LINES = '999999999'  # arbitrary setting, but should be enough for most datasets
 
@@ -123,7 +154,14 @@ class FuzzyDedupFilter(Filter):
         threshold: float = None,
         num_workers: int = 10,
         output_dir: str = None,
+        debug: bool = True,
     ):
+        self.debug = debug
+        if self.debug:
+            current_path = os.path.dirname(os.path.realpath(__file__))
+            self.debug_file = open(os.path.join(current_path, "debug_fuzzy_dedup_filter.txt"), "a")
+            self.dataset_root_path = os.path.dirname(next(iter(datasets.items()))[1].src)
+
         self.num_perms = num_perms
         if threshold:
             self.lsh = MinHashLSH(threshold=threshold, num_perm=num_perms)
@@ -135,11 +173,23 @@ class FuzzyDedupFilter(Filter):
     def build_lsh_parallel(self, lsh, output_dir, datasets, num_perms, num_workers):
         os.makedirs(output_dir, exist_ok=True)
         global_offset = 0
+
+        if self.debug:
+            self.index_to_dataset = {}
+            self.dataset_to_line_num_byte_map_src = {}
+            self.dataset_to_line_num_byte_map_tgt = {}
+
         for i, (_, dataset) in enumerate(datasets.items()):
             num_lines = utils.count_lines(dataset.src)
             if num_lines == 0:
                 print(f'Skipping {i+1}-th dataset: {dataset.src} because it has 0 lines.')
                 continue
+
+            if self.debug:
+                self.index_to_dataset[global_offset] = dataset
+                self.dataset_to_line_num_byte_map_src[os.path.split(dataset.src)[-1]] = build_line_number_to_byte_offset_map(dataset.src)
+                self.dataset_to_line_num_byte_map_tgt[os.path.split(dataset.tgt)[-1]] = build_line_number_to_byte_offset_map(dataset.tgt)
+
             print(f'Computing minhashes for {i+1}-th dataset: {dataset.src}.')
             # Modify the number of workers dynamically based on the number of lines in the dataset using the passed value as the upper bound.
             num_workers_dynamic = min(((num_lines - 1) // 5000) + 1, num_workers)
@@ -157,7 +207,7 @@ class FuzzyDedupFilter(Filter):
             with ProcessPoolExecutor(max_workers=num_workers_dynamic) as executor:
                 futures = [
                     executor.submit(
-                        self.compute_minhash_worker, output_dir, dataset.src, dataset.tgt, src_offset, tgt_offset, global_offset, line_numbers_covered_range, num_perms)
+                        compute_minhash_worker, output_dir, dataset.src, dataset.tgt, src_offset, tgt_offset, global_offset, line_numbers_covered_range, num_perms)
                     for (src_offset, tgt_offset, line_numbers_covered_range) in zip(src_file_chunks, tgt_file_chunks, src_chunks_line_numbers)
                 ]
                 # with tqdm(total=num_chunks) as pbar:
@@ -178,40 +228,38 @@ class FuzzyDedupFilter(Filter):
                 for line in inputs:
                     mh = MinHash(num_perm=num_perms)
 
-                    for shingle in self.get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
+                    for shingle in get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
                         mh.update(shingle.encode('utf8'))
 
                     lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
                     cnt += 1
 
-    def compute_minhash_worker(self, output_dir, src_path, tgt_path, src_offset, tgt_offset, global_offset, line_numbers_covered_range, num_perms):
-        mhs = []
-
-        # Caching.
-        if os.path.exists(os.path.join(output_dir, f"minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")):
-            return
-
-        with BitextChunker(src_path, tgt_path, src_offset, tgt_offset) as line_iterator:
-            for i, line in enumerate(line_iterator):
-                mh = MinHash(num_perm=num_perms)
-
-                for shingle in self.get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
-                    mh.update(shingle.encode('utf8'))
-
-                mhs.append((global_offset + line_numbers_covered_range[0] + i, mh))
-
-        if len(mhs) == line_numbers_covered_range[1] - line_numbers_covered_range[0]:
-            minhashes_file = os.path.join(output_dir, f"minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")
-            pickle.dump(mhs, open(minhashes_file, "wb"))
-        else:
-            minhashes_file = os.path.join(output_dir, f"error_minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")
-            pickle.dump(mhs, open(minhashes_file, "wb"))
-
-    def get_shingle_set(self, text: str, k: int = 5):
-        shingle_set = []
-        for i in range(len(text) - k+1):
-            shingle_set.append(text[i:i+k])
-        return set(shingle_set)
+    def fuzzy_debug_subroutine(self, normalized_line, result, i):
+        self.debug_file.write(f"QUERY-{normalized_line}" + "\n")
+        for ii in result:
+            if int(ii) != i:
+                candidate_line = None
+                for key in sorted(self.index_to_dataset.keys(), reverse=True):
+                    if int(ii) < key:
+                        pass
+                    else:
+                        dataset = self.index_to_dataset[key]
+                        line_num_byte_map_src = self.dataset_to_line_num_byte_map_src[os.path.split(dataset.src)[-1]]
+                        line_num_byte_map_tgt = self.dataset_to_line_num_byte_map_tgt[os.path.split(dataset.tgt)[-1]]
+                        line_offset_index = int(ii) - key
+                        src_byte_offset = line_num_byte_map_src[line_offset_index]
+                        tgt_byte_offset = line_num_byte_map_tgt[line_offset_index]
+                        with open(dataset.src, 'r') as f, open(dataset.tgt, 'r') as f_tgt:
+                            f.seek(src_byte_offset)
+                            f_tgt.seek(tgt_byte_offset)
+                            candidate_line = normalize_for_dedup(f.readline())
+                            candidate_line += " "
+                            candidate_line += normalize_for_dedup(f_tgt.readline())
+                        break
+                assert candidate_line is not None
+                self.debug_file.write(f"CANDIDATE-{ii}-{candidate_line}" + "\n")
+        self.debug_file.write("\n\n")
+        self.debug_file.flush()
 
     def filter_line(
         self, line: DatasetLine, counts: FilteringCounts
@@ -223,13 +271,17 @@ class FuzzyDedupFilter(Filter):
 
         mh = MinHash(num_perm=self.num_perms)
 
-        for shingle in self.get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
+        normalized_line = normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)
+        for shingle in get_shingle_set(normalized_line):
             mh.update(shingle.encode('utf8'))
 
         result = self.lsh.query(mh)
 
         for index in result:
             if int(index) != i:
+                if self.debug:
+                    self.fuzzy_debug_subroutine(normalized_line, result, i)
+
                 self.lsh.remove(f'{str(i).zfill(len(self.MAX_NUM_LINES))}')  # Remove the current line from the LSH index
                 counts.pair_fuzzy_dedup += 1
                 return None

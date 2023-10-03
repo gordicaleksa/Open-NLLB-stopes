@@ -122,7 +122,7 @@ def filter_direction(
 
         if os.path.isfile(path_counts):
             with open(path_counts, "rt") as fin:
-                counts[corpus_name] = yaml.safe_load(fin)
+                counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
@@ -179,10 +179,10 @@ def filter_direction(
 
     # 2nd stage: fuzzy deduplication
     # It's stateful so we have to do it before the loop - we're doing fuzzy across all datasets for this lang direction.
-    fuzzy_filter = hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets=fuzzy_datasets, output_dir=Path(output_dir) / f"minhashes_{direction}")
+    fuzzy_filter = hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets=fuzzy_datasets, output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}")
     cnt = 0
     for corpus_name, dataset in fuzzy_datasets.items():
-        dataset_counts = FilteringCounts(**counts[corpus_name])
+        dataset_counts = counts[corpus_name]
 
         path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}.gz"
         path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}.gz"
@@ -191,7 +191,7 @@ def filter_direction(
 
         if os.path.isfile(path_counts):
             with open(path_counts, "rt") as fin:
-                counts[corpus_name] = yaml.safe_load(fin)
+                counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
