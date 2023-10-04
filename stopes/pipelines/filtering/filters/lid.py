@@ -128,7 +128,7 @@ class HBSLidFilter(Filter):
             lid_probs = {lang[9:]: prob for lang, prob in zip(lid_l, lid_p)}
             line.tgt_lid_prob = lid_probs.get("hbs", 0.0)
 
-        if self.src_threshold and self.src_lang not in self.excluded_languages:
+        if self.src_threshold >= 0 and self.src_lang not in self.excluded_languages:
             if line.src_lid_prob <= self.src_threshold:
                 if self.debug:
                     prefix = f"SRC.{line.src_lid_prob:.2f}" if line.tgt_lid_prob >= self.tgt_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
@@ -138,7 +138,7 @@ class HBSLidFilter(Filter):
                 return None
         if (
             self.tgt_lang is not None
-            and self.tgt_threshold
+            and self.tgt_threshold >= 0
             and self.tgt_lang not in self.excluded_languages
         ):
             if line.tgt_lid_prob <= self.tgt_threshold:
