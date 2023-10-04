@@ -7,14 +7,15 @@
 
 import os
 from pathlib import Path
+import re
+import string
 from typing import Dict, List, Optional, Tuple
 
 import fasttext
 
 from stopes.pipelines.filtering.dataset import DatasetLine
 from stopes.pipelines.filtering.filters.base import Filter, FilteringCounts
-from stopes.pipelines.monolingual.utils.text_normalizer import replace_unicode_punct
-
+from stopes.pipelines.monolingual.utils.text_normalizer import replace_unicode_punct, normalize_whitespace, remove_non_printing_char, DIGIT_RE
 
 class LidFilter(Filter):
     def __init__(
@@ -77,6 +78,7 @@ class HBSLidFilter(Filter):
         excluded_languages: Optional[List[str]],
         src_lang: str,
         tgt_lang: Optional[str],
+        min_length: int = 40,
         debug: bool = False,
     ):
         self.src_threshold = thresholds.get(src_lang, default_threshold)
@@ -86,16 +88,24 @@ class HBSLidFilter(Filter):
         self.lid = fasttext.load_model(model_path)
         self.src_lang = src_lang
         self.tgt_lang = tgt_lang
+        self.min_length = min_length
         self.debug = debug
 
         if self.debug:
             current_path = os.path.dirname(os.path.realpath(__file__))
-            self.debug_file = open(os.path.join(current_path, "debug_symbols_filter.txt"), "a")
+            self.debug_file = open(os.path.join(current_path, f"debug_lid_filter_{src_lang}-{tgt_lang}.txt"), "a")
 
-    def normalize(self, line):
-        line = line.strip()
+    def normalize(self, line: str) -> str:
+        line = normalize_whitespace(line)
         line = line.lower()
+        line = DIGIT_RE.sub("", line)  # remove digits
+        line = remove_non_printing_char(line)
         line = replace_unicode_punct(line)
+        line = line.translate(str.maketrans('', '', string.punctuation))  # Remove all punctuation.
+        # line = strip_accents(line)
+        line = re.sub(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', '', line)  # remove ip addresses
+        line = re.sub(r'http\S+', '', line)  # remove urls
+        line = normalize_whitespace(line)
         return line
 
     def filter_line(
@@ -105,27 +115,24 @@ class HBSLidFilter(Filter):
         if self.excluded_corpora and line.corpus in self.excluded_corpora:
             return line
 
+        # we only consider lines with at least min_length characters
+        if len(line.src) < self.min_length or len(line.tgt) < self.min_length:
+            return line
+
         # store LID probs in DatasetLine
         lid_l, lid_p = self.lid.predict(self.normalize(line.src), k=-1)
         lid_probs = {lang[9:]: prob for lang, prob in zip(lid_l, lid_p)}
-        line.src_lid_prob = lid_probs.get(self.src_lang, 0.0)
-        # src_turkish_prob = lid_probs.get("tur_Latn", 0.0)
-        # src_german_prob = lid_probs.get("deu_Latn", 0.0)
+        line.src_lid_prob = lid_probs.get("non_hbs", 0.0)
         if self.tgt_lang is not None:
             lid_l, lid_p = self.lid.predict(self.normalize(line.tgt), k=-1)
             lid_probs = {lang[9:]: prob for lang, prob in zip(lid_l, lid_p)}
-            line.tgt_lid_prob = lid_probs.get(self.tgt_lang, 0.0)
-
-        # if src_german_prob > 0.5 or tgt_german_prob > 0.5:
-        #     counts.lid_threshold += 1
-        #     self.out_file.write(f"{line.src}\t{line.tgt}\n")
-        #     self.out_file.flush()
-        #     return None
+            line.tgt_lid_prob = lid_probs.get("hbs", 0.0)
 
         if self.src_threshold and self.src_lang not in self.excluded_languages:
-            if line.src_lid_prob < self.src_threshold:
+            if line.src_lid_prob <= self.src_threshold:
                 if self.debug:
-                    self.debug_file.write(f"SRC-{line.src}" + " || " + f"{line.tgt}" + "\n")
+                    prefix = f"SRC.{line.src_lid_prob:.2f}" if line.tgt_lid_prob >= self.tgt_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
+                    self.debug_file.write(f"{prefix}-{line.src}" + " || " + f"{line.tgt}" + "\n")
                     self.debug_file.flush()
                 counts.lid_threshold += 1
                 return None
@@ -134,9 +141,10 @@ class HBSLidFilter(Filter):
             and self.tgt_threshold
             and self.tgt_lang not in self.excluded_languages
         ):
-            if line.tgt_lid_prob < self.tgt_threshold:
+            if line.tgt_lid_prob <= self.tgt_threshold:
                 if self.debug:
-                    self.debug_file.write(f"TGT-{line.src}" + " || " + f"{line.tgt}" + "\n")
+                    prefix = f"TGT.{line.tgt_lid_prob:.2f}" if line.src_lid_prob >= self.src_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
+                    self.debug_file.write(f"{prefix}-{line.src}" + " || " + f"{line.tgt}" + "\n")
                     self.debug_file.flush()
                 counts.lid_threshold += 1
                 return None

@@ -51,6 +51,7 @@ class LidFilterConfig:
     excluded_languages: Optional[List[str]] = None
     default_threshold: float = 0.0
     thresholds: Dict[str, float] = field(default_factory=dict)
+    debug: bool = False
 
 
 @dataclass

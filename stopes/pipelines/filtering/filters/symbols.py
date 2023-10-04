@@ -50,7 +50,7 @@ class SymbolsFilter(Filter):
         digit2char_ratio: float = 0.5,
         words_with_alpha_ratio: float = 0.5,
         keep_dates_and_numbers: bool = True,
-        debug: bool = True,
+        debug: bool = False,
     ):
         self.hashtag_num = hashtag_num
         self.digit2char_ratio = digit2char_ratio

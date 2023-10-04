@@ -154,7 +154,7 @@ class FuzzyDedupFilter(Filter):
         threshold: float = None,
         num_workers: int = 10,
         output_dir: str = None,
-        debug: bool = True,
+        debug: bool = False,
     ):
         self.debug = debug
         if self.debug:
