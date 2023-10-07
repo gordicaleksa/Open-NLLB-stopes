@@ -185,11 +185,12 @@ def normalize_whitespace(s):
 
 
 def normalize_for_dedup(line: str) -> str:
-    line = normalize_whitespace(line)
-    if not line:
-        return line
+    # we do this already in the main loop
+    # line = normalize_whitespace(line)
+    # if not line:
+    #     return line
     line = line.lower()
     line = DIGIT_RE.sub("0", line)
-    line = PUNCT_OR_NON_PRINTING_CHARS_RE.sub("", line)
+    line = UNICODE_PUNCT_RE.sub("", line)
     line = strip_accents(line)
     return line

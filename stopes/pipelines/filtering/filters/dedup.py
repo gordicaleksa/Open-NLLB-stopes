@@ -8,12 +8,14 @@
 from collections import Counter
 from concurrent.futures import ProcessPoolExecutor
 import glob
+import multiprocessing as mp
 import os
 from pathlib import Path
 import pickle
 import re
 import time
 from typing import Dict, List, Optional, Set
+from threading import Lock
 
 from datasketch import MinHash, MinHashLSH
 import xxhash
@@ -23,7 +25,7 @@ from stopes.pipelines.filtering.dataset import Dataset, DatasetLine, DatasetRead
 from stopes.pipelines.filtering.filters.base import Filter, FilteringCounts
 from stopes.pipelines.monolingual.utils.text_normalizer import normalize_for_dedup
 
-from stopes.pipelines.filtering.filters.file_chunker_utils_bitext import BitextChunker, find_offsets, find_offsets_given_line_numbers, build_line_number_to_byte_offset_map
+from stopes.pipelines.filtering.filters.file_chunker_utils_bitext import BitextChunker, find_offsets, find_offsets_given_line_numbers, build_line_number_to_byte_offset_map, convert_offsets_to_line_numbers
 
 class DedupFilter(Filter):
     def __init__(
@@ -31,10 +33,19 @@ class DedupFilter(Filter):
         dedup_pairs: bool,
         max_source_dedup: Optional[int],
         max_target_dedup: Optional[int],
+        shared_memory: bool = False,
+        mp_dict: any = None,
+        lock: Lock = None,
     ):
+        self.shared_memory = shared_memory
+        if shared_memory:
+            assert mp_dict is not None, "shared_memory requires mp_dict"
+            assert lock is not None, "shared_memory requires lock"
+            self.lock = lock
+
         # pair deduplication
         self.dedup_pairs = dedup_pairs
-        self.seen_pair_hashes: Set[int] = set()
+        self.seen_pair_hashes = mp_dict if shared_memory else set()
 
         # source-side deduplication
         self.source_dedup = max_source_dedup
@@ -59,10 +70,18 @@ class DedupFilter(Filter):
             if line.tgt is not None:
                 normalized += f"\t{normalized_tgt}"
             line_hash = xxhash.xxh3_64_intdigest(normalized)
-            if line_hash in self.seen_pair_hashes:
-                counts.pair_dedup += 1
-                return None
-            self.seen_pair_hashes.add(line_hash)
+
+            if self.shared_memory:
+                with self.lock:
+                    if line_hash in self.seen_pair_hashes:
+                        counts.pair_dedup += 1
+                        return None
+                    self.seen_pair_hashes[line_hash] = 1
+            else:
+                if line_hash in self.seen_pair_hashes:
+                    counts.pair_dedup += 1
+                    return None
+                self.seen_pair_hashes.add(line_hash)
 
         if self.target_dedup and line.tgt is not None:
             line_hash = xxhash.xxh3_64_intdigest(normalized_tgt)
@@ -79,25 +98,6 @@ class DedupFilter(Filter):
             self.source_dup_counts[line_hash] += 1
 
         return line
-
-
-def convert_offsets_to_line_numbers(offsets, filename):
-    with open(filename, 'r') as f:
-        line_numbers_offsets = []
-        cnt = 0
-        for offset in offsets:
-            # count the number of lines up to the offset
-            while f.tell() < offset:
-                f.readline()
-                cnt += 1
-            assert f.tell() == offset
-            line_numbers_offsets.append(cnt)
-
-        assert len(line_numbers_offsets) == len(offsets)
-        assert line_numbers_offsets[0] == 0
-        assert line_numbers_offsets[-1] == utils.count_lines(filename)
-
-        return line_numbers_offsets
 
 
 def yield_minhashes(minhashes_directory):
@@ -218,8 +218,14 @@ class FuzzyDedupFilter(Filter):
 
             global_offset += num_lines
 
+        cnts = []
+
         for cnt, mh in yield_minhashes(output_dir):
+            cnts.append(cnt)
             lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
+
+        test = list(range(len(cnts)))
+        assert test == cnts, f'minhash corrupt'
 
     def build_lsh_sequential(self, lsh, datasets, num_perms):
         cnt = 0

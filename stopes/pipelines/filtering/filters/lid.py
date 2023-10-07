@@ -96,11 +96,13 @@ class HBSLidFilter(Filter):
             self.debug_file = open(os.path.join(current_path, f"debug_lid_filter_{src_lang}-{tgt_lang}.txt"), "a")
 
     def normalize(self, line: str) -> str:
-        line = normalize_whitespace(line)
+        # We already do this start of 1st stage
+        # line = normalize_whitespace(line)
         line = line.lower()
         line = DIGIT_RE.sub("", line)  # remove digits
-        line = remove_non_printing_char(line)
-        line = replace_unicode_punct(line)
+        # We already do this start of 1st stage
+        # line = remove_non_printing_char(line)
+        # line = replace_unicode_punct(line)
         line = line.translate(str.maketrans('', '', string.punctuation))  # Remove all punctuation.
         # line = strip_accents(line)
         line = re.sub(r'\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}', '', line)  # remove ip addresses

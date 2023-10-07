@@ -31,7 +31,9 @@ class ToxicityList:
 
     def _tokenize(self, s: str):
         "A very simple way of tokenizing for toxicity detection"
-        s = replace_unicode_punct(s.strip())
+        # We already do this in the beginning of 1st stage.
+        # s = replace_unicode_punct(s.strip())
+
         # split on punctuation, symbols and Han characters
         tok = self._split.sub(r" \1 ", s)
         # collapse multiple spaces
@@ -43,7 +45,7 @@ class ToxicityList:
         return " " + tok + " "
 
     def toxicity_count(self, s: str):
-        tokenized = self._tokenize(replace_unicode_punct(s))
+        tokenized = self._tokenize(s)
         regular = sum(1 for t in self.toxicity if t in tokenized)
         lowercased = sum(1 for t in self.toxicity if t in tokenized.lower())
         return max(regular, lowercased)

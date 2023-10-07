@@ -52,11 +52,6 @@ class LengthFilter(Filter):
             counts.empty += 1
             return None
 
-        if line.tgt is not None:
-            if not line.tgt:
-                counts.empty += 1
-                return None
-
         if (
             self.min_len
             or self.max_len

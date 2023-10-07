@@ -5,6 +5,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+import time
 import copy
 import gzip
 import itertools
@@ -13,6 +14,7 @@ import os
 import random
 from contextlib import ExitStack
 from pathlib import Path
+import pickle
 from typing import Dict, Optional
 
 import hydra
@@ -21,6 +23,7 @@ from omegaconf import DictConfig, OmegaConf
 from submitit import AutoExecutor
 import wandb
 
+from stopes.pipelines.filtering.first_stage_filtering import FirstStage
 from stopes.core import utils
 from stopes.pipelines.filtering.configs import (
     FilterConfig,
@@ -30,7 +33,8 @@ from stopes.pipelines.filtering.configs import (
 from stopes.pipelines.filtering.dataset import Dataset, DatasetLine, DatasetReader
 from stopes.pipelines.filtering.filters import FilteringCounts
 from stopes.pipelines.filtering.utils import cache_step_sync, normalize_unicode
-from stopes.pipelines.monolingual.utils.text_normalizer import replace_unicode_punct, remove_non_printing_char
+from stopes.pipelines.filtering.filters.file_chunker_utils_bitext import BitextChunker, find_offsets, find_offsets_given_line_numbers, build_line_number_to_byte_offset_map, convert_offsets_to_line_numbers
+from stopes.pipelines.monolingual.utils.text_normalizer import replace_unicode_punct, remove_non_printing_char, normalize_whitespace
 
 logger = logging.getLogger(__name__)
 
@@ -38,26 +42,106 @@ logger = logging.getLogger(__name__)
 register_configs()
 
 
-def balance_quotation_marks(line):
-    if line.startswith('"') and not line.endswith('"'):
-        line = line[1:]
-
-    if not line.startswith('"') and line.endswith('"'):
-        line = line[:-1]
-
-    return line
+def get_step(steps_so_far, dataset_counts):
+    return steps_so_far + dataset_counts.total_before
 
 
-def normalize_line(line):
-    line = line.strip()
-    line = replace_unicode_punct(line)
-    line_tmp = remove_non_printing_char(line)
-    return balance_quotation_marks(line_tmp)
+def first_stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers=12):
+    num_lines = utils.count_lines(dataset.src)
+    if num_lines == 0:
+        raise Exception(f"Dataset {dataset.src} has 0 lines.")
+    num_workers_dynamic = min(((num_lines - 1) // 5000) + 1, num_workers)
+
+    src_offsets_path = dataset_output_dir / f"{corpus_name}_src_offsets.pickle"
+    if os.path.exists(src_offsets_path):
+        with open(src_offsets_path, "rb") as f:
+            src_offsets = pickle.load(f)
+    else:
+        src_offsets = find_offsets(dataset.src, num_workers_dynamic)
+        with open(src_offsets_path, "wb") as f:
+            pickle.dump(src_offsets, f)
+
+    src_file_chunks = list(zip(src_offsets, src_offsets[1:]))
+
+    src_chunks_line_numbers_path = dataset_output_dir / f"{corpus_name}_src_chunks_line_numbers.pickle"
+    if os.path.exists(src_chunks_line_numbers_path):
+        with open(src_chunks_line_numbers_path, "rb") as f:
+            src_chunks_line_numbers = pickle.load(f)
+    else:
+        src_chunks_line_numbers = convert_offsets_to_line_numbers(src_offsets, dataset.src)
+        with open(src_chunks_line_numbers_path, "wb") as f:
+            pickle.dump(src_chunks_line_numbers, f)
+
+    tgt_offsets_path = dataset_output_dir / f"{corpus_name}_tgt_offsets.pickle"
+    if os.path.exists(tgt_offsets_path):
+        with open(tgt_offsets_path, "rb") as f:
+            tgt_offsets = pickle.load(f)
+    else:
+        tgt_offsets = find_offsets_given_line_numbers(dataset.tgt, src_chunks_line_numbers)
+        with open(tgt_offsets_path, "wb") as f:
+            pickle.dump(tgt_offsets, f)
+
+    tgt_chunks_line_numbers_path = dataset_output_dir / f"{corpus_name}_tgt_chunks_line_numbers.pickle"
+    if os.path.exists(tgt_chunks_line_numbers_path):
+        with open(tgt_chunks_line_numbers_path, "rb") as f:
+            tgt_chunks_line_numbers = pickle.load(f)
+    else:
+        tgt_chunks_line_numbers = convert_offsets_to_line_numbers(tgt_offsets, dataset.tgt)
+        with open(tgt_chunks_line_numbers_path, "wb") as f:
+            pickle.dump(tgt_chunks_line_numbers, f)
+
+    assert tgt_chunks_line_numbers == src_chunks_line_numbers, f"src and tgt have different number of lines for {dataset.src} and {dataset.tgt}"
+
+    tgt_file_chunks = list(zip(tgt_offsets, tgt_offsets[1:]))
+
+    return src_file_chunks, tgt_file_chunks, num_workers_dynamic
 
 
-def get_step(counts, dataset_counts):
-    steps = sum([el.total_before for el in counts.values()])
-    return steps + dataset_counts.total_before
+def first_stage_postprocess(
+        dataset_output_dir,
+        corpus_name,
+        src_lang,
+        tgt_lang,
+        path_out_src_before_fuzzy,
+        path_out_tgt_before_fuzzy,
+        path_counts
+    ):
+    src_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{src_lang}_before_fuzzy_*")], key=lambda x: int(x.split('_')[-1]))
+    tgt_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{tgt_lang}_before_fuzzy_*")], key=lambda x: int(x.split('_')[-1]))
+    assert len(src_files_list) == len(tgt_files_list), f"Number of src files {len(src_files_list)} is not equal to number of tgt files {len(tgt_files_list)}"
+
+    # Merge output files from the workers
+    src_cnt = 0
+    tgt_cnt = 0
+    with open(path_out_src_before_fuzzy, "w") as outfile_src, open(path_out_tgt_before_fuzzy, "w") as outfile_tgt:
+        for src_file, tgt_file in zip(src_files_list, tgt_files_list):
+            with open(src_file) as src_infile, open(tgt_file) as tgt_infile:
+                for line in src_infile:
+                    src_cnt += 1
+                    outfile_src.write(line)
+                for line in tgt_infile:
+                    tgt_cnt += 1
+                    outfile_tgt.write(line)
+
+    assert src_cnt == tgt_cnt, f"Number of src lines {src_cnt} is not equal to number of tgt lines {tgt_cnt}"
+    # delete the temporary files
+    for src_file, tgt_file in zip(src_files_list, tgt_files_list):
+        os.remove(src_file)
+        os.remove(tgt_file)
+
+    counts_files_list = [str(path) for path in dataset_output_dir.glob(f"{corpus_name}_before_fuzzy_*")]
+    counts_partial = []
+    with open(path_counts, "wt") as fout:
+        for counts_file in counts_files_list:
+            with open(counts_file) as fin:
+                counts_partial.append(FilteringCounts(**yaml.safe_load(fin)))
+        yaml.safe_dump(sum(counts_partial).__dict__, fout)
+
+    # delete the temporary files
+    for counts_file in counts_files_list:
+        os.remove(counts_file)
+
+    return sum(counts_partial)
 
 
 # TODO have this use the MultiprocLineProcessor module
@@ -73,47 +157,20 @@ def filter_direction(
     custom_step_name: str,
     output_dir: Path,
     wandb_run_name: str,
+    num_workers: int = 12
 ):
     direction = f"{src_lang}-{tgt_lang}" if tgt_lang is not None else src_lang
+    # TODO: TMP HACK
+    if not direction == 'eng_Latn-bos_Latn':
+        return direction, None
     wandb.init(project="NLLB-filtering", reinit=False, name=wandb_run_name)
     print(f"Filtering {group_name}.{direction}")
-
-    # build the list of filters to be applied to this direction
-    filters = [
-        hydra.utils.instantiate(config.laser_filter),
-        hydra.utils.instantiate(
-            config.length_filter,
-            length_factors=length_factors,
-            src_lang=src_lang,
-            tgt_lang=tgt_lang,
-        ),
-        hydra.utils.instantiate(
-            config.symbols_filter, keep_dates_and_numbers=group_name != "train_mined"
-        ),
-        hydra.utils.instantiate(
-            config.lid_filter, src_lang=src_lang, tgt_lang=tgt_lang
-        ),
-        hydra.utils.instantiate(
-            config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
-        ),
-        hydra.utils.instantiate(config.dedup_filter),
-    ]
-
-    total_num_lines = 0
-    for corpus_name, dataset in datasets.items():
-        path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy.yaml"
-
-        if os.path.isfile(path_counts):
-            continue
-
-        total_num_lines += utils.count_lines(dataset.src)
 
     counts: Dict[str, FilteringCounts] = {}
     fuzzy_datasets = {}
     # 1st stage of filtering: everything except for fuzzy deduplication.
+    timings = []
     for corpus_name, dataset in datasets.items():
-        dataset_counts = FilteringCounts()  # filtering counts for the current dataset
-
         path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy"
         path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy"
         fuzzy_datasets[corpus_name] = Dataset(src=path_out_src_before_fuzzy, tgt=path_out_tgt_before_fuzzy, tsv=None, metadata=None, lang_dir=None, fold=None)
@@ -126,60 +183,49 @@ def filter_direction(
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
-        print(f"Processing {corpus_name} before fuzzy deduplication")
-        with ExitStack() as outputs, DatasetReader(dataset, corpus_name) as inputs:
-            fout_src = outputs.enter_context(open(path_out_src_before_fuzzy, "wt"))
-            fout_tgt = None
+        # steps_so_far = sum([el.total_before for el in counts.values()])
+        ts = time.time()
 
-            # if tgt_lang is not provided, we have a monolingual dataset;
-            # otherwise, the parallel file needs to be opened
-            if tgt_lang is not None:
-                fout_tgt = outputs.enter_context(open(path_out_tgt_before_fuzzy, "wt"))
+        src_file_chunks, tgt_file_chunks, num_workers_dynamic = first_stage_preprocess(
+            dataset,
+            corpus_name,
+            dataset_output_dir,
+            num_workers
+        )
 
-            for line in inputs:
-                dataset_counts.total_before += 1
+        FirstStage(
+            dataset.src,
+            dataset.tgt,
+            src_file_chunks,
+            tgt_file_chunks,
+            dataset_output_dir,
+            group_name,
+            corpus_name,
+            src_lang,
+            tgt_lang,
+            config,
+            length_factors,
+            num_workers_dynamic
+        ).run()
+        timings.append(time.time() - ts)
 
-                if get_step(counts, dataset_counts) % 1000 == 0:
-                    wandb.log(
-                        {f"{group_name.split('_')[-1]}_before_fuzzy/{direction}": get_step(counts, dataset_counts) / total_num_lines},
-                        step=get_step(counts, dataset_counts)
-                    )
-
-                if config.normalize_unicode:
-                    line.src = normalize_unicode(line.src)
-                    if line.tgt is not None:
-                        line.tgt = normalize_unicode(line.tgt)
-
-                if config.normalize_line:
-                    line.src = normalize_line(line.src)
-                    if line.tgt is not None:
-                        line.tgt = normalize_line(line.tgt)
-
-                # apply filters sequentially
-                for fltr in filters:
-                    if fltr is None:
-                        continue
-
-                    line = fltr.filter_line(line, dataset_counts)
-                    # no need to keep filtering if the line was already discarded
-                    if line is None:
-                        break
-                if line is None:
-                    continue
-
-                fout_src.write(line.src + "\n")
-                if fout_tgt is not None:
-                    fout_tgt.write(line.tgt + "\n")
-                dataset_counts.total_after += 1
-
-            if dataset_counts:
-                counts[corpus_name] = dataset_counts
-                with open(path_counts, "wt") as fout:
-                    yaml.safe_dump(dataset_counts.__dict__, fout)
+        counts[corpus_name] = first_stage_postprocess(
+            dataset_output_dir,
+            corpus_name,
+            src_lang,
+            tgt_lang,
+            path_out_src_before_fuzzy,
+            path_out_tgt_before_fuzzy,
+            path_counts
+        )
 
     # 2nd stage: fuzzy deduplication
     # It's stateful so we have to do it before the loop - we're doing fuzzy across all datasets for this lang direction.
-    fuzzy_filter = hydra.utils.instantiate(config.fuzzy_dedup_filter, datasets=fuzzy_datasets, output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}")
+    fuzzy_filter = hydra.utils.instantiate(
+        config.fuzzy_dedup_filter,
+        datasets=fuzzy_datasets,
+        num_workers=num_workers,
+        output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}")
     cnt = 0
     for corpus_name, dataset in fuzzy_datasets.items():
         dataset_counts = counts[corpus_name]
@@ -192,6 +238,7 @@ def filter_direction(
         if os.path.isfile(path_counts):
             with open(path_counts, "rt") as fin:
                 counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
+                cnt += counts[corpus_name].total_after
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
@@ -206,7 +253,7 @@ def filter_direction(
                 fout_tgt = outputs.enter_context(gzip.open(path_out_tgt, "wt"))
 
             for i, line in enumerate(inputs):
-                if cnt % 1000 == 0:
+                if cnt % 10000 == 0:
                     wandb.log(
                         {f"{group_name.split('_')[-1]}_fuzzy/{direction}": cnt / dataset_counts.total_after},
                         step=cnt
@@ -362,13 +409,14 @@ def main(config: DictConfig) -> None:
             config.directions = all_directions[i : i + batch_size]
             config.output_dir = os.path.join(root_output_dir, f"batch_{i}_to_{i+len(config.directions)}")
             os.makedirs(config.output_dir, exist_ok=True)
-            for group_name in ("train_primary", "train_mined", "train_bt"):
+            # TODO: tmp removed primary
+            for group_name in ("train_mined", "train_bt"):  # "train_primary", 
                 if config.get(group_name, None):
                     filter_group(group_name=group_name, config=config)
 
         logger.info(f"All jobs done – data written to {root_output_dir}")
     else:
-        for group_name in ("train_primary", "train_mined", "train_bt"):
+        for group_name in ("train_mined", "train_bt"):  # "train_primary", 
             if config.get(group_name, None):
                 filter_group(group_name=group_name, config=config)
 

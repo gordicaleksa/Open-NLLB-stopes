@@ -46,6 +46,25 @@ def find_offsets_given_line_numbers(filename: str, line_numbers: tp.List[int]) -
         return offsets
 
 
+def convert_offsets_to_line_numbers(offsets, filename):
+    with open(filename, 'r') as f:
+        line_numbers_offsets = []
+        cnt = 0
+        for offset in offsets:
+            # count the number of lines up to the offset
+            while f.tell() < offset:
+                f.readline()
+                cnt += 1
+            assert f.tell() == offset
+            line_numbers_offsets.append(cnt)
+
+        assert len(line_numbers_offsets) == len(offsets)
+        assert line_numbers_offsets[0] == 0
+        assert line_numbers_offsets[-1] == utils.count_lines(filename)
+
+        return line_numbers_offsets
+
+
 def build_line_number_to_byte_offset_map(filename: str) -> tp.Dict[int, int]:
     line_number_to_byte_offset = {}
     line_num = 0
