@@ -67,7 +67,7 @@ if __name__ == "__main__":
         "Script to analyze certain statistics of the primary data."
     )
     parser.add_argument(
-        "--filtered_data_root_path",
+        "--filtered-data-root-path",
         "-d",
         type=str,
         required=True,
@@ -76,7 +76,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--train-primary-config-path",
         type=Path,
-        default=Path("stopes/pipelines/filtering/filter_configs/unfiltered_corpora/train_primary.yaml"),
+        default=Path("stopes/pipelines/filtering/filter_configs/unfiltered_corpora/train_mined.yaml"),
         help="Directory where the configuration files are stored.",
     )
 

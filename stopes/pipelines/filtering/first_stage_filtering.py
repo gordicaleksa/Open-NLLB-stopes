@@ -60,7 +60,7 @@ def first_stage_filtering_worker(
         hydra.utils.instantiate(
             config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
         ),
-        hydra.utils.instantiate(config.dedup_filter, mp_dict=mp_dict, lock=lock),
+        hydra.utils.instantiate(config.dedup_filter, shared_memory=True, mp_dict=mp_dict, lock=lock),
     ]
     path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy_{worker_id}"
     path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy_{worker_id}"

@@ -198,6 +198,9 @@ class DedupSharding(StopesModule):
                             seen_lines += 1
                         num_lines += 1
 
+                # TODO(gordicaleksa): this is doing global deduplication (filtering is doing language direction deduplication)
+                # so it might happen that if we have same data for eng->x and x->eng one of those gets filtered out.
+                # Verify that this is indeed the case?
                 self.logger.info(
                     f"Removed {seen_lines}/{num_lines} lines ({(seen_lines * 100 / num_lines):.2f} %)"
                 )
