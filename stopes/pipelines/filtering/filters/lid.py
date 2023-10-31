@@ -27,6 +27,7 @@ class LidFilter(Filter):
         excluded_languages: Optional[List[str]],
         src_lang: str,
         tgt_lang: Optional[str],
+        debug: bool = False,
     ):
         self.src_threshold = thresholds.get(src_lang, default_threshold)
         self.tgt_threshold = thresholds.get(tgt_lang, default_threshold)
@@ -35,6 +36,13 @@ class LidFilter(Filter):
         self.lid = fasttext.load_model(model_path)
         self.src_lang = src_lang
         self.tgt_lang = tgt_lang
+
+        self.debug = debug
+
+        if self.debug:
+            current_path = os.path.dirname(os.path.realpath(__file__))
+            self.debug_file = open(os.path.join(current_path, f"debug_lid_filter_{src_lang}-{tgt_lang}.txt"), "a")
+            self.debug_file_scores = open(os.path.join(current_path, f"debug_lid_filter_scores_{src_lang}-{tgt_lang}.txt"), "a")
 
     def filter_line(
         self, line: DatasetLine, counts: FilteringCounts
@@ -52,16 +60,28 @@ class LidFilter(Filter):
             lid_probs = {lang[9:]: prob for lang, prob in zip(lid_l, lid_p)}
             line.tgt_lid_prob = lid_probs.get(self.tgt_lang, 0.0)
 
-        if self.src_threshold and self.src_lang not in self.excluded_languages:
-            if line.src_lid_prob < self.src_threshold:
+        if self.debug:
+            self.debug_file_scores.write(f"{line.src_lid_prob:.2f}" + " " + f"{line.tgt_lid_prob:.2f}" + "\n")
+            self.debug_file_scores.flush()
+
+        if self.src_threshold >= 0 and self.src_lang not in self.excluded_languages:
+            if line.src_lid_prob <= self.src_threshold:
+                if self.debug:
+                    prefix = f"SRC.{line.src_lid_prob:.2f}" if line.tgt_lid_prob > self.tgt_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
+                    self.debug_file.write(f"{prefix}-{line.src}" + " || " + f"{line.tgt}" + "\n")
+                    self.debug_file.flush()
                 counts.lid_threshold += 1
                 return None
         if (
             self.tgt_lang is not None
-            and self.tgt_threshold
+            and self.tgt_threshold >= 0
             and self.tgt_lang not in self.excluded_languages
         ):
-            if line.tgt_lid_prob < self.tgt_threshold:
+            if line.tgt_lid_prob <= self.tgt_threshold:
+                if self.debug:
+                    prefix = f"TGT.{line.tgt_lid_prob:.2f}" if line.src_lid_prob > self.src_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
+                    self.debug_file.write(f"{prefix}-{line.src}" + " || " + f"{line.tgt}" + "\n")
+                    self.debug_file.flush()
                 counts.lid_threshold += 1
                 return None
         return line
@@ -133,7 +153,7 @@ class HBSLidFilter(Filter):
         if self.src_threshold >= 0 and self.src_lang not in self.excluded_languages:
             if line.src_lid_prob <= self.src_threshold:
                 if self.debug:
-                    prefix = f"SRC.{line.src_lid_prob:.2f}" if line.tgt_lid_prob >= self.tgt_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
+                    prefix = f"SRC.{line.src_lid_prob:.2f}" if line.tgt_lid_prob > self.tgt_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
                     self.debug_file.write(f"{prefix}-{line.src}" + " || " + f"{line.tgt}" + "\n")
                     self.debug_file.flush()
                 counts.lid_threshold += 1
@@ -145,7 +165,7 @@ class HBSLidFilter(Filter):
         ):
             if line.tgt_lid_prob <= self.tgt_threshold:
                 if self.debug:
-                    prefix = f"TGT.{line.tgt_lid_prob:.2f}" if line.src_lid_prob >= self.src_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
+                    prefix = f"TGT.{line.tgt_lid_prob:.2f}" if line.src_lid_prob > self.src_threshold else f"SRC.{line.src_lid_prob:.2f}-TGT.{line.tgt_lid_prob:.2f}"
                     self.debug_file.write(f"{prefix}-{line.src}" + " || " + f"{line.tgt}" + "\n")
                     self.debug_file.flush()
                 counts.lid_threshold += 1

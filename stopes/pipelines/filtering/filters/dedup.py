@@ -11,6 +11,7 @@ import glob
 import multiprocessing as mp
 import os
 from pathlib import Path
+import psutil
 import pickle
 import re
 import time
@@ -140,6 +141,13 @@ def compute_minhash_worker(output_dir, src_path, tgt_path, src_offset, tgt_offse
     else:
         minhashes_file = os.path.join(output_dir, f"error_minhashes_{global_offset + line_numbers_covered_range[0]}.pkl")
         pickle.dump(mhs, open(minhashes_file, "wb"))
+
+
+def print_mem():
+    total_memory, used_memory, free_memory = map(
+        int, os.popen('free -t -m').readlines()[-1].split()[1:])
+
+    return free_memory
 
 
 class FuzzyDedupFilter(Filter):

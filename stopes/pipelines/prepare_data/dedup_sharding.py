@@ -258,9 +258,6 @@ async def dedup_sharding(
         else:
             eval_datasets_per_lang_dir[dataset.lang_dir].append(dataset)
 
-    for lang_dir, train_datasets in train_datasets_per_lang_dir.items():
-        assert len(train_datasets) == 1, "Expected only a single dataset per lang direction."
-
     dedup_sharding_jobs = []
     for lang_dir, train_datasets in train_datasets_per_lang_dir.items():
         eval_datasets = eval_datasets_per_lang_dir.get(lang_dir)

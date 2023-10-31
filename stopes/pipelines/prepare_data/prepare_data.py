@@ -199,11 +199,19 @@ def main(config: PrepareDataConfig) -> None:
         download_spm200()
 
     # For readability purposes we pass in a path instead of dumping the data directly into prepare_data.yaml.
-    train_corpora_path = config.corpora.train[0]
-    assert isinstance(train_corpora_path, str)
-    with open(train_corpora_path, "rt") as fin:
-        train_corpora = OmegaConf.load(fin)
-    config.corpora.train = train_corpora
+    if 'train' in config.corpora:
+        train_corpora_path = config.corpora.train[0]
+        assert isinstance(train_corpora_path, str)
+        with open(train_corpora_path, "rt") as fin:
+            train_corpora = OmegaConf.load(fin)
+        config.corpora.train = train_corpora
+
+    if 'train_mined' in config.corpora:
+        train_mined_corpora_path = config.corpora.train_mined[0]
+        assert isinstance(train_mined_corpora_path, str)
+        with open(train_mined_corpora_path, "rt") as fin:
+            train_mined_corpora = OmegaConf.load(fin)
+        config.corpora.train_mined = train_mined_corpora
 
     pipeline = PrepareData(config)
     asyncio.run(pipeline.run())

@@ -7,12 +7,15 @@ directions and corpora information directly into example config we instead link 
 """
 import argparse
 from pathlib import Path
-
+from tqdm import tqdm
 
 import yaml
 
 
 from stopes.core.utils import count_lines
+
+
+blacklisted_directions = ['eng_Latn-srp_Latn', 'eng_Latn-bos_Cyrl']
 
 
 def main(args):
@@ -30,7 +33,9 @@ def main(args):
             config = yaml.safe_load(fout)
 
             lang_direction_num_sentences = {}
-            for lang_direction, datasets in config.items():
+            for lang_direction, datasets in tqdm(config.items()):
+                if lang_direction in blacklisted_directions:
+                    continue
                 num_sentences_for_lang_direction = 0
                 for corpus_name, dataset in datasets.items():
                     src_path = dataset["src"]
