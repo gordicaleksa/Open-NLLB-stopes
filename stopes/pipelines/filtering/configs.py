@@ -85,6 +85,7 @@ class FuzzyDedupFilterConfig:
     subvector_size: int = 10
     datasets: Optional[Dict[str, Dataset]] = None
     output_dir: Optional[str] = None
+    attempt_num: Optional[int] = None
 
 @dataclass
 class GroupFilterConfig:

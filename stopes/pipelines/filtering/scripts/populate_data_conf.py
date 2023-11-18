@@ -147,7 +147,7 @@ if __name__ == "__main__":
     parser.add_argument(
         "--data_type",
         type=str,
-        default="train_primary",
+        default="train_mined",
         choices=["train_primary", "train_mined", "train_bt"],
         help="What type of data to populate the config for; "
         "choices: train_primary, train_mined, train_bt",

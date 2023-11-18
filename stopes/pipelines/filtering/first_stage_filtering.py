@@ -41,31 +41,32 @@ def first_stage_filtering_worker(
         src_lang,
         tgt_lang,
         length_factors,
-        mp_dict
+        mp_dict,
+        global_exact_dedup,
     ):
     filters = [
-        hydra.utils.instantiate(config.laser_filter),
-        hydra.utils.instantiate(
-            config.length_filter,
-            length_factors=length_factors,
-            src_lang=src_lang,
-            tgt_lang=tgt_lang,
-        ),
-        hydra.utils.instantiate(
-            config.symbols_filter, keep_dates_and_numbers=group_name != "train_mined"
-        ),
-        hydra.utils.instantiate(
-            config.lid_filter, src_lang=src_lang, tgt_lang=tgt_lang
-        ),
-        hydra.utils.instantiate(
-            config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
-        ),
+        # hydra.utils.instantiate(config.laser_filter),
+        # hydra.utils.instantiate(
+        #     config.length_filter,
+        #     length_factors=length_factors,
+        #     src_lang=src_lang,
+        #     tgt_lang=tgt_lang,
+        # ),
+        # hydra.utils.instantiate(
+        #     config.symbols_filter, keep_dates_and_numbers=group_name != "train_mined"
+        # ),
+        # hydra.utils.instantiate(
+        #     config.lid_filter, src_lang=src_lang, tgt_lang=tgt_lang
+        # ),
+        # hydra.utils.instantiate(
+        #     config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
+        # ),
         hydra.utils.instantiate(config.dedup_filter, shared_memory=True, mp_dict=mp_dict, lock=lock),
     ]
-    path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy_{worker_id}"
-    path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy_{worker_id}"
+    path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy_{worker_id}{'_global_exact_dedup' if global_exact_dedup else ''}"
+    path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy_{worker_id}{'_global_exact_dedup' if global_exact_dedup else ''}"
 
-    path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy_{worker_id}.yaml"
+    path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy_{worker_id}{'_global_exact_dedup' if global_exact_dedup else ''}.yaml"
 
     dataset_counts = FilteringCounts()  # filtering counts for the current dataset
 
@@ -139,7 +140,9 @@ class FirstStage:
             tgt_lang,
             config,
             length_factors,
-            num_workers_dynamic
+            num_workers_dynamic,
+            dedup_dict,
+            global_exact_dedup,
         ):
         self.src_path = src_path
         self.tgt_path = tgt_path
@@ -153,9 +156,10 @@ class FirstStage:
         self.config = config
         self.length_factors= length_factors
         self.num_workers = num_workers_dynamic
+        self.dedup_dict = dedup_dict
+        self.global_exact_dedup = global_exact_dedup
 
     def run(self):
-        dedup_dict = multiprocessing.Manager().dict()
         dedup_lock = multiprocessing.Lock()
 
         with ProcessPoolExecutor(
@@ -179,7 +183,8 @@ class FirstStage:
                     self.src_lang,
                     self.tgt_lang,
                     self.length_factors,
-                    dedup_dict)
+                    self.dedup_dict,
+                    self.global_exact_dedup)
                 for worker_id, (src_offset, tgt_offset) in enumerate(zip(self.src_file_chunks, self.tgt_file_chunks))
             ]
 

@@ -7,24 +7,71 @@ defaults:
 
 directions:
  - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/directions.yaml
+
 train_primary:
-  normalize_punctuation: true
+  normalize_line: true
   included_corpora:
-    - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/included_corpora.yaml
+    - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/primary_included_corpora.yaml
   laser_filter: null
   length_filter:
     min_len: 5
     max_len: 1050
-    max_len_ratio: 9
-  lid_filter: null
-  toxicity_filter: null
+    max_len_ratio: 2
+  symbols_filter:
+    hashtag_num: 3
+    digit2char_ratio: 0.5
+    words_with_alpha_ratio: 0.5
+  lid_filter:
+    _target_: "stopes.pipelines.filtering.filters.LidFilter"
+    model_path: "/home/aleksa/Projects/nllb/fairseq/examples/nllb/data/nllb-lid.bin"
+    default_threshold: 0.5
+    thresholds:
+      eng_Latn: 0.0
+  toxicity_filter:
+    max_toxicity_difference: 1
+    max_toxicity: 4
   dedup_filter:
     dedup_pairs: true
     max_source_dedup: null
     max_target_dedup: null
+  fuzzy_dedup_filter:
+    num_perms: 10
+    threshold: 0.75
+    num_workers: 10
 
-train_mined: null
+train_mined:
+  normalize_line: true
+  included_corpora:
+    - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/mined_included_corpora.yaml
+  laser_filter: null
+  length_filter:
+    min_len: 5
+    max_len: 1050
+    max_len_ratio: 2
+  symbols_filter:
+    hashtag_num: 3
+    digit2char_ratio: 0.5
+    words_with_alpha_ratio: 0.5
+  lid_filter:
+    _target_: "stopes.pipelines.filtering.filters.LidFilter"
+    model_path: "/home/aleksa/Projects/nllb/fairseq/examples/nllb/data/nllb-lid.bin"
+    default_threshold: 0.5
+    thresholds:
+      eng_Latn: 0.0
+  toxicity_filter:
+    max_toxicity_difference: 1
+    max_toxicity: 4
+  dedup_filter:
+    dedup_pairs: true
+    max_source_dedup: null
+    max_target_dedup: null
+  fuzzy_dedup_filter:
+    num_perms: 10
+    threshold: 0.75
+    num_workers: 10
+
 train_bt: null
+
 executor:
   log_folder: executor_logs
   cluster: local

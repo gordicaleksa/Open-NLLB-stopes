@@ -1,0 +1,540 @@
+eng_Latn-bel_Cyrl:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-bel_Cyrl/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-bel_Cyrl/CCAligned.bel_Cyrl
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-bel_Cyrl/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-bel_Cyrl/CCMatrix.bel_Cyrl
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-bel_Cyrl/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-bel_Cyrl/NLLB.bel_Cyrl
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bel_Cyrl/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bel_Cyrl/WikiMatrix.bel_Cyrl
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bel_Cyrl/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bel_Cyrl/XLEnt.bel_Cyrl
+    tsv: null
+eng_Latn-bos_Cyrl:
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bos_Cyrl/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bos_Cyrl/WikiMatrix.bos_Cyrl
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bos_Cyrl/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bos_Cyrl/XLEnt.bos_Cyrl
+    tsv: null
+eng_Latn-bos_Latn:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-bos_Latn/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-bos_Latn/CCAligned.bos_Latn
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-bos_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-bos_Latn/NLLB.bos_Latn
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bos_Latn/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bos_Latn/WikiMatrix.bos_Latn
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bos_Latn/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bos_Latn/XLEnt.bos_Latn
+    tsv: null
+eng_Latn-bul_Cyrl:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-bul_Cyrl/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-bul_Cyrl/CCAligned.bul_Cyrl
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-bul_Cyrl/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-bul_Cyrl/CCMatrix.bul_Cyrl
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-bul_Cyrl/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-bul_Cyrl/NLLB.bul_Cyrl
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-bul_Cyrl/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-bul_Cyrl/ParaCrawl.bul_Cyrl
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bul_Cyrl/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-bul_Cyrl/WikiMatrix.bul_Cyrl
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bul_Cyrl/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-bul_Cyrl/XLEnt.bul_Cyrl
+    tsv: null
+eng_Latn-ces_Latn:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-ces_Latn/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-ces_Latn/CCAligned.ces_Latn
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-ces_Latn/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-ces_Latn/CCMatrix.ces_Latn
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-ces_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-ces_Latn/NLLB.ces_Latn
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-ces_Latn/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-ces_Latn/ParaCrawl.ces_Latn
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-ces_Latn/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-ces_Latn/WikiMatrix.ces_Latn
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-ces_Latn/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-ces_Latn/XLEnt.ces_Latn
+    tsv: null
+eng_Latn-hrv_Latn:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-hrv_Latn/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-hrv_Latn/CCAligned.hrv_Latn
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-hrv_Latn/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-hrv_Latn/CCMatrix.hrv_Latn
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-hrv_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-hrv_Latn/NLLB.hrv_Latn
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-hrv_Latn/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-hrv_Latn/ParaCrawl.hrv_Latn
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-hrv_Latn/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-hrv_Latn/WikiMatrix.hrv_Latn
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-hrv_Latn/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-hrv_Latn/XLEnt.hrv_Latn
+    tsv: null
+eng_Latn-mkd_Cyrl:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-mkd_Cyrl/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-mkd_Cyrl/CCAligned.mkd_Cyrl
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-mkd_Cyrl/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-mkd_Cyrl/CCMatrix.mkd_Cyrl
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-mkd_Cyrl/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-mkd_Cyrl/NLLB.mkd_Cyrl
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-mkd_Cyrl/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-mkd_Cyrl/WikiMatrix.mkd_Cyrl
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-mkd_Cyrl/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-mkd_Cyrl/XLEnt.mkd_Cyrl
+    tsv: null
+eng_Latn-pol_Latn:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-pol_Latn/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-pol_Latn/CCAligned.pol_Latn
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-pol_Latn/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-pol_Latn/CCMatrix.pol_Latn
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-pol_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-pol_Latn/NLLB.pol_Latn
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-pol_Latn/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-pol_Latn/ParaCrawl.pol_Latn
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-pol_Latn/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-pol_Latn/WikiMatrix.pol_Latn
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-pol_Latn/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-pol_Latn/XLEnt.pol_Latn
+    tsv: null
+eng_Latn-rus_Cyrl:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-rus_Cyrl/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-rus_Cyrl/CCAligned.rus_Cyrl
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-rus_Cyrl/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-rus_Cyrl/CCMatrix.rus_Cyrl
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-rus_Cyrl/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-rus_Cyrl/NLLB.rus_Cyrl
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-rus_Cyrl/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-rus_Cyrl/ParaCrawl.rus_Cyrl
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-rus_Cyrl/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-rus_Cyrl/WikiMatrix.rus_Cyrl
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-rus_Cyrl/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-rus_Cyrl/XLEnt.rus_Cyrl
+    tsv: null
+eng_Latn-slk_Latn:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-slk_Latn/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-slk_Latn/CCAligned.slk_Latn
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-slk_Latn/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-slk_Latn/CCMatrix.slk_Latn
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-slk_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-slk_Latn/NLLB.slk_Latn
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-slk_Latn/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-slk_Latn/ParaCrawl.slk_Latn
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-slk_Latn/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-slk_Latn/WikiMatrix.slk_Latn
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-slk_Latn/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-slk_Latn/XLEnt.slk_Latn
+    tsv: null
+eng_Latn-slv_Latn:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-slv_Latn/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-slv_Latn/CCAligned.slv_Latn
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-slv_Latn/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-slv_Latn/CCMatrix.slv_Latn
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-slv_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-slv_Latn/NLLB.slv_Latn
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-slv_Latn/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-slv_Latn/ParaCrawl.slv_Latn
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-slv_Latn/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-slv_Latn/WikiMatrix.slv_Latn
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-slv_Latn/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-slv_Latn/XLEnt.slv_Latn
+    tsv: null
+eng_Latn-srp_Cyrl:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-srp_Cyrl/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-srp_Cyrl/CCAligned.srp_Cyrl
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-srp_Cyrl/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-srp_Cyrl/CCMatrix.srp_Cyrl
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-srp_Cyrl/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-srp_Cyrl/NLLB.srp_Cyrl
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-srp_Cyrl/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-srp_Cyrl/WikiMatrix.srp_Cyrl
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-srp_Cyrl/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-srp_Cyrl/XLEnt.srp_Cyrl
+    tsv: null
+eng_Latn-srp_Latn:
+  CCAligned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-srp_Latn/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCAligned/eng_Latn-srp_Latn/CCAligned.srp_Latn
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-srp_Latn/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-srp_Latn/CCMatrix.srp_Latn
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-srp_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-srp_Latn/NLLB.srp_Latn
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-srp_Latn/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-srp_Latn/WikiMatrix.srp_Latn
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-srp_Latn/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-srp_Latn/XLEnt.srp_Latn
+    tsv: null
+eng_Latn-szl_Latn:
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-szl_Latn/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-szl_Latn/NLLB.szl_Latn
+    tsv: null
+eng_Latn-ukr_Cyrl:
+  CCALigned:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCALigned/eng_Latn-ukr_Cyrl/CCAligned.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCALigned/eng_Latn-ukr_Cyrl/CCAligned.ukr_Cyrl
+    tsv: null
+  CCMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-ukr_Cyrl/CCMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/CCMatrix/eng_Latn-ukr_Cyrl/CCMatrix.ukr_Cyrl
+    tsv: null
+  NLLB:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-ukr_Cyrl/NLLB.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/NLLB/eng_Latn-ukr_Cyrl/NLLB.ukr_Cyrl
+    tsv: null
+  ParaCrawl:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-ukr_Cyrl/ParaCrawl.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/ParaCrawl/eng_Latn-ukr_Cyrl/ParaCrawl.ukr_Cyrl
+    tsv: null
+  WikiMatrix:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-ukr_Cyrl/WikiMatrix.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/WikiMatrix/eng_Latn-ukr_Cyrl/WikiMatrix.ukr_Cyrl
+    tsv: null
+  XLEnt:
+    fold: null
+    lang_dir: null
+    metadata: null
+    src: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-ukr_Cyrl/XLEnt.eng_Latn
+    tgt: /hdd/open-nllb-data/slavic_data/mined/XLEnt/eng_Latn-ukr_Cyrl/XLEnt.ukr_Cyrl
+    tsv: null

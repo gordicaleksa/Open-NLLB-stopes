@@ -143,11 +143,15 @@ def compute_minhash_worker(output_dir, src_path, tgt_path, src_offset, tgt_offse
         pickle.dump(mhs, open(minhashes_file, "wb"))
 
 
-def print_mem():
+def get_available_mem():
+    print(os.popen('free -t -m'))
     total_memory, used_memory, free_memory = map(
         int, os.popen('free -t -m').readlines()[-1].split()[1:])
 
-    return free_memory
+    available_mem_bytes = psutil.virtual_memory().available
+    available_mem_mb = available_mem_bytes / (1024 ** 2)
+
+    return available_mem_mb
 
 
 class FuzzyDedupFilter(Filter):
@@ -163,7 +167,9 @@ class FuzzyDedupFilter(Filter):
         num_workers: int = 10,
         output_dir: str = None,
         debug: bool = False,
+        attempt_num: int = 0,
     ):
+        self.attempt_num = attempt_num
         self.debug = debug
         if self.debug:
             current_path = os.path.dirname(os.path.realpath(__file__))
@@ -176,6 +182,8 @@ class FuzzyDedupFilter(Filter):
         else:
             self.lsh = MinHashLSH(params=[num_bands, subvector_size], num_perm=num_perms)
 
+        self.should_repeat_fuzzy = False
+        self.memory_margin = 6000  # in MB
         self.build_lsh_parallel(self.lsh, output_dir, datasets, num_perms, num_workers)
 
     def build_lsh_parallel(self, lsh, output_dir, datasets, num_perms, num_workers):
@@ -187,11 +195,29 @@ class FuzzyDedupFilter(Filter):
             self.dataset_to_line_num_byte_map_src = {}
             self.dataset_to_line_num_byte_map_tgt = {}
 
+        num_lines_processed = 0
+        if len(os.listdir(output_dir)):
+            num_lines_processed = int(sorted([filename for filename in os.listdir(output_dir) if filename.endswith(".pkl")], key=lambda x: int(x.split('_')[-1].split('.')[0]))[-1].split("_")[-1].split('.')[0])
+
         for i, (_, dataset) in enumerate(datasets.items()):
             num_lines = utils.count_lines(dataset.src)
             if num_lines == 0:
                 print(f'Skipping {i+1}-th dataset: {dataset.src} because it has 0 lines.')
                 continue
+
+            if num_lines_processed >= global_offset + num_lines:
+                global_offset += num_lines
+                continue
+
+            available_mem_mb = get_available_mem()
+            file_size_mb = os.path.getsize(dataset.src) / (1024 ** 2) + os.path.getsize(dataset.tgt) / (1024 ** 2)
+            if available_mem_mb - self.memory_margin < file_size_mb:
+                dataset_name = os.path.basename(dataset.src).split('.')[0]
+                with open(os.path.join(output_dir, f"{dataset_name}_{self.attempt_num}_fuzzy_no_mem.txt"), "w") as f:
+                    f.write(f"(attempt {self.attempt_num}) Not enough memory to compute minhashes for {i+1}-th dataset: {dataset.src}. Left with {available_mem_mb}MB, but need {file_size_mb}MB.")
+                print(f"(attempt {self.attempt_num}) Not enough memory to compute minhashes for {i+1}-th dataset: {dataset.src}. Left with {available_mem_mb}MB, but need {file_size_mb}MB.")
+                self.should_repeat_fuzzy = True  # Attempt once more after we have less data in the 2nd iteration.
+                break
 
             if self.debug:
                 self.index_to_dataset[global_offset] = dataset
@@ -229,6 +255,15 @@ class FuzzyDedupFilter(Filter):
         cnts = []
 
         for cnt, mh in yield_minhashes(output_dir):
+            if cnt % 1000000 == 0 and cnt > 0:
+                available_mem_mb = get_available_mem()
+                if available_mem_mb < self.memory_margin:
+                    with open(os.path.join(output_dir, f"{self.attempt_num}_filling_fuzzy_no_mem.txt"), "w") as f:
+                        f.write(f"(attempt {self.attempt_num}) Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
+                    print(f"(attempt {self.attempt_num}) Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
+                    self.should_repeat_fuzzy = True  # Attempt once more after we have less data in the 2nd iteration.
+                    break
+
             cnts.append(cnt)
             lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
 
