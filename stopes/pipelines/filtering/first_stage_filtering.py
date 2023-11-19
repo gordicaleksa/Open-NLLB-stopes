@@ -44,25 +44,31 @@ def first_stage_filtering_worker(
         mp_dict,
         global_exact_dedup,
     ):
-    filters = [
-        # hydra.utils.instantiate(config.laser_filter),
-        # hydra.utils.instantiate(
-        #     config.length_filter,
-        #     length_factors=length_factors,
-        #     src_lang=src_lang,
-        #     tgt_lang=tgt_lang,
-        # ),
-        # hydra.utils.instantiate(
-        #     config.symbols_filter, keep_dates_and_numbers=group_name != "train_mined"
-        # ),
-        # hydra.utils.instantiate(
-        #     config.lid_filter, src_lang=src_lang, tgt_lang=tgt_lang
-        # ),
-        # hydra.utils.instantiate(
-        #     config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
-        # ),
-        hydra.utils.instantiate(config.dedup_filter, shared_memory=True, mp_dict=mp_dict, lock=lock),
-    ]
+    if global_exact_dedup:
+        filters = [
+            hydra.utils.instantiate(config.dedup_filter, shared_memory=True, mp_dict=mp_dict, lock=lock),
+        ]
+    else:
+        filters = [
+            hydra.utils.instantiate(config.laser_filter),
+            hydra.utils.instantiate(
+                config.length_filter,
+                length_factors=length_factors,
+                src_lang=src_lang,
+                tgt_lang=tgt_lang,
+            ),
+            hydra.utils.instantiate(
+                config.symbols_filter, keep_dates_and_numbers=group_name != "train_mined"
+            ),
+            hydra.utils.instantiate(
+                config.lid_filter, src_lang=src_lang, tgt_lang=tgt_lang
+            ),
+            hydra.utils.instantiate(
+                config.toxicity_filter, src_lang=src_lang, tgt_lang=tgt_lang
+            ),
+            hydra.utils.instantiate(config.dedup_filter, shared_memory=True, mp_dict=mp_dict, lock=lock),
+        ]
+
     path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy_{worker_id}{'_global_exact_dedup' if global_exact_dedup else ''}"
     path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy_{worker_id}{'_global_exact_dedup' if global_exact_dedup else ''}"
 
@@ -161,6 +167,8 @@ class FirstStage:
 
     def run(self):
         dedup_lock = multiprocessing.Lock()
+        if self.dedup_dict is None:
+            self.dedup_dict = multiprocessing.Manager().dict()  # corpus-level dedup.
 
         with ProcessPoolExecutor(
             max_workers=self.num_workers,

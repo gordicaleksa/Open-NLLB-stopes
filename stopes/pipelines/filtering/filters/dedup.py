@@ -195,9 +195,12 @@ class FuzzyDedupFilter(Filter):
             self.dataset_to_line_num_byte_map_src = {}
             self.dataset_to_line_num_byte_map_tgt = {}
 
-        num_lines_processed = 0
+        num_lines_already_processed = 0
         if len(os.listdir(output_dir)):
-            num_lines_processed = int(sorted([filename for filename in os.listdir(output_dir) if filename.endswith(".pkl")], key=lambda x: int(x.split('_')[-1].split('.')[0]))[-1].split("_")[-1].split('.')[0])
+            # Sort minhashes files that have already been created and see what's the highest number (encoded into the filename)
+            minhashes_pickle_files = [filename for filename in os.listdir(output_dir) if filename.endswith(".pkl")]
+            minhashes_pickle_files = sorted(minhashes_pickle_files, key=lambda x: int(x.split('_')[-1].split('.')[0]))
+            num_lines_already_processed = int(minhashes_pickle_files[-1].split("_")[-1].split('.')[0])
 
         for i, (_, dataset) in enumerate(datasets.items()):
             num_lines = utils.count_lines(dataset.src)
@@ -205,10 +208,12 @@ class FuzzyDedupFilter(Filter):
                 print(f'Skipping {i+1}-th dataset: {dataset.src} because it has 0 lines.')
                 continue
 
-            if num_lines_processed >= global_offset + num_lines:
+            # Optimization: don't recompute minhashes for the datasets that have already been processed.
+            if num_lines_already_processed >= global_offset + num_lines:
                 global_offset += num_lines
                 continue
 
+            # In case not enough RAM is available we stop minhash computation and do partial fuzzy. We will attempt to do fuzzy again after we have less data after the first iteration.
             available_mem_mb = get_available_mem()
             file_size_mb = os.path.getsize(dataset.src) / (1024 ** 2) + os.path.getsize(dataset.tgt) / (1024 ** 2)
             if available_mem_mb - self.memory_margin < file_size_mb:
@@ -244,44 +249,23 @@ class FuzzyDedupFilter(Filter):
                         compute_minhash_worker, output_dir, dataset.src, dataset.tgt, src_offset, tgt_offset, global_offset, line_numbers_covered_range, num_perms)
                     for (src_offset, tgt_offset, line_numbers_covered_range) in zip(src_file_chunks, tgt_file_chunks, src_chunks_line_numbers)
                 ]
-                # with tqdm(total=num_chunks) as pbar:
-                #     for _ in concurrent.futures.as_completed(futures):
-                #         pbar.update(1)
                 for future in futures:
                     future.result()
 
             global_offset += num_lines
 
-        cnts = []
-
+        # Load up the LSH index.
         for cnt, mh in yield_minhashes(output_dir):
             if cnt % 1000000 == 0 and cnt > 0:
                 available_mem_mb = get_available_mem()
                 if available_mem_mb < self.memory_margin:
-                    with open(os.path.join(output_dir, f"{self.attempt_num}_filling_fuzzy_no_mem.txt"), "w") as f:
+                    with open(os.path.join(output_dir, f"{self.attempt_num}_lsh_load_fuzzy_no_mem.txt"), "w") as f:
                         f.write(f"(attempt {self.attempt_num}) Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
                     print(f"(attempt {self.attempt_num}) Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
                     self.should_repeat_fuzzy = True  # Attempt once more after we have less data in the 2nd iteration.
                     break
 
-            cnts.append(cnt)
             lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
-
-        test = list(range(len(cnts)))
-        assert test == cnts, f'minhash corrupt'
-
-    def build_lsh_sequential(self, lsh, datasets, num_perms):
-        cnt = 0
-        for corpus_name, dataset in datasets.items():
-            with DatasetReader(dataset, corpus_name) as inputs:
-                for line in inputs:
-                    mh = MinHash(num_perm=num_perms)
-
-                    for shingle in get_shingle_set(normalize_for_dedup(line.src) + " " + normalize_for_dedup(line.tgt)):
-                        mh.update(shingle.encode('utf8'))
-
-                    lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)
-                    cnt += 1
 
     def fuzzy_debug_subroutine(self, normalized_line, result, i):
         self.debug_file.write(f"QUERY-{normalized_line}" + "\n")

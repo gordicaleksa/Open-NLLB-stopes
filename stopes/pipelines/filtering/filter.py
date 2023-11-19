@@ -109,8 +109,8 @@ def first_stage_postprocess(
         path_counts,
         global_exact_dedup
     ):
-    src_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{src_lang}_before_fuzzy_*{'_global_exact_dedup' if global_exact_dedup else ''}")], key=lambda x: int(x.split('_')[-4]))
-    tgt_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{tgt_lang}_before_fuzzy_*{'_global_exact_dedup' if global_exact_dedup else ''}")], key=lambda x: int(x.split('_')[-4]))
+    src_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{src_lang}_before_fuzzy_*{'_global_exact_dedup' if global_exact_dedup else ''}")], key=lambda x: int(x.split('_')[-4 if global_exact_dedup else -1]))
+    tgt_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{tgt_lang}_before_fuzzy_*{'_global_exact_dedup' if global_exact_dedup else ''}")], key=lambda x: int(x.split('_')[-4 if global_exact_dedup else -1]))
     assert len(src_files_list) == len(tgt_files_list), f"Number of src files {len(src_files_list)} is not equal to number of tgt files {len(tgt_files_list)}"
 
     # Merge output files from the workers
@@ -148,6 +148,14 @@ def first_stage_postprocess(
     for counts_file in counts_files_list:
         os.remove(counts_file)
 
+    # remove offsets & chunks that were computed prior to main stage
+    offset_files_list = [str(path) for path in dataset_output_dir.glob(f"*offsets")]
+    chunk_files_list = [str(path) for path in dataset_output_dir.glob(f"*chunks*")]
+    assert len(offset_files_list) == len(chunk_files_list), f"Number of src files {len(offset_files_list)} is not equal to number of tgt files {len(chunk_files_list)}"
+    for offset_file, chunk_file in zip(offset_files_list, chunk_files_list):
+        os.remove(offset_file)
+        os.remove(chunk_file)
+
     return sum(counts_partial)
 
 
@@ -171,31 +179,22 @@ def filter_direction(
     print(f"Filtering {group_name}.{direction}")
 
     counts: Dict[str, FilteringCounts] = {}
-    fuzzy_datasets = {}
+    next_stage_datasets = {}
     # 1st stage of filtering: everything except for fuzzy deduplication.
     timings = []
-    global_exact_dedup = True
-    # if os.path.exists(os.path.join(dataset_output_dir, 'global_exact_dedup_dictionary_keys.pkl')):
-    #     with open(os.path.join(dataset_output_dir, 'global_exact_dedup_dictionary_keys.pkl'), 'rb') as f:
-    #         dedup_dict_keys = pickle.load(f)
-    #         # add 1 as values for all the keys
-    #         dedup_dict = {key: 1 for key in dedup_dict_keys}
-    #         dedup_dict = multiprocessing.Manager().dict(dedup_dict)
-    # else:
-    dedup_dict = multiprocessing.Manager().dict()
 
+    #
+    # 1ST STAGE - CORPUS-LEVEL FILTERING
+    #
+    global_exact_dedup = False
     for corpus_name, dataset in datasets.items():
 
-        if global_exact_dedup:
-            dataset.src = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy"
-            dataset.tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy"
+        path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy"
+        path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy"
 
-        path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy{'_global_exact_dedup' if global_exact_dedup else ''}"
-        path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy{'_global_exact_dedup' if global_exact_dedup else ''}"
+        next_stage_datasets[corpus_name] = Dataset(src=path_out_src_before_fuzzy, tgt=path_out_tgt_before_fuzzy, tsv=None, metadata=None, lang_dir=None, fold=None)
 
-        fuzzy_datasets[corpus_name] = Dataset(src=path_out_src_before_fuzzy, tgt=path_out_tgt_before_fuzzy, tsv=None, metadata=None, lang_dir=None, fold=None)
-
-        path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy{'_global_exact_dedup' if global_exact_dedup else ''}.yaml"
+        path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy.yaml"
 
         if os.path.isfile(path_counts):
             with open(path_counts, "rt") as fin:
@@ -203,7 +202,67 @@ def filter_direction(
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
-        # steps_so_far = sum([el.total_before for el in counts.values()])
+        ts = time.time()
+
+        # Prepare for parallel processing
+        src_file_chunks, tgt_file_chunks, num_workers_dynamic = first_stage_preprocess(
+            dataset,
+            corpus_name,
+            dataset_output_dir,
+            num_workers,
+            global_exact_dedup=global_exact_dedup
+        )
+
+        if src_file_chunks != -1:  # if not empty
+            FirstStage(
+                dataset.src,
+                dataset.tgt,
+                src_file_chunks,
+                tgt_file_chunks,
+                dataset_output_dir,
+                group_name,
+                corpus_name,
+                src_lang,
+                tgt_lang,
+                config,
+                length_factors,
+                num_workers_dynamic,
+                dedup_dict=None,  # externally we only pass dedup_dict for global exact deduplication
+                global_exact_dedup=global_exact_dedup,
+            ).run()
+            timings.append(time.time() - ts)
+
+        counts[corpus_name] = first_stage_postprocess(
+            dataset_output_dir,
+            corpus_name,
+            src_lang,
+            tgt_lang,
+            path_out_src_before_fuzzy,
+            path_out_tgt_before_fuzzy,
+            path_counts,
+            global_exact_dedup=global_exact_dedup
+        )
+
+    #
+    # 2ND STAGE - GLOBAL EXACT DEDUP
+    #
+    global_exact_dedup = True
+    dedup_dict = multiprocessing.Manager().dict()
+    for corpus_name, dataset in next_stage_datasets.items():
+
+        path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy_global_exact_dedup"
+        path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy_global_exact_dedup"
+
+        next_stage_datasets[corpus_name] = Dataset(src=path_out_src_before_fuzzy, tgt=path_out_tgt_before_fuzzy, tsv=None, metadata=None, lang_dir=None, fold=None)
+
+        path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy_global_exact_dedup.yaml"
+
+        if os.path.isfile(path_counts):
+            with open(path_counts, "rt") as fin:
+                counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
+            print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
+            continue
+
         ts = time.time()
 
         src_file_chunks, tgt_file_chunks, num_workers_dynamic = first_stage_preprocess(
@@ -211,7 +270,7 @@ def filter_direction(
             corpus_name,
             dataset_output_dir,
             num_workers,
-            global_exact_dedup=True
+            global_exact_dedup=global_exact_dedup
         )
 
         if src_file_chunks != -1:  # if not empty
@@ -230,7 +289,7 @@ def filter_direction(
                 length_factors,
                 num_workers_dynamic,
                 dedup_dict,
-                global_exact_dedup=True,
+                global_exact_dedup=global_exact_dedup,
             ).run()
             timings.append(time.time() - ts)
 
@@ -245,9 +304,13 @@ def filter_direction(
             global_exact_dedup=global_exact_dedup
         )
 
+    #
+    # 3RD STAGE - FUZZY DEDUP
+    #
+
     # Optimization - if all the datasets are already filtered, skip the fuzzy deduplication
     skip_fuzzy = True
-    for corpus_name, dataset in fuzzy_datasets.items():
+    for corpus_name, dataset in next_stage_datasets.items():
         path_counts = dataset_output_dir / f"{corpus_name}.yaml"
         if not os.path.isfile(path_counts):
             skip_fuzzy = False
@@ -258,7 +321,7 @@ def filter_direction(
         return direction, counts
 
     lines_left_to_process = 0
-    for corpus_name, dataset in fuzzy_datasets.items():
+    for corpus_name, dataset in next_stage_datasets.items():
         lines_left_to_process += counts[corpus_name].total_after
 
     # Update threshold in config.fuzzy_dedup_filter depending on number of lines - simple heuristic.
@@ -271,12 +334,11 @@ def filter_direction(
     else:
         config.fuzzy_dedup_filter.threshold = 0.5
 
-    # 2nd stage: fuzzy deduplication
     # It's stateful so we have to do it before the loop - we're doing fuzzy across all datasets for this lang direction.
     # If the dataset is too big we repeat once more on the filtered smaller dataset from the 1st iteration.
     fuzzy_filter = hydra.utils.instantiate(
         config.fuzzy_dedup_filter,
-        datasets=fuzzy_datasets,
+        datasets=next_stage_datasets,
         num_workers=num_workers,
         output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}",
         attempt_num=0)
@@ -290,12 +352,12 @@ def filter_direction(
             shutil.rmtree(Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}")
             fuzzy_filter = hydra.utils.instantiate(
                 config.fuzzy_dedup_filter,
-                datasets=fuzzy_datasets,  # Updated in the first iteration
+                datasets=next_stage_datasets,  # Updated in the first iteration
                 num_workers=num_workers,
                 output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}",
                 attempt_num=1)
 
-        for corpus_name, dataset in fuzzy_datasets.items():
+        for corpus_name, dataset in next_stage_datasets.items():
             dataset_counts = counts[corpus_name]
             if i == 1 and repeat_fuzzy:
                 dataset_counts.total_after_fuzzy = 0  # reset the counter
@@ -395,12 +457,12 @@ def filter_group(group_name: str, config: DictConfig):
         length_factors = yaml.safe_load(fin)
     # submit all directions as part of the same array
     jobs = []
-    for direction, corpora in datasets.items():
-        with executor.batch():
+    with executor.batch():
+        for direction, corpora in datasets.items():
             if direction not in config.directions:
                 continue
 
-            if direction not in ["eng_Latn-slk_Latn"]:
+            if direction not in ["eng_Latn-slk_Latn"]:  # If we change the config.directions we change the output directory...
                 continue
 
             try:
@@ -447,8 +509,6 @@ def filter_group(group_name: str, config: DictConfig):
                 wandb_run_name=config.wandb_run_name
             )
             jobs.append(job)
-        jobs[0].result()
-        jobs = []
     logger.info(f"All jobs for {group_name} have been scheduled")
     _ = [job.result() for job in jobs]
     logger.info(f"All jobs for {group_name} are done")
@@ -495,13 +555,13 @@ def main(config: DictConfig) -> None:
             config.directions = all_directions[i : i + batch_size]
             config.output_dir = os.path.join(root_output_dir, f"batch_{i}_to_{i+len(config.directions)}")
             os.makedirs(config.output_dir, exist_ok=True)
-            for group_name in ("train_mined", "train_bt"):  # "train_primary", 
+            for group_name in ("train_mined", "train_bt"):  # TODO: TMP REMOVED "train_primary"
                 if config.get(group_name, None):
                     filter_group(group_name=group_name, config=config)
 
         logger.info(f"All jobs done – data written to {root_output_dir}")
     else:
-        for group_name in ("train_mined", "train_bt"):  # TODO: TMP HACK: "train_primary", 
+        for group_name in ("train_primary", "train_mined", "train_bt"):
             if config.get(group_name, None):
                 filter_group(group_name=group_name, config=config)
 
