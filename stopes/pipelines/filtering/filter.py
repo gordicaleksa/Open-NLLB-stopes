@@ -342,8 +342,10 @@ def filter_direction(
         num_workers=num_workers,
         output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}",
         attempt_num=0)
+
     # too little RAM for complete dedup, repeat the fuzzy deduplication to approximate the full deduplication
     repeat_fuzzy = fuzzy_filter.should_repeat_fuzzy
+
     for i in range(2 if repeat_fuzzy else 1):
         cnt = 0
         control_flag = repeat_fuzzy and i == 0
@@ -418,8 +420,6 @@ def filter_direction(
                 os.remove(dataset.src)
                 os.remove(dataset.tgt)
                 os.remove(dataset_output_dir / f"{corpus_name}_1.yaml")
-
-            # TODO(gordicaleksa): maybe if fuzzy finished successfully delete the before_fuzzy files
 
     if counts:
         print(f"Total counts: {sum(counts.values()).__dict__}")
