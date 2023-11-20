@@ -127,7 +127,7 @@ def stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers=12, s
 
     tgt_file_chunks = list(zip(tgt_offsets, tgt_offsets[1:]))
 
-    return src_file_chunks, tgt_file_chunks, num_workers_dynamic
+    return src_file_chunks, tgt_file_chunks, src_chunks_line_numbers, num_workers_dynamic
 
 
 def stage_postprocess(
@@ -238,7 +238,7 @@ def filter_direction(
         ts = time.time()
 
         # Prepare for parallel processing
-        src_file_chunks, tgt_file_chunks, num_workers_dynamic = stage_preprocess(
+        src_file_chunks, tgt_file_chunks, _, num_workers_dynamic = stage_preprocess(
             dataset,
             corpus_name,
             dataset_output_dir,
@@ -298,7 +298,7 @@ def filter_direction(
 
         ts = time.time()
 
-        src_file_chunks, tgt_file_chunks, num_workers_dynamic = stage_preprocess(
+        src_file_chunks, tgt_file_chunks, _, num_workers_dynamic = stage_preprocess(
             dataset,
             corpus_name,
             dataset_output_dir,
@@ -390,7 +390,7 @@ def filter_direction(
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
-        src_file_chunks, tgt_file_chunks, num_workers_dynamic = stage_preprocess(
+        src_file_chunks, tgt_file_chunks, src_chunks_line_numbers, num_workers_dynamic = stage_preprocess(
             dataset,
             corpus_name,
             dataset_output_dir,
@@ -411,6 +411,8 @@ def filter_direction(
                 tgt_lang,
                 num_workers_dynamic,
                 fuzzy_filter,
+                src_chunks_line_numbers,
+                cnt,
             ).run()
 
         counts[corpus_name] = stage_postprocess(

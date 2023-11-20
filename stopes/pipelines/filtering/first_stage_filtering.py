@@ -209,6 +209,8 @@ def fuzzy_filtering_worker(
         src_lang,
         tgt_lang,
         fuzzy_filter,
+        line_numbers_range_chunk,
+        offset_cnt
 ):
     # TODO: fix the cnt logic -> crucial for correct fuzzy deduplication
     path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}_fuzzy_dedup_{worker_id}"
@@ -218,6 +220,7 @@ def fuzzy_filtering_worker(
 
     dataset_counts = FilteringCounts()  # filtering counts for the current dataset
 
+    cnt = offset_cnt + line_numbers_range_chunk[0]  # TODO: test this works correctly
     with ExitStack() as outputs, BitextChunker(src_path, tgt_path, src_offset, tgt_offset) as inputs:
         fout_src = outputs.enter_context(open(path_out_src, "wt"))
         fout_tgt = None
@@ -261,6 +264,8 @@ class FuzzyFilterStage:
             tgt_lang,
             num_workers_dynamic,
             fuzzy_filter,
+            chunks_line_numbers,
+            cnt,
         ):
         self.src_path = src_path
         self.tgt_path = tgt_path
@@ -272,6 +277,8 @@ class FuzzyFilterStage:
         self.tgt_lang = tgt_lang
         self.num_workers = num_workers_dynamic
         self.fuzzy_filter = fuzzy_filter
+        self.line_numbers_range_all = chunks_line_numbers
+        self.cnt = cnt
 
     def run(self):
         dedup_lock = multiprocessing.Lock()
@@ -294,8 +301,10 @@ class FuzzyFilterStage:
                     self.corpus_name,
                     self.src_lang,
                     self.tgt_lang,
-                    self.fuzzy_filter)
-                for worker_id, (src_offset, tgt_offset) in enumerate(zip(self.src_file_chunks, self.tgt_file_chunks))
+                    self.fuzzy_filter,
+                    line_numbers_range_chunk,
+                    self.cnt)
+                for worker_id, (src_offset, tgt_offset, line_numbers_range_chunk) in enumerate(zip(self.src_file_chunks, self.tgt_file_chunks, self.line_numbers_range_all))
             ]
 
             for future in futures:
