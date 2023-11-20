@@ -167,9 +167,7 @@ class FuzzyDedupFilter(Filter):
         num_workers: int = 10,
         output_dir: str = None,
         debug: bool = False,
-        attempt_num: int = 0,
     ):
-        self.attempt_num = attempt_num
         self.debug = debug
         if self.debug:
             current_path = os.path.dirname(os.path.realpath(__file__))
@@ -182,7 +180,6 @@ class FuzzyDedupFilter(Filter):
         else:
             self.lsh = MinHashLSH(params=[num_bands, subvector_size], num_perm=num_perms)
 
-        self.should_repeat_fuzzy = False
         self.memory_margin = 6000  # in MB
         self.build_lsh_parallel(self.lsh, output_dir, datasets, num_perms, num_workers)
 
@@ -218,10 +215,9 @@ class FuzzyDedupFilter(Filter):
             file_size_mb = os.path.getsize(dataset.src) / (1024 ** 2) + os.path.getsize(dataset.tgt) / (1024 ** 2)
             if available_mem_mb - self.memory_margin < file_size_mb:
                 dataset_name = os.path.basename(dataset.src).split('.')[0]
-                with open(os.path.join(output_dir, f"{dataset_name}_{self.attempt_num}_fuzzy_no_mem.txt"), "w") as f:
-                    f.write(f"(attempt {self.attempt_num}) Not enough memory to compute minhashes for {i+1}-th dataset: {dataset.src}. Left with {available_mem_mb}MB, but need {file_size_mb}MB.")
-                print(f"(attempt {self.attempt_num}) Not enough memory to compute minhashes for {i+1}-th dataset: {dataset.src}. Left with {available_mem_mb}MB, but need {file_size_mb}MB.")
-                self.should_repeat_fuzzy = True  # Attempt once more after we have less data in the 2nd iteration.
+                with open(os.path.join(output_dir, f"{dataset_name}_fuzzy_no_mem.txt"), "w") as f:
+                    f.write(f"(Not enough memory to compute minhashes for {i+1}-th dataset: {dataset.src}. Left with {available_mem_mb}MB, but need {file_size_mb}MB.")
+                print(f"(Not enough memory to compute minhashes for {i+1}-th dataset: {dataset.src}. Left with {available_mem_mb}MB, but need {file_size_mb}MB.")
                 break
 
             if self.debug:
@@ -259,10 +255,9 @@ class FuzzyDedupFilter(Filter):
             if cnt % 1000000 == 0 and cnt > 0:
                 available_mem_mb = get_available_mem()
                 if available_mem_mb < self.memory_margin:
-                    with open(os.path.join(output_dir, f"{self.attempt_num}_lsh_load_fuzzy_no_mem.txt"), "w") as f:
-                        f.write(f"(attempt {self.attempt_num}) Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
-                    print(f"(attempt {self.attempt_num}) Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
-                    self.should_repeat_fuzzy = True  # Attempt once more after we have less data in the 2nd iteration.
+                    with open(os.path.join(output_dir, f"lsh_load_fuzzy_no_mem.txt"), "w") as f:
+                        f.write(f"Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
+                    print(f"Not enough memory while filling the LSH index. Left with {available_mem_mb}MB. Got to {cnt} minhashes.")
                     break
 
             lsh.insert(f'{str(cnt).zfill(len(self.MAX_NUM_LINES))}', mh)

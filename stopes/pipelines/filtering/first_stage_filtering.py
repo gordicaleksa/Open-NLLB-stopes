@@ -1,5 +1,6 @@
 from concurrent.futures import ProcessPoolExecutor
 from contextlib import ExitStack
+import gzip
 import multiprocessing
 
 import hydra
@@ -140,7 +141,6 @@ class FirstStage:
             src_file_chunks,
             tgt_file_chunks,
             dataset_output_dir,
-            group_name,
             corpus_name,
             src_lang,
             tgt_lang,
@@ -155,7 +155,6 @@ class FirstStage:
         self.src_file_chunks = src_file_chunks
         self.tgt_file_chunks = tgt_file_chunks
         self.dataset_output_dir = dataset_output_dir
-        self.group_name = group_name
         self.corpus_name = corpus_name
         self.src_lang = src_lang
         self.tgt_lang = tgt_lang
@@ -186,13 +185,116 @@ class FirstStage:
                     src_offset,
                     tgt_offset,
                     self.dataset_output_dir,
-                    self.group_name,
                     self.corpus_name,
                     self.src_lang,
                     self.tgt_lang,
                     self.length_factors,
                     self.dedup_dict,
                     self.global_exact_dedup)
+                for worker_id, (src_offset, tgt_offset) in enumerate(zip(self.src_file_chunks, self.tgt_file_chunks))
+            ]
+
+            for future in futures:
+                future.result()
+
+
+def fuzzy_filtering_worker(
+        worker_id,
+        src_path,
+        tgt_path,
+        src_offset,
+        tgt_offset,
+        dataset_output_dir,
+        corpus_name,
+        src_lang,
+        tgt_lang,
+        fuzzy_filter,
+):
+    # TODO: fix the cnt logic -> crucial for correct fuzzy deduplication
+    path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}_fuzzy_dedup_{worker_id}"
+    path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}_fuzzy_dedup_{worker_id}"
+
+    path_counts = dataset_output_dir / f"{corpus_name}_fuzzy_dedup_{worker_id}.yaml"
+
+    dataset_counts = FilteringCounts()  # filtering counts for the current dataset
+
+    with ExitStack() as outputs, BitextChunker(src_path, tgt_path, src_offset, tgt_offset) as inputs:
+        fout_src = outputs.enter_context(open(path_out_src, "wt"))
+        fout_tgt = None
+
+        # if tgt_lang is not provided, we have a monolingual dataset;
+        # otherwise, the parallel file needs to be opened
+        if tgt_lang is not None:
+            fout_tgt = outputs.enter_context(open(path_out_tgt, "wt"))
+
+        for i, line in enumerate(inputs):
+            dataset_counts.total_before += 1
+
+            # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
+            line.src = f'{str(cnt).zfill(9)}{line.src}'
+            line = fuzzy_filter.filter_line(line, dataset_counts)
+            cnt += 1  # this needs to be precisely here, don't move it unless you know why you are doing that.
+
+            if line is None:
+                continue
+
+            fout_src.write(line.src + "\n")
+            if fout_tgt is not None:
+                fout_tgt.write(line.tgt + "\n")
+            dataset_counts.total_after_fuzzy += 1
+
+        if dataset_counts:
+            with open(path_counts, "wt") as fout:
+                yaml.safe_dump(dataset_counts.__dict__, fout)
+
+
+class FuzzyFilterStage:
+    def __init__(
+            self,
+            src_path,
+            tgt_path,
+            src_file_chunks,
+            tgt_file_chunks,
+            dataset_output_dir,
+            corpus_name,
+            src_lang,
+            tgt_lang,
+            num_workers_dynamic,
+            fuzzy_filter,
+        ):
+        self.src_path = src_path
+        self.tgt_path = tgt_path
+        self.src_file_chunks = src_file_chunks
+        self.tgt_file_chunks = tgt_file_chunks
+        self.dataset_output_dir = dataset_output_dir
+        self.corpus_name = corpus_name
+        self.src_lang = src_lang
+        self.tgt_lang = tgt_lang
+        self.num_workers = num_workers_dynamic
+        self.fuzzy_filter = fuzzy_filter
+
+    def run(self):
+        dedup_lock = multiprocessing.Lock()
+
+        with ProcessPoolExecutor(
+            max_workers=self.num_workers,
+            initializer=init_pool_processes,
+            initargs=(dedup_lock,)) as executor:
+
+            # Process file chunks in parallel.
+            futures = [
+                executor.submit(
+                    fuzzy_filtering_worker,
+                    worker_id,
+                    self.src_path,
+                    self.tgt_path,
+                    src_offset,
+                    tgt_offset,
+                    self.dataset_output_dir,
+                    self.corpus_name,
+                    self.src_lang,
+                    self.tgt_lang,
+                    self.fuzzy_filter)
                 for worker_id, (src_offset, tgt_offset) in enumerate(zip(self.src_file_chunks, self.tgt_file_chunks))
             ]
 

@@ -5,6 +5,7 @@
 # This source code is licensed under the license found in the
 # LICENSE file in the root directory of this source tree.
 
+from enum import Enum
 import shutil
 import time
 import copy
@@ -25,7 +26,7 @@ from omegaconf import DictConfig, OmegaConf
 from submitit import AutoExecutor
 import wandb
 
-from stopes.pipelines.filtering.first_stage_filtering import FirstStage
+from stopes.pipelines.filtering.first_stage_filtering import FirstStage, FuzzyFilterStage
 from stopes.core import utils
 from stopes.pipelines.filtering.configs import (
     FilterConfig,
@@ -44,17 +45,47 @@ logger = logging.getLogger(__name__)
 register_configs()
 
 
+class FilteringStage(Enum):
+    FirstStage = 1
+    SecondStage = 2
+    ThirdStage = 3
+
+
+def get_preprocess_stage_infix(stage: FilteringStage):
+    if stage == FilteringStage.FirstStage:
+        return ""
+    elif stage == FilteringStage.SecondStage:
+        return "_global_exact_dedup"
+    elif stage == FilteringStage.ThirdStage:
+        return "_fuzzy_dedup"
+    else:
+        raise ValueError(f"Unknown stage {stage}")
+
+
+def get_postprocess_stage_infix(stage: FilteringStage):
+    if stage == FilteringStage.FirstStage:
+        return "_before_fuzzy_*", -1
+    elif stage == FilteringStage.SecondStage:
+        return "_before_fuzzy_*_global_exact_dedup", -4
+    elif stage == FilteringStage.ThirdStage:
+        return "_fuzzy_dedup_*", -1
+    else:
+        raise ValueError(f"Unknown stage {stage}")
+
+
 def get_step(steps_so_far, dataset_counts):
     return steps_so_far + dataset_counts.total_before
 
 
-def first_stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers=12, global_exact_dedup=False):
+def stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers=12, stage: FilteringStage = FilteringStage.FirstStage):
     num_lines = utils.count_lines(dataset.src)
     if num_lines == 0:
         return -1, -1, -1
-    num_workers_dynamic = min(((num_lines - 1) // 5000) + 1, num_workers)
 
-    src_offsets_path = dataset_output_dir / f"{corpus_name}_src_offsets{'_global_exact_dedup' if global_exact_dedup else ''}.pickle"
+    num_workers_dynamic = min(((num_lines - 1) // 5000) + 1, num_workers)
+    filename_infix = get_preprocess_stage_infix(stage)
+
+    src_offsets_path = dataset_output_dir / f"{corpus_name}_src_offsets{filename_infix}.pickle"
     if os.path.exists(src_offsets_path):
         with open(src_offsets_path, "rb") as f:
             src_offsets = pickle.load(f)
@@ -65,7 +96,7 @@ def first_stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers
 
     src_file_chunks = list(zip(src_offsets, src_offsets[1:]))
 
-    src_chunks_line_numbers_path = dataset_output_dir / f"{corpus_name}_src_chunks_line_numbers{'_global_exact_dedup' if global_exact_dedup else ''}.pickle"
+    src_chunks_line_numbers_path = dataset_output_dir / f"{corpus_name}_src_chunks_line_numbers{filename_infix}.pickle"
     if os.path.exists(src_chunks_line_numbers_path):
         with open(src_chunks_line_numbers_path, "rb") as f:
             src_chunks_line_numbers = pickle.load(f)
@@ -74,7 +105,7 @@ def first_stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers
         with open(src_chunks_line_numbers_path, "wb") as f:
             pickle.dump(src_chunks_line_numbers, f)
 
-    tgt_offsets_path = dataset_output_dir / f"{corpus_name}_tgt_offsets{'_global_exact_dedup' if global_exact_dedup else ''}.pickle"
+    tgt_offsets_path = dataset_output_dir / f"{corpus_name}_tgt_offsets{filename_infix}.pickle"
     if os.path.exists(tgt_offsets_path):
         with open(tgt_offsets_path, "rb") as f:
             tgt_offsets = pickle.load(f)
@@ -83,7 +114,7 @@ def first_stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers
         with open(tgt_offsets_path, "wb") as f:
             pickle.dump(tgt_offsets, f)
 
-    tgt_chunks_line_numbers_path = dataset_output_dir / f"{corpus_name}_tgt_chunks_line_numbers{'_global_exact_dedup' if global_exact_dedup else ''}.pickle"
+    tgt_chunks_line_numbers_path = dataset_output_dir / f"{corpus_name}_tgt_chunks_line_numbers{filename_infix}.pickle"
     if os.path.exists(tgt_chunks_line_numbers_path):
         with open(tgt_chunks_line_numbers_path, "rb") as f:
             tgt_chunks_line_numbers = pickle.load(f)
@@ -99,7 +130,7 @@ def first_stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers
     return src_file_chunks, tgt_file_chunks, num_workers_dynamic
 
 
-def first_stage_postprocess(
+def stage_postprocess(
         dataset_output_dir,
         corpus_name,
         src_lang,
@@ -107,10 +138,12 @@ def first_stage_postprocess(
         path_out_src_before_fuzzy,
         path_out_tgt_before_fuzzy,
         path_counts,
-        global_exact_dedup
+        stage: FilteringStage = FilteringStage.FirstStage,
     ):
-    src_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{src_lang}_before_fuzzy_*{'_global_exact_dedup' if global_exact_dedup else ''}")], key=lambda x: int(x.split('_')[-4 if global_exact_dedup else -1]))
-    tgt_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{tgt_lang}_before_fuzzy_*{'_global_exact_dedup' if global_exact_dedup else ''}")], key=lambda x: int(x.split('_')[-4 if global_exact_dedup else -1]))
+    filename_infix, index = get_postprocess_stage_infix(stage)
+
+    src_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{src_lang}{filename_infix}")], key=lambda x: int(x.split('.')[0].split('_')[index]))
+    tgt_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{tgt_lang}{filename_infix}")], key=lambda x: int(x.split('.')[0].split('_')[index]))
     assert len(src_files_list) == len(tgt_files_list), f"Number of src files {len(src_files_list)} is not equal to number of tgt files {len(tgt_files_list)}"
 
     # Merge output files from the workers
@@ -132,7 +165,7 @@ def first_stage_postprocess(
         os.remove(src_file)
         os.remove(tgt_file)
 
-    counts_files_list = [str(path) for path in dataset_output_dir.glob(f"{corpus_name}_before_fuzzy_*{'_global_exact_dedup' if global_exact_dedup else ''}.yaml")]
+    counts_files_list = [str(path) for path in dataset_output_dir.glob(f"{corpus_name}{filename_infix}.yaml")]
     counts_partial = []
     with open(path_counts, "wt") as fout:
         for counts_file in counts_files_list:
@@ -205,12 +238,12 @@ def filter_direction(
         ts = time.time()
 
         # Prepare for parallel processing
-        src_file_chunks, tgt_file_chunks, num_workers_dynamic = first_stage_preprocess(
+        src_file_chunks, tgt_file_chunks, num_workers_dynamic = stage_preprocess(
             dataset,
             corpus_name,
             dataset_output_dir,
             num_workers,
-            global_exact_dedup=global_exact_dedup
+            stage=FilteringStage.FirstStage
         )
 
         if src_file_chunks != -1:  # if not empty
@@ -232,7 +265,7 @@ def filter_direction(
             ).run()
             timings.append(time.time() - ts)
 
-        counts[corpus_name] = first_stage_postprocess(
+        counts[corpus_name] = stage_postprocess(
             dataset_output_dir,
             corpus_name,
             src_lang,
@@ -240,7 +273,7 @@ def filter_direction(
             path_out_src_before_fuzzy,
             path_out_tgt_before_fuzzy,
             path_counts,
-            global_exact_dedup=global_exact_dedup
+            stage=FilteringStage.FirstStage
         )
 
     #
@@ -265,12 +298,12 @@ def filter_direction(
 
         ts = time.time()
 
-        src_file_chunks, tgt_file_chunks, num_workers_dynamic = first_stage_preprocess(
+        src_file_chunks, tgt_file_chunks, num_workers_dynamic = stage_preprocess(
             dataset,
             corpus_name,
             dataset_output_dir,
             num_workers,
-            global_exact_dedup=global_exact_dedup
+            stage=FilteringStage.SecondStage
         )
 
         if src_file_chunks != -1:  # if not empty
@@ -293,7 +326,7 @@ def filter_direction(
             ).run()
             timings.append(time.time() - ts)
 
-        counts[corpus_name] = first_stage_postprocess(
+        counts[corpus_name] = stage_postprocess(
             dataset_output_dir,
             corpus_name,
             src_lang,
@@ -301,7 +334,7 @@ def filter_direction(
             path_out_src_before_fuzzy,
             path_out_tgt_before_fuzzy,
             path_counts,
-            global_exact_dedup=global_exact_dedup
+            stage=FilteringStage.SecondStage
         )
 
     #
@@ -340,86 +373,56 @@ def filter_direction(
         config.fuzzy_dedup_filter,
         datasets=next_stage_datasets,
         num_workers=num_workers,
-        output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}",
-        attempt_num=0)
+        output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}")
 
-    # too little RAM for complete dedup, repeat the fuzzy deduplication to approximate the full deduplication
-    repeat_fuzzy = fuzzy_filter.should_repeat_fuzzy
+    cnt = 0
+    for corpus_name, dataset in next_stage_datasets.items():
 
-    for i in range(2 if repeat_fuzzy else 1):
-        cnt = 0
-        control_flag = repeat_fuzzy and i == 0
+        path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}.gz"
+        path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}.gz"
 
-        if i == 1 and repeat_fuzzy:  # Update the state
-            shutil.rmtree(Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}")
-            fuzzy_filter = hydra.utils.instantiate(
-                config.fuzzy_dedup_filter,
-                datasets=next_stage_datasets,  # Updated in the first iteration
-                num_workers=num_workers,
-                output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}",
-                attempt_num=1)
+        path_counts = dataset_output_dir / f"{corpus_name}.yaml"
 
-        for corpus_name, dataset in next_stage_datasets.items():
-            dataset_counts = counts[corpus_name]
-            if i == 1 and repeat_fuzzy:
-                dataset_counts.total_after_fuzzy = 0  # reset the counter
+        if os.path.isfile(path_counts):
+            with open(path_counts, "rt") as fin:
+                counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
+                cnt += counts[corpus_name].total_after
+            print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
+            continue
 
-            path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}{'_1_fuzzy' if control_flag else '.gz'}"
-            path_out_tgt = dataset_output_dir / f"{corpus_name}.{tgt_lang}{'_1_fuzzy' if control_flag else '.gz'}"
+        src_file_chunks, tgt_file_chunks, num_workers_dynamic = stage_preprocess(
+            dataset,
+            corpus_name,
+            dataset_output_dir,
+            num_workers,
+            stage=FilteringStage.ThirdStage
+        )
 
-            path_counts = dataset_output_dir / f"{corpus_name}{'_1' if control_flag else ''}.yaml"
+        if src_file_chunks != -1:  # if not empty
 
-            if os.path.isfile(path_counts):
-                with open(path_counts, "rt") as fin:
-                    counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
-                    cnt += counts[corpus_name].total_after
-                print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
-                continue
+            FuzzyFilterStage(
+                dataset.src,
+                dataset.tgt,
+                src_file_chunks,
+                tgt_file_chunks,
+                dataset_output_dir,
+                corpus_name,
+                src_lang,
+                tgt_lang,
+                num_workers_dynamic,
+                fuzzy_filter,
+            ).run()
 
-            print(f"Processing {corpus_name} - fuzzy deduplication")
-            with ExitStack() as outputs, DatasetReader(dataset, corpus_name) as inputs:
-                fout_src = outputs.enter_context(open(path_out_src, "wt") if control_flag else gzip.open(path_out_src, "wt"))
-                fout_tgt = None
-
-                # if tgt_lang is not provided, we have a monolingual dataset;
-                # otherwise, the parallel file needs to be opened
-                if tgt_lang is not None:
-                    fout_tgt = outputs.enter_context(open(path_out_src, "wt") if control_flag else gzip.open(path_out_tgt, "wt"))
-
-                for i, line in enumerate(inputs):
-                    if cnt % 10000 == 0:
-                        wandb.log(
-                            {f"{group_name.split('_')[-1]}_fuzzy/{direction}": cnt / dataset_counts.total_after},
-                            step=cnt
-                        )
-
-                    # hacky - in order not to break the existing func signature I'm encoding the line number information in the line.src
-                    line.src = f'{str(cnt).zfill(9)}{line.src}'
-                    line = fuzzy_filter.filter_line(line, dataset_counts)
-                    cnt += 1  # this needs to be precisely here, don't move it unless you know why you are doing that.
-
-                    if line is None:
-                        continue
-
-                    fout_src.write(line.src + "\n")
-                    if fout_tgt is not None:
-                        fout_tgt.write(line.tgt + "\n")
-                    dataset_counts.total_after_fuzzy += 1
-
-                if dataset_counts:
-                    with open(path_counts, "wt") as fout:
-                        yaml.safe_dump(dataset_counts.__dict__, fout)
-
-            # update the dataset path so that the output from this iteration is the input to the next
-            # modify the dataset.src and dataset.tgt paths
-            if control_flag:
-                dataset.src = path_out_src
-                dataset.tgt = path_out_tgt
-
-            if repeat_fuzzy and i == 1:  # delete iteration 1 intermediate files
-                os.remove(dataset.src)
-                os.remove(dataset.tgt)
-                os.remove(dataset_output_dir / f"{corpus_name}_1.yaml")
+        counts[corpus_name] = stage_postprocess(
+            dataset_output_dir,
+            corpus_name,
+            src_lang,
+            tgt_lang,
+            path_out_src,
+            path_out_tgt,
+            path_counts,
+            stage=FilteringStage.ThirdStage
+        )
 
     if counts:
         print(f"Total counts: {sum(counts.values()).__dict__}")
