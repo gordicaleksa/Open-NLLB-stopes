@@ -1776,104 +1776,104 @@ eng_Latn-hrv_Latn:
     tgt: /hdd/open-nllb-data/slavic_data/primary/wikimedia/eng_Latn-hrv_Latn/wikimedia.hrv_Latn
     tsv: null
 eng_Latn-mkd_Cyrl:
-  ELRC-3050-wikipedia_health:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/ELRC-3050-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-3050-wikipedia_health.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC-3050-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-3050-wikipedia_health.mkd_Cyrl
-    tsv: null
-  ELRC-5067-SciPar:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/ELRC-5067-SciPar/eng_Latn-mkd_Cyrl/ELRC-5067-SciPar.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC-5067-SciPar/eng_Latn-mkd_Cyrl/ELRC-5067-SciPar.mkd_Cyrl
-    tsv: null
-  ELRC-wikipedia_health:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/ELRC-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-wikipedia_health.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-wikipedia_health.mkd_Cyrl
-    tsv: null
-  ELRC_2922:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/ELRC_2922/eng_Latn-mkd_Cyrl/ELRC_2922.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC_2922/eng_Latn-mkd_Cyrl/ELRC_2922.mkd_Cyrl
-    tsv: null
-  EUbookshop:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/EUbookshop/eng_Latn-mkd_Cyrl/EUbookshop.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/EUbookshop/eng_Latn-mkd_Cyrl/EUbookshop.mkd_Cyrl
-    tsv: null
-  GNOME:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/GNOME/eng_Latn-mkd_Cyrl/GNOME.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/GNOME/eng_Latn-mkd_Cyrl/GNOME.mkd_Cyrl
-    tsv: null
-  GlobalVoices:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/GlobalVoices/eng_Latn-mkd_Cyrl/GlobalVoices.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/GlobalVoices/eng_Latn-mkd_Cyrl/GlobalVoices.mkd_Cyrl
-    tsv: null
-  KDE4:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/KDE4/eng_Latn-mkd_Cyrl/KDE4.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/KDE4/eng_Latn-mkd_Cyrl/KDE4.mkd_Cyrl
-    tsv: null
-  MaCoCu:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/MaCoCu/eng_Latn-mkd_Cyrl/MaCoCu.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/MaCoCu/eng_Latn-mkd_Cyrl/MaCoCu.mkd_Cyrl
-    tsv: null
-  Mozilla-I10n:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/Mozilla-I10n/eng_Latn-mkd_Cyrl/Mozilla-I10n.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/Mozilla-I10n/eng_Latn-mkd_Cyrl/Mozilla-I10n.mkd_Cyrl
-    tsv: null
-  NeuLab-TedTalks:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/NeuLab-TedTalks/eng_Latn-mkd_Cyrl/NeuLab-TedTalks.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/NeuLab-TedTalks/eng_Latn-mkd_Cyrl/NeuLab-TedTalks.mkd_Cyrl
-    tsv: null
-  OpenSubtitles:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/OpenSubtitles/eng_Latn-mkd_Cyrl/OpenSubtitles.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/OpenSubtitles/eng_Latn-mkd_Cyrl/OpenSubtitles.mkd_Cyrl
-    tsv: null
-  QED:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/QED/eng_Latn-mkd_Cyrl/QED.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/QED/eng_Latn-mkd_Cyrl/QED.mkd_Cyrl
-    tsv: null
-  SETIMES:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/SETIMES/eng_Latn-mkd_Cyrl/SETIMES.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/SETIMES/eng_Latn-mkd_Cyrl/SETIMES.mkd_Cyrl
-    tsv: null
+  # ELRC-3050-wikipedia_health:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/ELRC-3050-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-3050-wikipedia_health.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC-3050-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-3050-wikipedia_health.mkd_Cyrl
+  #   tsv: null
+  # ELRC-5067-SciPar:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/ELRC-5067-SciPar/eng_Latn-mkd_Cyrl/ELRC-5067-SciPar.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC-5067-SciPar/eng_Latn-mkd_Cyrl/ELRC-5067-SciPar.mkd_Cyrl
+  #   tsv: null
+  # ELRC-wikipedia_health:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/ELRC-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-wikipedia_health.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC-wikipedia_health/eng_Latn-mkd_Cyrl/ELRC-wikipedia_health.mkd_Cyrl
+  #   tsv: null
+  # ELRC_2922:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/ELRC_2922/eng_Latn-mkd_Cyrl/ELRC_2922.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/ELRC_2922/eng_Latn-mkd_Cyrl/ELRC_2922.mkd_Cyrl
+  #   tsv: null
+  # EUbookshop:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/EUbookshop/eng_Latn-mkd_Cyrl/EUbookshop.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/EUbookshop/eng_Latn-mkd_Cyrl/EUbookshop.mkd_Cyrl
+  #   tsv: null
+  # GNOME:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/GNOME/eng_Latn-mkd_Cyrl/GNOME.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/GNOME/eng_Latn-mkd_Cyrl/GNOME.mkd_Cyrl
+  #   tsv: null
+  # GlobalVoices:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/GlobalVoices/eng_Latn-mkd_Cyrl/GlobalVoices.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/GlobalVoices/eng_Latn-mkd_Cyrl/GlobalVoices.mkd_Cyrl
+  #   tsv: null
+  # KDE4:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/KDE4/eng_Latn-mkd_Cyrl/KDE4.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/KDE4/eng_Latn-mkd_Cyrl/KDE4.mkd_Cyrl
+  #   tsv: null
+  # MaCoCu:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/MaCoCu/eng_Latn-mkd_Cyrl/MaCoCu.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/MaCoCu/eng_Latn-mkd_Cyrl/MaCoCu.mkd_Cyrl
+  #   tsv: null
+  # Mozilla-I10n:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/Mozilla-I10n/eng_Latn-mkd_Cyrl/Mozilla-I10n.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/Mozilla-I10n/eng_Latn-mkd_Cyrl/Mozilla-I10n.mkd_Cyrl
+  #   tsv: null
+  # NeuLab-TedTalks:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/NeuLab-TedTalks/eng_Latn-mkd_Cyrl/NeuLab-TedTalks.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/NeuLab-TedTalks/eng_Latn-mkd_Cyrl/NeuLab-TedTalks.mkd_Cyrl
+  #   tsv: null
+  # OpenSubtitles:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/OpenSubtitles/eng_Latn-mkd_Cyrl/OpenSubtitles.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/OpenSubtitles/eng_Latn-mkd_Cyrl/OpenSubtitles.mkd_Cyrl
+  #   tsv: null
+  # QED:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/QED/eng_Latn-mkd_Cyrl/QED.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/QED/eng_Latn-mkd_Cyrl/QED.mkd_Cyrl
+  #   tsv: null
+  # SETIMES:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/SETIMES/eng_Latn-mkd_Cyrl/SETIMES.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/SETIMES/eng_Latn-mkd_Cyrl/SETIMES.mkd_Cyrl
+  #   tsv: null
   TED2020:
     fold: null
     lang_dir: null
@@ -1888,20 +1888,20 @@ eng_Latn-mkd_Cyrl:
     src: /hdd/open-nllb-data/slavic_data/primary/Tatoeba/eng_Latn-mkd_Cyrl/Tatoeba.eng_Latn
     tgt: /hdd/open-nllb-data/slavic_data/primary/Tatoeba/eng_Latn-mkd_Cyrl/Tatoeba.mkd_Cyrl
     tsv: null
-  Ubuntu:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/Ubuntu/eng_Latn-mkd_Cyrl/Ubuntu.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/Ubuntu/eng_Latn-mkd_Cyrl/Ubuntu.mkd_Cyrl
-    tsv: null
-  wikimedia:
-    fold: null
-    lang_dir: null
-    metadata: null
-    src: /hdd/open-nllb-data/slavic_data/primary/wikimedia/eng_Latn-mkd_Cyrl/wikimedia.eng_Latn
-    tgt: /hdd/open-nllb-data/slavic_data/primary/wikimedia/eng_Latn-mkd_Cyrl/wikimedia.mkd_Cyrl
-    tsv: null
+  # Ubuntu:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/Ubuntu/eng_Latn-mkd_Cyrl/Ubuntu.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/Ubuntu/eng_Latn-mkd_Cyrl/Ubuntu.mkd_Cyrl
+  #   tsv: null
+  # wikimedia:
+  #   fold: null
+  #   lang_dir: null
+  #   metadata: null
+  #   src: /hdd/open-nllb-data/slavic_data/primary/wikimedia/eng_Latn-mkd_Cyrl/wikimedia.eng_Latn
+  #   tgt: /hdd/open-nllb-data/slavic_data/primary/wikimedia/eng_Latn-mkd_Cyrl/wikimedia.mkd_Cyrl
+  #   tsv: null
 eng_Latn-pol_Latn:
   Books:
     fold: null

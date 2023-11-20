@@ -2,6 +2,7 @@ from concurrent.futures import ProcessPoolExecutor
 from contextlib import ExitStack
 import gzip
 import multiprocessing
+import os
 
 import hydra
 import yaml
@@ -75,6 +76,10 @@ def first_stage_filtering_worker(
 
     path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy_{worker_id}{'_global_exact_dedup' if global_exact_dedup else ''}.yaml"
 
+    # if os.path.isfile(path_counts):
+    #     print(f"Skipping {path_counts}: already exists")
+    #     return
+
     dataset_counts = FilteringCounts()  # filtering counts for the current dataset
 
     with ExitStack() as outputs, BitextChunker(src_path, tgt_path, src_offset, tgt_offset) as inputs:
@@ -141,6 +146,7 @@ class FirstStage:
             src_file_chunks,
             tgt_file_chunks,
             dataset_output_dir,
+            group_name,
             corpus_name,
             src_lang,
             tgt_lang,
@@ -159,6 +165,7 @@ class FirstStage:
         self.src_lang = src_lang
         self.tgt_lang = tgt_lang
         self.config = config
+        self.group_name = group_name
         self.length_factors= length_factors
         self.num_workers = num_workers_dynamic
         self.dedup_dict = dedup_dict
@@ -185,6 +192,7 @@ class FirstStage:
                     src_offset,
                     tgt_offset,
                     self.dataset_output_dir,
+                    self.group_name,
                     self.corpus_name,
                     self.src_lang,
                     self.tgt_lang,
@@ -281,12 +289,9 @@ class FuzzyFilterStage:
         self.cnt = cnt
 
     def run(self):
-        dedup_lock = multiprocessing.Lock()
 
         with ProcessPoolExecutor(
-            max_workers=self.num_workers,
-            initializer=init_pool_processes,
-            initargs=(dedup_lock,)) as executor:
+            max_workers=self.num_workers) as executor:
 
             # Process file chunks in parallel.
             futures = [

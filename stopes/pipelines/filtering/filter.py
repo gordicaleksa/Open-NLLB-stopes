@@ -80,7 +80,7 @@ def get_step(steps_so_far, dataset_counts):
 def stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers=12, stage: FilteringStage = FilteringStage.FirstStage):
     num_lines = utils.count_lines(dataset.src)
     if num_lines == 0:
-        return -1, -1, -1
+        return -1, -1, -1, -1
 
     num_workers_dynamic = min(((num_lines - 1) // 5000) + 1, num_workers)
     filename_infix = get_preprocess_stage_infix(stage)
@@ -127,6 +127,9 @@ def stage_preprocess(dataset, corpus_name, dataset_output_dir, num_workers=12, s
 
     tgt_file_chunks = list(zip(tgt_offsets, tgt_offsets[1:]))
 
+    src_chunks_line_numbers = list(zip(src_chunks_line_numbers, src_chunks_line_numbers[1:]))
+    tgt_chunks_line_numbers = list(zip(tgt_chunks_line_numbers, tgt_chunks_line_numbers[1:]))
+
     return src_file_chunks, tgt_file_chunks, src_chunks_line_numbers, num_workers_dynamic
 
 
@@ -140,16 +143,17 @@ def stage_postprocess(
         path_counts,
         stage: FilteringStage = FilteringStage.FirstStage,
     ):
+    is_third = stage == FilteringStage.ThirdStage
     filename_infix, index = get_postprocess_stage_infix(stage)
 
-    src_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{src_lang}{filename_infix}")], key=lambda x: int(x.split('.')[0].split('_')[index]))
-    tgt_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{tgt_lang}{filename_infix}")], key=lambda x: int(x.split('.')[0].split('_')[index]))
+    src_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{src_lang}{filename_infix}")], key=lambda x: int(x.split('_')[index]))
+    tgt_files_list = sorted([str(path) for path in dataset_output_dir.glob(f"{corpus_name}.{tgt_lang}{filename_infix}")], key=lambda x: int(x.split('_')[index]))
     assert len(src_files_list) == len(tgt_files_list), f"Number of src files {len(src_files_list)} is not equal to number of tgt files {len(tgt_files_list)}"
 
     # Merge output files from the workers
     src_cnt = 0
     tgt_cnt = 0
-    with open(path_out_src_before_fuzzy, "w") as outfile_src, open(path_out_tgt_before_fuzzy, "w") as outfile_tgt:
+    with gzip.open(path_out_src_before_fuzzy, "wt") if is_third else open(path_out_src_before_fuzzy, "w") as outfile_src, gzip.open(path_out_tgt_before_fuzzy, "wt") if is_third else open(path_out_tgt_before_fuzzy, "w") as outfile_tgt:
         for src_file, tgt_file in zip(src_files_list, tgt_files_list):
             with open(src_file) as src_infile, open(tgt_file) as tgt_infile:
                 for line in src_infile:
@@ -182,7 +186,7 @@ def stage_postprocess(
         os.remove(counts_file)
 
     # remove offsets & chunks that were computed prior to main stage
-    offset_files_list = [str(path) for path in dataset_output_dir.glob(f"*offsets")]
+    offset_files_list = [str(path) for path in dataset_output_dir.glob(f"*offsets*")]
     chunk_files_list = [str(path) for path in dataset_output_dir.glob(f"*chunks*")]
     assert len(offset_files_list) == len(chunk_files_list), f"Number of src files {len(offset_files_list)} is not equal to number of tgt files {len(chunk_files_list)}"
     for offset_file, chunk_file in zip(offset_files_list, chunk_files_list):
@@ -386,7 +390,7 @@ def filter_direction(
         if os.path.isfile(path_counts):
             with open(path_counts, "rt") as fin:
                 counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
-                cnt += counts[corpus_name].total_after
+                cnt += counts[corpus_name].total_before
             print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
             continue
 
@@ -414,6 +418,8 @@ def filter_direction(
                 src_chunks_line_numbers,
                 cnt,
             ).run()
+
+            cnt += src_chunks_line_numbers[-1][1] - src_chunks_line_numbers[0][0]
 
         counts[corpus_name] = stage_postprocess(
             dataset_output_dir,
@@ -467,7 +473,7 @@ def filter_group(group_name: str, config: DictConfig):
             if direction not in config.directions:
                 continue
 
-            if direction not in ["eng_Latn-slk_Latn"]:  # If we change the config.directions we change the output directory...
+            if direction not in ["eng_Latn-mkd_Cyrl"]:  # If we change the config.directions we change the output directory...
                 continue
 
             try:
@@ -560,7 +566,7 @@ def main(config: DictConfig) -> None:
             config.directions = all_directions[i : i + batch_size]
             config.output_dir = os.path.join(root_output_dir, f"batch_{i}_to_{i+len(config.directions)}")
             os.makedirs(config.output_dir, exist_ok=True)
-            for group_name in ("train_mined", "train_bt"):  # TODO: TMP REMOVED "train_primary"
+            for group_name in ("train_primary", "train_bt"):  # TODO: TMP REMOVED "train_mined"
                 if config.get(group_name, None):
                     filter_group(group_name=group_name, config=config)
 
