@@ -209,7 +209,7 @@ def filter_direction(
     custom_step_name: str,
     output_dir: Path,
     wandb_run_name: str,
-    num_workers: int = 12
+    num_workers: int = 32
 ):
     direction = f"{src_lang}-{tgt_lang}" if tgt_lang is not None else src_lang
     wandb.init(project="slavic-NLLB-filtering", reinit=False, name=wandb_run_name)
@@ -223,69 +223,69 @@ def filter_direction(
     #
     # 1ST STAGE - CORPUS-LEVEL FILTERING
     #
-    global_exact_dedup = False
-    for corpus_name, dataset in datasets.items():
+    # global_exact_dedup = False
+    # for corpus_name, dataset in datasets.items():
 
-        path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy"
-        path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy"
+    #     path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy"
+    #     path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy"
 
-        next_stage_datasets[corpus_name] = Dataset(src=path_out_src_before_fuzzy, tgt=path_out_tgt_before_fuzzy, tsv=None, metadata=None, lang_dir=None, fold=None)
+    #     next_stage_datasets[corpus_name] = Dataset(src=path_out_src_before_fuzzy, tgt=path_out_tgt_before_fuzzy, tsv=None, metadata=None, lang_dir=None, fold=None)
 
-        path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy.yaml"
+    #     path_counts = dataset_output_dir / f"{corpus_name}_before_fuzzy.yaml"
 
-        if os.path.isfile(path_counts):
-            with open(path_counts, "rt") as fin:
-                counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
-            print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
-            continue
+    #     if os.path.isfile(path_counts):
+    #         with open(path_counts, "rt") as fin:
+    #             counts[corpus_name] = FilteringCounts(**yaml.safe_load(fin))
+    #         print(f"Skipping {corpus_name} as a corresponding YAML file already exists")
+    #         continue
 
-        ts = time.time()
+    #     ts = time.time()
 
-        # Prepare for parallel processing
-        src_file_chunks, tgt_file_chunks, _, num_workers_dynamic = stage_preprocess(
-            dataset,
-            corpus_name,
-            dataset_output_dir,
-            num_workers,
-            stage=FilteringStage.FirstStage
-        )
+    #     # Prepare for parallel processing
+    #     src_file_chunks, tgt_file_chunks, _, num_workers_dynamic = stage_preprocess(
+    #         dataset,
+    #         corpus_name,
+    #         dataset_output_dir,
+    #         num_workers,
+    #         stage=FilteringStage.FirstStage
+    #     )
 
-        if src_file_chunks != -1:  # if not empty
-            FirstStage(
-                dataset.src,
-                dataset.tgt,
-                src_file_chunks,
-                tgt_file_chunks,
-                dataset_output_dir,
-                group_name,
-                corpus_name,
-                src_lang,
-                tgt_lang,
-                config,
-                length_factors,
-                num_workers_dynamic,
-                dedup_dict=None,  # externally we only pass dedup_dict for global exact deduplication
-                global_exact_dedup=global_exact_dedup,
-            ).run()
-            timings.append(time.time() - ts)
+    #     if src_file_chunks != -1:  # if not empty
+    #         FirstStage(
+    #             dataset.src,
+    #             dataset.tgt,
+    #             src_file_chunks,
+    #             tgt_file_chunks,
+    #             dataset_output_dir,
+    #             group_name,
+    #             corpus_name,
+    #             src_lang,
+    #             tgt_lang,
+    #             config,
+    #             length_factors,
+    #             num_workers_dynamic,
+    #             dedup_dict=None,  # externally we only pass dedup_dict for global exact deduplication
+    #             global_exact_dedup=global_exact_dedup,
+    #         ).run()
+    #         timings.append(time.time() - ts)
 
-        counts[corpus_name] = stage_postprocess(
-            dataset_output_dir,
-            corpus_name,
-            src_lang,
-            tgt_lang,
-            path_out_src_before_fuzzy,
-            path_out_tgt_before_fuzzy,
-            path_counts,
-            stage=FilteringStage.FirstStage
-        )
+    #     counts[corpus_name] = stage_postprocess(
+    #         dataset_output_dir,
+    #         corpus_name,
+    #         src_lang,
+    #         tgt_lang,
+    #         path_out_src_before_fuzzy,
+    #         path_out_tgt_before_fuzzy,
+    #         path_counts,
+    #         stage=FilteringStage.FirstStage
+    #     )
 
     #
     # 2ND STAGE - GLOBAL EXACT DEDUP
     #
     global_exact_dedup = True
     dedup_dict = multiprocessing.Manager().dict()
-    for corpus_name, dataset in next_stage_datasets.items():
+    for corpus_name, dataset in datasets.items():
 
         path_out_src_before_fuzzy = dataset_output_dir / f"{corpus_name}.{src_lang}_before_fuzzy_global_exact_dedup"
         path_out_tgt_before_fuzzy = dataset_output_dir / f"{corpus_name}.{tgt_lang}_before_fuzzy_global_exact_dedup"
@@ -380,6 +380,9 @@ def filter_direction(
         output_dir=Path(output_dir) / f"{group_name.split('_')[-1]}_minhashes_{direction}")
 
     cnt = 0
+
+    # TODO: TMP UNTIL I FIGURE OUT A GOOD WAY TO PARALLELIZE WORK
+    num_workers = 1
     for corpus_name, dataset in next_stage_datasets.items():
 
         path_out_src = dataset_output_dir / f"{corpus_name}.{src_lang}.gz"
@@ -473,7 +476,7 @@ def filter_group(group_name: str, config: DictConfig):
             if direction not in config.directions:
                 continue
 
-            if direction not in ["eng_Latn-mkd_Cyrl"]:  # If we change the config.directions we change the output directory...
+            if direction not in ["eng_Latn-pol_Latn", "eng_Latn-ces_Latn", "eng_Latn-rus_Cyrl"]:  # If we change the config.directions we change the output directory...
                 continue
 
             try:
@@ -566,7 +569,7 @@ def main(config: DictConfig) -> None:
             config.directions = all_directions[i : i + batch_size]
             config.output_dir = os.path.join(root_output_dir, f"batch_{i}_to_{i+len(config.directions)}")
             os.makedirs(config.output_dir, exist_ok=True)
-            for group_name in ("train_primary", "train_bt"):  # TODO: TMP REMOVED "train_mined"
+            for group_name in ("train_mined", "train_bt"):  # TODO: TMP REMOVED "train_primary", 
                 if config.get(group_name, None):
                     filter_group(group_name=group_name, config=config)
 

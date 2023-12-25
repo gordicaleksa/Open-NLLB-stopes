@@ -290,27 +290,43 @@ class FuzzyFilterStage:
 
     def run(self):
 
-        with ProcessPoolExecutor(
-            max_workers=self.num_workers) as executor:
+        if self.num_workers > 1:
+            with ProcessPoolExecutor(
+                max_workers=self.num_workers) as executor:
 
-            # Process file chunks in parallel.
-            futures = [
-                executor.submit(
-                    fuzzy_filtering_worker,
-                    worker_id,
-                    self.src_path,
-                    self.tgt_path,
-                    src_offset,
-                    tgt_offset,
-                    self.dataset_output_dir,
-                    self.corpus_name,
-                    self.src_lang,
-                    self.tgt_lang,
-                    self.fuzzy_filter,
-                    line_numbers_range_chunk,
-                    self.cnt)
-                for worker_id, (src_offset, tgt_offset, line_numbers_range_chunk) in enumerate(zip(self.src_file_chunks, self.tgt_file_chunks, self.line_numbers_range_all))
-            ]
+                # Process file chunks in parallel.
+                futures = [
+                    executor.submit(
+                        fuzzy_filtering_worker,
+                        worker_id,
+                        self.src_path,
+                        self.tgt_path,
+                        src_offset,
+                        tgt_offset,
+                        self.dataset_output_dir,
+                        self.corpus_name,
+                        self.src_lang,
+                        self.tgt_lang,
+                        self.fuzzy_filter,
+                        line_numbers_range_chunk,
+                        self.cnt)
+                    for worker_id, (src_offset, tgt_offset, line_numbers_range_chunk) in enumerate(zip(self.src_file_chunks, self.tgt_file_chunks, self.line_numbers_range_all))
+                ]
 
-            for future in futures:
-                future.result()
+                for future in futures:
+                    future.result()
+        else:
+            fuzzy_filtering_worker(
+                0,
+                self.src_path,
+                self.tgt_path,
+                self.src_file_chunks[0],
+                self.tgt_file_chunks[0],
+                self.dataset_output_dir,
+                self.corpus_name,
+                self.src_lang,
+                self.tgt_lang,
+                self.fuzzy_filter,
+                self.line_numbers_range_all[0],
+                self.cnt
+            )

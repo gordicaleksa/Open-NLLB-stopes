@@ -6,12 +6,12 @@ defaults:
   - train_primary/dedup_filter: default
 
 directions:
- - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/directions.yaml
+ - /home/gordicaleksa/Open-NLLB-stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/directions.yaml
 
 train_primary:
   normalize_line: true
   included_corpora:
-    - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/primary_included_corpora.yaml
+    - /home/gordicaleksa/Open-NLLB-stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/primary_included_corpora.yaml
   laser_filter: null
   length_filter:
     min_len: 5
@@ -23,7 +23,7 @@ train_primary:
     words_with_alpha_ratio: 0.5
   lid_filter:
     _target_: "stopes.pipelines.filtering.filters.LidFilter"
-    model_path: "/home/aleksa/Projects/nllb/fairseq/examples/nllb/data/nllb-lid.bin"
+    model_path: "/home/gordicaleksa/Open-NLLB-stopes/nllb-lid.bin"
     default_threshold: 0.5
     thresholds:
       eng_Latn: 0.0
@@ -42,7 +42,7 @@ train_primary:
 train_mined:
   normalize_line: true
   included_corpora:
-    - /home/aleksa/Projects/nllb/stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/mined_included_corpora.yaml
+    - /home/gordicaleksa/Open-NLLB-stopes/stopes/pipelines/filtering/filter_configs/unfiltered_corpora/mined_included_corpora.yaml
   laser_filter: null
   length_filter:
     min_len: 5
@@ -54,7 +54,7 @@ train_mined:
     words_with_alpha_ratio: 0.5
   lid_filter:
     _target_: "stopes.pipelines.filtering.filters.LidFilter"
-    model_path: "/home/aleksa/Projects/nllb/fairseq/examples/nllb/data/nllb-lid.bin"
+    model_path: "/home/gordicaleksa/Open-NLLB-stopes/nllb-lid.bin"
     default_threshold: 0.5
     thresholds:
       eng_Latn: 0.0

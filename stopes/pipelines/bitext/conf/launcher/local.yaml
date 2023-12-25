@@ -5,4 +5,4 @@ _target_: stopes.core.Launcher
 log_folder: executor_logs
 cluster: local
 partition: null
-max_jobarray_jobs: 1000
+max_jobarray_jobs: 90
